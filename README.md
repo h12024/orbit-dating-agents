@@ -31,6 +31,12 @@ The AI layer is provider-agnostic (`lib/llm.ts`): **Gemini** (official REST `gen
 
 Put them in `.env.local` (git-ignored). Keys stay server-side.
 
+### Apify free-plan reality (read before the full run)
+- The LinkedIn actor (`apimaestro/linkedin-profile-detail`) enforces **20 profiles per day on Apify's free plan** (verified by hitting it: "Daily free-tier limit of 20 profiles reached"). Instagram (`apify/instagram-profile-scraper`) has no such cap in our tests. Spend is tiny (~$0.19 for 25 people) but the daily cap, not money, is the constraint.
+- The app treats that message as a **quota stop**, never as profile data: the scrape route returns `429 quota_exhausted`, the pipeline halts, and `run-cohort.mjs` exits 5 with a checkpoint (`data/runs/`). Re-run with `--resume` after the limit resets.
+- Every successful scrape is cached locally (compacted text only, `data/runs/scrape-cache/`, 7 days, disabled on Vercel or with `SCRAPE_CACHE=off`), so no profile ever costs quota twice. Verification (`npm run verify:people -- --apify`) fills the same cache.
+- Realistic schedule on the free plan: day 1 verify the last candidates and scrape up to the cap; day 2 `--resume`. Upgrading the Apify plan removes the cap but is a paid step we have not taken.
+
 ### Free-tier realities (Gemini)
 - **Quotas are per model, per Google project, and reset at midnight Pacific.** Google publishes the exact RPM/RPD only inside AI Studio (login required); third-party figures disagree (from ~20 to ~1,500 requests/day for Flash models), so check your project's limits at https://aistudio.google.com/rate-limit before a big run.
 - **Workload:** one date = 8 requests (6 turns + 2 debriefs). 25 people at K=4 is ~2 x 25 + ~90 dates x 8 = **~770 requests**, split over three models. Tune with `K` and `ROUNDS` env vars (K=3, ROUNDS=2 is ~420). Run `node scripts/run-cohort.mjs data/cohort.json public/demo.json --estimate` to print the budget first.
@@ -52,7 +58,7 @@ npm run demo:real            # terminal 2: full cohort -> public/demo.json (add 
 `run-cohort.mjs` refuses to run without a key and refuses to write synthetic output to a non-fixture file name (or live output to a fixture one). Commit `public/demo.json` to publish it. `npm run demo:fixture` regenerates `public/fixture-demo.json` offline.
 
 ## People dataset
-`scripts/candidates.json` -> `npm run verify:people` -> `data/people.json` + `data/cohort.json`. A profile is `verified` only when the platform's own public page returns 200 and its title/description identifies the person (explicit aliases are listed in candidates.json); Instagram must also show a follower count (public). Only people verified on **both** platforms enter `cohort.json`. The script is resumable and does not retry once LinkedIn blocks (HTTP 999). These are public figures; for private individuals, get their consent first.
+`scripts/candidates.json` -> `npm run verify:people` -> `data/people.json` + `data/cohort.json`. A profile is `verified` only when the platform's own public page returns 200 and its title/description identifies the person (explicit aliases are listed in candidates.json); Instagram must also show a follower count (public). Only people verified on **both** platforms enter `cohort.json`. Every verification is also sanity-checked against identity traps: LinkedIn profiles reached via the actor must return the same `public_identifier` and a follower count of at least 20,000 (these are public figures), and candidates rejected after manual review (same-name strangers) are listed in `candidates.json` with the reason. The script is resumable and does not retry once LinkedIn blocks (HTTP 999). These are public figures; for private individuals, get their consent first.
 
 ## Cost and abuse protection
 Strict URL allow-lists (no user-supplied fetch targets: SSRF-safe), body size caps, profile sanitising, clamped rounds / pool size, per-IP hourly rate limits per route (in-memory, best-effort per instance), max 30 people per run in the UI. For hard spend limits also set a monthly cap on the Anthropic key in its console.

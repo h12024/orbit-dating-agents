@@ -44,7 +44,7 @@
  },
  {
   "name": "Richard Branson",
-  "linkedin": "https://www.linkedin.com/in/richardbranson/",
+  "linkedin": "https://www.linkedin.com/in/rbranson/",
   "instagram": "https://www.instagram.com/richardbranson/"
  },
  {
@@ -54,7 +54,7 @@
  },
  {
   "name": "Sara Blakely",
-  "linkedin": "https://www.linkedin.com/in/sarablakely/",
+  "linkedin": "https://www.linkedin.com/in/sarablakely27/",
   "instagram": "https://www.instagram.com/sarablakely/"
  },
  {
@@ -82,7 +82,7 @@
  },
  {
   "name": "Sheryl Sandberg",
-  "linkedin": "https://www.linkedin.com/in/sherylsandberg/",
+  "linkedin": "https://www.linkedin.com/in/sheryl-sandberg-5126652/",
   "instagram": "https://www.instagram.com/sherylsandberg/"
  },
  {
@@ -123,7 +123,8 @@
  {
   "name": "Lilly Singh",
   "linkedin": "https://www.linkedin.com/in/lillysingh/",
-  "instagram": "https://www.instagram.com/lilly/"
+  "instagram": "https://www.instagram.com/lilly/",
+  "reject_linkedin": "slug lillysingh is a different person (law student)"
  },
  {
   "name": "Whitney Wolfe Herd",

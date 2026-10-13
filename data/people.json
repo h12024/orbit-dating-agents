@@ -162,12 +162,10 @@
  {
   "name": "Richard Branson",
   "linkedin": {
-   "url": "https://www.linkedin.com/in/richardbranson/",
+   "url": "https://www.linkedin.com/in/rbranson/",
    "status": "unverified",
-   "http": 999,
-   "page_title": "",
-   "page_desc": "",
-   "checked_at": "2026-10-13T20:05:32.894Z"
+   "note": "apify returned no profile for slug \"rbranson\"",
+   "checked_at": "2026-10-13T21:03:33.949Z"
   },
   "instagram": {
    "url": "https://www.instagram.com/richardbranson/",
@@ -202,12 +200,10 @@
  {
   "name": "Sara Blakely",
   "linkedin": {
-   "url": "https://www.linkedin.com/in/sarablakely/",
-   "status": "verified",
-   "http": 200,
-   "page_title": "Sara Blakely - prAna | LinkedIn",
-   "page_desc": "Experience: prAna · Education: California State University-San Marcos - College of Business Administration · Location: San Diego Metropolitan Area · 389 connect",
-   "checked_at": "2026-10-13T20:04:09.875Z"
+   "url": "https://www.linkedin.com/in/sarablakely27/",
+   "status": "unverified",
+   "note": "apify returned no profile for slug \"sarablakely27\"",
+   "checked_at": "2026-10-13T21:03:35.723Z"
   },
   "instagram": {
    "url": "https://www.instagram.com/sarablakely/",
@@ -217,7 +213,7 @@
    "page_desc": "1M Followers, 484 Following, 1,577 Posts - See Instagram photos and videos from Sara Blakely (@sarablakely)",
    "checked_at": "2026-10-13T20:04:10.831Z"
   },
-  "both_verified": true
+  "both_verified": false
  },
  {
   "name": "Daymond John",
@@ -243,11 +239,11 @@
   "name": "Tim Ferriss",
   "linkedin": {
    "url": "https://www.linkedin.com/in/timferriss/",
-   "status": "unverified",
-   "http": 999,
-   "page_title": "",
-   "page_desc": "",
-   "checked_at": "2026-10-13T20:05:38.685Z"
+   "status": "verified",
+   "method": "apify:linkedin-profile-detail",
+   "page_title": "Tim Ferriss - Author of 5 #1 NYT/WSJ bestsellers, early-stage investor, Tim Ferriss Show podcast (1B+ downloads), ",
+   "page_desc": "followers: 1539102",
+   "checked_at": "2026-10-13T21:00:59.863Z"
   },
   "instagram": {
    "url": "https://www.instagram.com/timferriss/",
@@ -257,17 +253,17 @@
    "page_desc": "2M Followers, 566 Following, 2,682 Posts - See Instagram photos and videos from Tim Ferriss (@timferriss)",
    "checked_at": "2026-10-13T20:04:15.816Z"
   },
-  "both_verified": false
+  "both_verified": true
  },
  {
   "name": "Nuseir Yassin",
   "linkedin": {
    "url": "https://www.linkedin.com/in/nyassin/",
-   "status": "unverified",
-   "http": 999,
-   "page_title": "",
-   "page_desc": "",
-   "checked_at": "2026-10-13T20:05:43.323Z"
+   "status": "verified",
+   "method": "apify:linkedin-profile-detail",
+   "page_title": "Nuseir Yassin - CEO at Nas Company",
+   "page_desc": "followers: 215420",
+   "checked_at": "2026-10-13T21:01:03.783Z"
   },
   "instagram": {
    "url": "https://www.instagram.com/nasdaily/",
@@ -277,17 +273,17 @@
    "page_desc": "5M Followers, 1,340 Following, 1,613 Posts - See Instagram photos and videos from Nas Daily (@nasdaily)",
    "checked_at": "2026-10-13T20:05:50.076Z"
   },
-  "both_verified": false
+  "both_verified": true
  },
  {
   "name": "Alex Hormozi",
   "linkedin": {
    "url": "https://www.linkedin.com/in/alexhormozi/",
-   "status": "unverified",
-   "http": 999,
-   "page_title": "",
-   "page_desc": "",
-   "checked_at": "2026-10-13T20:05:50.632Z"
+   "status": "verified",
+   "method": "apify:linkedin-profile-detail",
+   "page_title": "Alex Hormozi - Founder Acquisition.com x Co-Founder Skool.com. Get your free scaling roadmap👇",
+   "page_desc": "followers: 1070764",
+   "checked_at": "2026-10-13T21:01:08.986Z"
   },
   "instagram": {
    "url": "https://www.instagram.com/hormozi/",
@@ -297,17 +293,15 @@
    "page_desc": "5M Followers, 624 Following, 4,509 Posts - See Instagram photos and videos from Alex Hormozi (@hormozi)",
    "checked_at": "2026-10-13T20:04:24.214Z"
   },
-  "both_verified": false
+  "both_verified": true
  },
  {
   "name": "Sheryl Sandberg",
   "linkedin": {
-   "url": "https://www.linkedin.com/in/sherylsandberg/",
+   "url": "https://www.linkedin.com/in/sheryl-sandberg-5126652/",
    "status": "unverified",
-   "http": 999,
-   "page_title": "",
-   "page_desc": "",
-   "checked_at": "2026-10-13T20:05:56.080Z"
+   "note": "apify returned no profile for slug \"sheryl-sandberg-5126652\"",
+   "checked_at": "2026-10-13T21:03:39.530Z"
   },
   "instagram": {
    "url": "https://www.instagram.com/sherylsandberg/",
@@ -323,11 +317,11 @@
   "name": "Nikhil Kamath",
   "linkedin": {
    "url": "https://www.linkedin.com/in/nikhilkamathcio/",
-   "status": "unverified",
-   "http": 999,
-   "page_title": "",
-   "page_desc": "",
-   "checked_at": "2026-10-13T20:06:01.908Z"
+   "status": "verified",
+   "method": "apify:linkedin-profile-detail",
+   "page_title": "Nikhil Kamath - Investor & Entrepreneur",
+   "page_desc": "followers: 1726949",
+   "checked_at": "2026-10-13T21:01:18.607Z"
   },
   "instagram": {
    "url": "https://www.instagram.com/nikhilkamathcio/",
@@ -337,17 +331,17 @@
    "page_desc": "2M Followers, 361 Following, 756 Posts - See Instagram photos and videos from Nikhil Kamath (@nikhilkamathcio)",
    "checked_at": "2026-10-13T20:04:33.450Z"
   },
-  "both_verified": false
+  "both_verified": true
  },
  {
   "name": "Vusi Thembekwayo",
   "linkedin": {
    "url": "https://www.linkedin.com/in/vusithembekwayo/",
-   "status": "unverified",
-   "http": 999,
-   "page_title": "",
-   "page_desc": "",
-   "checked_at": "2026-10-13T20:06:06.463Z"
+   "status": "verified",
+   "method": "apify:linkedin-profile-detail",
+   "page_title": "Vusi Thembekwayo - Venture Investor & Operator.  I’ve spent 2 decades scaling businesses across 4 continents. 3x Best-S",
+   "page_desc": "followers: 1052350",
+   "checked_at": "2026-10-13T21:01:23.445Z"
   },
   "instagram": {
    "url": "https://www.instagram.com/vusithembekwayo/",
@@ -357,17 +351,17 @@
    "page_desc": "2M Followers, 107 Following, 1,072 Posts - See Instagram photos and videos from Vusi Thembekwayo (@vusithembekwayo)",
    "checked_at": "2026-10-13T20:04:36.608Z"
   },
-  "both_verified": false
+  "both_verified": true
  },
  {
   "name": "Satya Nadella",
   "linkedin": {
    "url": "https://www.linkedin.com/in/satyanadella/",
-   "status": "unverified",
-   "http": 999,
-   "page_title": "",
-   "page_desc": "",
-   "checked_at": "2026-10-13T20:06:11.016Z"
+   "status": "verified",
+   "method": "apify:linkedin-profile-detail",
+   "page_title": "Satya Nadella - Chairman and CEO at Microsoft",
+   "page_desc": "followers: 12223905",
+   "checked_at": "2026-10-13T21:01:28.262Z"
   },
   "instagram": {
    "url": "https://www.instagram.com/satyanadella/",
@@ -377,17 +371,17 @@
    "page_desc": "6 Followers, 0 Following, 0 Posts - See Instagram photos and videos from Satya Nadella (@satyanadella)",
    "checked_at": "2026-10-13T20:04:39.661Z"
   },
-  "both_verified": false
+  "both_verified": true
  },
  {
   "name": "Melinda French Gates",
   "linkedin": {
    "url": "https://www.linkedin.com/in/melindagates/",
-   "status": "unverified",
-   "http": 999,
-   "page_title": "",
-   "page_desc": "",
-   "checked_at": "2026-10-13T20:06:15.473Z"
+   "status": "verified",
+   "method": "apify:linkedin-profile-detail",
+   "page_title": "Melinda French Gates - Founder of Pivotal. Co-founder of the Gates Foundation. Author of The Moment of Lift & The Next Day.",
+   "page_desc": "followers: 6723287",
+   "checked_at": "2026-10-13T21:01:33.428Z"
   },
   "instagram": {
    "url": "https://www.instagram.com/melindafrenchgates/",
@@ -397,17 +391,15 @@
    "page_desc": "1M Followers, 446 Following, 1,456 Posts - See Instagram photos and videos from Melinda French Gates (@melindafrenchgates)",
    "checked_at": "2026-10-13T20:04:41.579Z"
   },
-  "both_verified": false
+  "both_verified": true
  },
  {
   "name": "Marques Brownlee",
   "linkedin": {
    "url": "https://www.linkedin.com/in/marquesbrownlee/",
    "status": "unverified",
-   "http": 999,
-   "page_title": "",
-   "page_desc": "",
-   "checked_at": "2026-10-13T20:06:20.058Z"
+   "note": "apify returned no profile for slug \"marquesbrownlee\"",
+   "checked_at": "2026-10-13T21:03:41.058Z"
   },
   "instagram": {
    "url": "https://www.instagram.com/mkbhd/",
@@ -423,11 +415,11 @@
   "name": "Neil Patel",
   "linkedin": {
    "url": "https://www.linkedin.com/in/neilkpatel/",
-   "status": "unverified",
-   "http": 999,
-   "page_title": "",
-   "page_desc": "",
-   "checked_at": "2026-10-13T20:06:25.788Z"
+   "status": "verified",
+   "method": "apify:linkedin-profile-detail",
+   "page_title": "Neil Patel - Co-Founder at Neil Patel Digital",
+   "page_desc": "followers: 833370",
+   "checked_at": "2026-10-13T21:01:41.864Z"
   },
   "instagram": {
    "url": "https://www.instagram.com/neilpatel/",
@@ -437,17 +429,17 @@
    "page_desc": "678K Followers, 133 Following, 3,206 Posts - See Instagram photos and videos from Neil Patel (@neilpatel)",
    "checked_at": "2026-10-13T20:04:46.687Z"
   },
-  "both_verified": false
+  "both_verified": true
  },
  {
   "name": "Kevin O'Leary",
   "linkedin": {
    "url": "https://www.linkedin.com/in/kevinolearytv/",
-   "status": "unverified",
-   "http": 999,
-   "page_title": "",
-   "page_desc": "",
-   "checked_at": "2026-10-13T20:06:31.458Z"
+   "status": "verified",
+   "method": "apify:linkedin-profile-detail",
+   "page_title": "Kevin O'Leary - Chairman, O’Leary Ventures and Beanstox",
+   "page_desc": "followers: 4614301",
+   "checked_at": "2026-10-13T21:01:46.163Z"
   },
   "instagram": {
    "url": "https://www.instagram.com/kevinolearytv/",
@@ -457,17 +449,15 @@
    "page_desc": "2M Followers, 583 Following, 5,813 Posts - See Instagram photos and videos from Kevin O'Leary (@kevinolearytv)",
    "checked_at": "2026-10-13T20:04:51.611Z"
   },
-  "both_verified": false
+  "both_verified": true
  },
  {
   "name": "Lilly Singh",
   "linkedin": {
    "url": "https://www.linkedin.com/in/lillysingh/",
    "status": "unverified",
-   "http": 999,
-   "page_title": "",
-   "page_desc": "",
-   "checked_at": "2026-10-13T20:06:36.032Z"
+   "note": "rejected after manual identity review: slug lillysingh is a different person (law student)",
+   "checked_at": "2026-10-13T21:03:43.167Z"
   },
   "instagram": {
    "url": "https://www.instagram.com/lilly/",
@@ -484,10 +474,8 @@
   "linkedin": {
    "url": "https://www.linkedin.com/in/whitneywolfeherd/",
    "status": "unverified",
-   "http": 999,
-   "page_title": "",
-   "page_desc": "",
-   "checked_at": "2026-10-13T20:06:40.452Z"
+   "note": "apify returned no profile for slug \"whitneywolfeherd\"",
+   "checked_at": "2026-10-13T21:03:44.583Z"
   },
   "instagram": {
    "url": "https://www.instagram.com/whitney/",
@@ -503,11 +491,11 @@
   "name": "Bill Gates",
   "linkedin": {
    "url": "https://www.linkedin.com/in/williamhgates/",
-   "status": "unverified",
-   "http": 999,
-   "page_title": "",
-   "page_desc": "",
-   "checked_at": "2026-10-13T20:06:44.994Z"
+   "status": "verified",
+   "method": "apify:linkedin-profile-detail",
+   "page_title": "Bill Gates - Chair, Gates Foundation and Founder, Breakthrough Energy",
+   "page_desc": "followers: 40727930",
+   "checked_at": "2026-10-13T21:01:59.029Z"
   },
   "instagram": {
    "url": "https://www.instagram.com/thisisbillgates/",
@@ -517,17 +505,17 @@
    "page_desc": "12M Followers, 313 Following, 633 Posts - See Instagram photos and videos from Bill Gates (@thisisbillgates)",
    "checked_at": "2026-10-13T20:04:59.994Z"
   },
-  "both_verified": false
+  "both_verified": true
  },
  {
   "name": "Sundar Pichai",
   "linkedin": {
    "url": "https://www.linkedin.com/in/sundarpichai/",
-   "status": "unverified",
-   "http": 999,
-   "page_title": "",
-   "page_desc": "",
-   "checked_at": "2026-10-13T20:06:49.466Z"
+   "status": "verified",
+   "method": "apify:linkedin-profile-detail",
+   "page_title": "Sundar  Pichai - CEO at Google",
+   "page_desc": "followers: 5489485",
+   "checked_at": "2026-10-13T21:02:02.761Z"
   },
   "instagram": {
    "url": "https://www.instagram.com/sundarpichai/",
@@ -537,17 +525,15 @@
    "page_desc": "6M Followers, 45 Following, 148 Posts - See Instagram photos and videos from Sundar Pichai (@sundarpichai)",
    "checked_at": "2026-10-13T20:05:03.190Z"
   },
-  "both_verified": false
+  "both_verified": true
  },
  {
   "name": "Emma Grede",
   "linkedin": {
    "url": "https://www.linkedin.com/in/emmagrede/",
    "status": "unverified",
-   "http": 999,
-   "page_title": "",
-   "page_desc": "",
-   "checked_at": "2026-10-13T20:06:54.156Z"
+   "note": "apify returned no profile for slug \"emmagrede\"",
+   "checked_at": "2026-10-13T21:03:46.756Z"
   },
   "instagram": {
    "url": "https://www.instagram.com/emmagrede/",
@@ -564,10 +550,8 @@
   "linkedin": {
    "url": "https://www.linkedin.com/in/justinwelsh/",
    "status": "unverified",
-   "http": 999,
-   "page_title": "",
-   "page_desc": "",
-   "checked_at": "2026-10-13T20:06:58.715Z"
+   "note": "apify returned no profile for slug \"justinwelsh\"",
+   "checked_at": "2026-10-13T21:03:48.172Z"
   },
   "instagram": {
    "url": "https://www.instagram.com/thejustinwelsh/",
@@ -584,10 +568,8 @@
   "linkedin": {
    "url": "https://www.linkedin.com/in/codiesanchez/",
    "status": "unverified",
-   "http": 999,
-   "page_title": "",
-   "page_desc": "",
-   "checked_at": "2026-10-13T20:07:04.256Z"
+   "note": "apify returned no profile for slug \"codiesanchez\"",
+   "checked_at": "2026-10-13T21:03:49.662Z"
   },
   "instagram": {
    "url": "https://www.instagram.com/codiesanchez/",

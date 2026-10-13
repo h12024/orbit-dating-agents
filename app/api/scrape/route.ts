@@ -8,5 +8,8 @@ export async function POST(req: Request) {
   if (!linkedinUsername(body.linkedin) || !instagramUsername(body.instagram))
     return Response.json({ error: "Need a linkedin.com/in/<name> URL and an instagram.com/<handle> URL (https)" }, { status: 400 });
   const [li, ig] = await Promise.all([scrapeLinkedIn(body.linkedin.trim()), scrapeInstagram(body.instagram.trim())]);
+  // The scraper account hit its own daily/credit limit: tell the pipeline to stop and resume later instead of analysing half a profile.
+  const q = li.quota ? li : ig.quota ? ig : null;
+  if (q) return Response.json({ error: q.error, code: "quota_exhausted" }, { status: 429 });
   return Response.json({ linkedin: li, instagram: ig });
 }

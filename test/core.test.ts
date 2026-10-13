@@ -73,3 +73,29 @@ test("extractJSON handles fences, trailing objects and braces inside strings", (
   assert.deepEqual(extractJSON('Here: {"picks":[{"id":"p1"}]}\nHope this helps }'), { picks: [{ id: "p1" }] });
   assert.throws(() => extractJSON("{broken"));
 });
+
+import { compactInstagram, compactLinkedIn } from "../lib/scrape-compact.ts";
+
+test("compactLinkedIn keeps substance, drops urls/logos/emails", () => {
+  const item = { basic_info: { fullname: "Test Person", headline: "Engineer", about: "I build things and love climbing.", profile_picture_url: "https://media.licdn.com/" + "x".repeat(200), email: { address: "a@b.c" }, follower_count: 10 },
+    experience: [{ title: "Staff Engineer", company: "Acme", duration: "3 yrs", company_logo_url: "https://cdn/" + "y".repeat(100) }], education: [{ school: "MIT", field_of_study: "CS" }] };
+  const t = compactLinkedIn(item);
+  assert.ok(t.includes("love climbing") && t.includes("Staff Engineer") && t.includes("MIT"));
+  assert.ok(!/https?:/.test(t) && !t.includes("a@b.c") && !t.includes("logo"));
+});
+
+test("compactInstagram keeps captions/hashtags/places, drops related profiles and cdn urls, caps size", () => {
+  const post = (i: number) => ({ type: "Image", caption: `caption ${i} ` + "z".repeat(900), hashtags: ["trail"], locationName: "Lisbon", timestamp: "2024-05-01T10:00:00.000Z", displayUrl: "https://scontent.cdninstagram.com/" + "q".repeat(300), taggedUsers: [{ username: "friend", profile_pic_url: "https://x/" + "p".repeat(200) }] });
+  const item = { username: "u", biography: "bio here", followersCount: 5, relatedProfiles: [{ username: "someone_else", full_name: "Someone Else" }], latestPosts: Array.from({ length: 30 }, (_, i) => post(i)) };
+  const t = compactInstagram(item);
+  assert.ok(t.includes("bio here") && t.includes("Lisbon") && t.includes("trail") && t.includes("friend"));
+  assert.ok(!t.includes("someone_else") && !/cdninstagram/.test(t) && t.length <= 12000);
+  assert.equal((t.match(/"caption"/g) ?? []).length, 12);
+  assert.ok(t.includes("2024-05-01") && !t.includes("T10:00"));
+});
+
+test("compact functions tolerate empty/odd input", () => {
+  assert.equal(compactLinkedIn(null), "");
+  assert.equal(compactInstagram(undefined), "");
+  assert.equal(compactInstagram({}), "{}");
+});
