@@ -98,7 +98,8 @@
  {
   "name": "Satya Nadella",
   "linkedin": "https://www.linkedin.com/in/satyanadella/",
-  "instagram": "https://www.instagram.com/satyanadella/"
+  "instagram": "https://www.instagram.com/satyanadella/",
+  "reject_instagram": "Instagram account is private (Apify reported private=true); the task allows public profiles only"
  },
  {
   "name": "Melinda French Gates",

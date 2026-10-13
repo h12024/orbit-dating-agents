@@ -13,7 +13,7 @@
    "url": "https://www.instagram.com/adamgrant/",
    "status": "verified",
    "http": 200,
-   "page_title": "Adam Grant (@adamgrant) • Instagram photos and videos",
+   "page_title": "Adam Grant (@adamgrant) \u2022 Instagram photos and videos",
    "page_desc": "3M Followers, 642 Following, 2,002 Posts - See Instagram photos and videos from Adam Grant (@adamgrant)",
    "checked_at": "2026-10-13T20:03:35.779Z"
   },
@@ -33,7 +33,7 @@
    "url": "https://www.instagram.com/jayshetty/",
    "status": "verified",
    "http": 200,
-   "page_title": "Jay Shetty (@jayshetty) • Instagram photos and videos",
+   "page_title": "Jay Shetty (@jayshetty) \u2022 Instagram photos and videos",
    "page_desc": "19M Followers, 6,535 Following, 10K Posts - See Instagram photos and videos from Jay Shetty (@jayshetty)",
    "checked_at": "2026-10-13T20:03:39.397Z"
   },
@@ -45,7 +45,7 @@
    "url": "https://www.linkedin.com/in/warikoo/",
    "status": "verified",
    "method": "apify:harvestapi/linkedin-profile-scraper",
-   "page_title": "Ankur Warikoo - Founder @WebVeda, @IndiaGeniusChallenge @Monzy • 6X Bestselling Author • 16M+ community",
+   "page_title": "Ankur Warikoo - Founder @WebVeda, @IndiaGeniusChallenge @Monzy \u2022 6X Bestselling Author \u2022 16M+ community",
    "page_desc": "followers: 2640344",
    "checked_at": "2026-10-13T21:25:51.812Z"
   },
@@ -53,7 +53,7 @@
    "url": "https://www.instagram.com/ankurwarikoo/",
    "status": "verified",
    "http": 200,
-   "page_title": "Ankur Warikoo (@ankurwarikoo) • Instagram photos and videos",
+   "page_title": "Ankur Warikoo (@ankurwarikoo) \u2022 Instagram photos and videos",
    "page_desc": "4M Followers, 24 Following, 6,622 Posts - See Instagram photos and videos from Ankur Warikoo (@ankurwarikoo)",
    "checked_at": "2026-10-13T20:03:43.785Z"
   },
@@ -73,7 +73,7 @@
    "url": "https://www.instagram.com/melrobbins/",
    "status": "verified",
    "http": 200,
-   "page_title": "Mel Robbins (@melrobbins) • Instagram photos and videos",
+   "page_title": "Mel Robbins (@melrobbins) \u2022 Instagram photos and videos",
    "page_desc": "13M Followers, 322 Following, 9,586 Posts - See Instagram photos and videos from Mel Robbins (@melrobbins)",
    "checked_at": "2026-10-13T20:03:47.322Z"
   },
@@ -93,19 +93,19 @@
    "url": "https://www.instagram.com/simonsinek/",
    "status": "verified",
    "http": 200,
-   "page_title": "Simon Sinek (@simonsinek) • Instagram photos and videos",
+   "page_title": "Simon Sinek (@simonsinek) \u2022 Instagram photos and videos",
    "page_desc": "5M Followers, 1,102 Following, 3,194 Posts - See Instagram photos and videos from Simon Sinek (@simonsinek)",
    "checked_at": "2026-10-13T20:03:50.297Z"
   },
   "both_verified": true
  },
  {
-  "name": "Brené Brown",
+  "name": "Bren\u00e9 Brown",
   "linkedin": {
    "url": "https://www.linkedin.com/in/brenebrown/",
    "status": "verified",
    "method": "apify:harvestapi/linkedin-profile-scraper",
-   "page_title": "Brené Brown - University of Houston + University of Texas at Austin | Researcher. Storyteller. Courage-builder. ",
+   "page_title": "Bren\u00e9 Brown - University of Houston + University of Texas at Austin | Researcher. Storyteller. Courage-builder. ",
    "page_desc": "followers: 5004179",
    "checked_at": "2026-10-13T21:25:51.812Z"
   },
@@ -113,8 +113,8 @@
    "url": "https://www.instagram.com/brenebrown/",
    "status": "verified",
    "http": 200,
-   "page_title": "Brené Brown (@brenebrown) • Instagram photos and videos",
-   "page_desc": "5M Followers, 1,982 Following, 1,166 Posts - See Instagram photos and videos from Brené Brown (@brenebrown)",
+   "page_title": "Bren\u00e9 Brown (@brenebrown) \u2022 Instagram photos and videos",
+   "page_desc": "5M Followers, 1,982 Following, 1,166 Posts - See Instagram photos and videos from Bren\u00e9 Brown (@brenebrown)",
    "checked_at": "2026-10-13T20:03:53.247Z"
   },
   "both_verified": true
@@ -125,7 +125,7 @@
    "url": "https://www.linkedin.com/in/garyvaynerchuk/",
    "status": "verified",
    "method": "apify:harvestapi/linkedin-profile-scraper",
-   "page_title": "Gary Vaynerchuk - Chairman – VaynerX, CEO – VaynerMedia, Creator – VeeFriends",
+   "page_title": "Gary Vaynerchuk - Chairman \u2013 VaynerX, CEO \u2013 VaynerMedia, Creator \u2013 VeeFriends",
    "page_desc": "followers: 6050070",
    "checked_at": "2026-10-13T21:25:51.812Z"
   },
@@ -133,7 +133,7 @@
    "url": "https://www.instagram.com/garyvee/",
    "status": "verified",
    "http": 200,
-   "page_title": "Gary Vay-Ner-Chuk (@garyvee) • Instagram photos and videos",
+   "page_title": "Gary Vay-Ner-Chuk (@garyvee) \u2022 Instagram photos and videos",
    "page_desc": "12M Followers, 7,807 Following, 11K Posts - See Instagram photos and videos from Gary Vay-Ner-Chuk (@garyvee)",
    "checked_at": "2026-10-13T20:05:32.393Z"
   },
@@ -153,7 +153,7 @@
    "url": "https://www.instagram.com/ariannahuff/",
    "status": "verified",
    "http": 200,
-   "page_title": "Arianna Huffington (@ariannahuff) • Instagram photos and videos",
+   "page_title": "Arianna Huffington (@ariannahuff) \u2022 Instagram photos and videos",
    "page_desc": "755K Followers, 1,046 Following, 6,820 Posts - See Instagram photos and videos from Arianna Huffington (@ariannahuff)",
    "checked_at": "2026-10-13T20:04:00.825Z"
   },
@@ -173,7 +173,7 @@
    "url": "https://www.instagram.com/richardbranson/",
    "status": "verified",
    "http": 200,
-   "page_title": "Richard Branson (@richardbranson) • Instagram photos and videos",
+   "page_title": "Richard Branson (@richardbranson) \u2022 Instagram photos and videos",
    "page_desc": "5M Followers, 519 Following, 4,646 Posts - See Instagram photos and videos from Richard Branson (@richardbranson)",
    "checked_at": "2026-10-13T20:04:03.578Z"
   },
@@ -193,7 +193,7 @@
    "url": "https://www.instagram.com/reidhoffman/",
    "status": "verified",
    "http": 200,
-   "page_title": "Reid Hoffman (@reidhoffman) • Instagram photos and videos",
+   "page_title": "Reid Hoffman (@reidhoffman) \u2022 Instagram photos and videos",
    "page_desc": "135K Followers, 44 Following, 325 Posts - See Instagram photos and videos from Reid Hoffman (@reidhoffman)",
    "checked_at": "2026-10-13T20:04:07.258Z"
   },
@@ -213,7 +213,7 @@
    "url": "https://www.instagram.com/sarablakely/",
    "status": "verified",
    "http": 200,
-   "page_title": "Sara Blakely (@sarablakely) • Instagram photos and videos",
+   "page_title": "Sara Blakely (@sarablakely) \u2022 Instagram photos and videos",
    "page_desc": "1M Followers, 484 Following, 1,577 Posts - See Instagram photos and videos from Sara Blakely (@sarablakely)",
    "checked_at": "2026-10-13T20:04:10.831Z"
   },
@@ -233,7 +233,7 @@
    "url": "https://www.instagram.com/thesharkdaymond/",
    "status": "verified",
    "http": 200,
-   "page_title": "Daymond John (@thesharkdaymond) • Instagram photos and videos",
+   "page_title": "Daymond John (@thesharkdaymond) \u2022 Instagram photos and videos",
    "page_desc": "1M Followers, 2,660 Following, 8,427 Posts - See Instagram photos and videos from Daymond John (@thesharkdaymond)",
    "checked_at": "2026-10-13T20:04:13.920Z"
   },
@@ -253,7 +253,7 @@
    "url": "https://www.instagram.com/timferriss/",
    "status": "verified",
    "http": 200,
-   "page_title": "Tim Ferriss (@timferriss) • Instagram photos and videos",
+   "page_title": "Tim Ferriss (@timferriss) \u2022 Instagram photos and videos",
    "page_desc": "2M Followers, 566 Following, 2,682 Posts - See Instagram photos and videos from Tim Ferriss (@timferriss)",
    "checked_at": "2026-10-13T20:04:15.816Z"
   },
@@ -273,7 +273,7 @@
    "url": "https://www.instagram.com/nasdaily/",
    "status": "verified",
    "http": 200,
-   "page_title": "Nas Daily (@nasdaily) • Instagram photos and videos",
+   "page_title": "Nas Daily (@nasdaily) \u2022 Instagram photos and videos",
    "page_desc": "5M Followers, 1,340 Following, 1,613 Posts - See Instagram photos and videos from Nas Daily (@nasdaily)",
    "checked_at": "2026-10-13T20:05:50.076Z"
   },
@@ -285,7 +285,7 @@
    "url": "https://www.linkedin.com/in/alexhormozi/",
    "status": "verified",
    "method": "apify:harvestapi/linkedin-profile-scraper",
-   "page_title": "Alex Hormozi - Founder Acquisition.com x Co-Founder Skool.com. Get your free scaling roadmap👇",
+   "page_title": "Alex Hormozi - Founder Acquisition.com x Co-Founder Skool.com. Get your free scaling roadmap\ud83d\udc47",
    "page_desc": "followers: 1070782",
    "checked_at": "2026-10-13T21:25:51.812Z"
   },
@@ -293,7 +293,7 @@
    "url": "https://www.instagram.com/hormozi/",
    "status": "verified",
    "http": 200,
-   "page_title": "Alex Hormozi (@hormozi) • Instagram photos and videos",
+   "page_title": "Alex Hormozi (@hormozi) \u2022 Instagram photos and videos",
    "page_desc": "5M Followers, 624 Following, 4,509 Posts - See Instagram photos and videos from Alex Hormozi (@hormozi)",
    "checked_at": "2026-10-13T20:04:24.214Z"
   },
@@ -313,7 +313,7 @@
    "url": "https://www.instagram.com/sherylsandberg/",
    "status": "verified",
    "http": 200,
-   "page_title": "Sheryl Sandberg (@sherylsandberg) • Instagram photos and videos",
+   "page_title": "Sheryl Sandberg (@sherylsandberg) \u2022 Instagram photos and videos",
    "page_desc": "1M Followers, 2,091 Following, 1,620 Posts - See Instagram photos and videos from Sheryl Sandberg (@sherylsandberg)",
    "checked_at": "2026-10-13T20:04:30.467Z"
   },
@@ -333,7 +333,7 @@
    "url": "https://www.instagram.com/nikhilkamathcio/",
    "status": "verified",
    "http": 200,
-   "page_title": "Nikhil Kamath (@nikhilkamathcio) • Instagram photos and videos",
+   "page_title": "Nikhil Kamath (@nikhilkamathcio) \u2022 Instagram photos and videos",
    "page_desc": "2M Followers, 361 Following, 756 Posts - See Instagram photos and videos from Nikhil Kamath (@nikhilkamathcio)",
    "checked_at": "2026-10-13T20:04:33.450Z"
   },
@@ -345,7 +345,7 @@
    "url": "https://www.linkedin.com/in/vusithembekwayo/",
    "status": "verified",
    "method": "apify:harvestapi/linkedin-profile-scraper",
-   "page_title": "Vusi Thembekwayo - Venture Investor & Operator.  I’ve spent 2 decades scaling businesses across 4 continents. 3x Best-S",
+   "page_title": "Vusi Thembekwayo - Venture Investor & Operator.  I\u2019ve spent 2 decades scaling businesses across 4 continents. 3x Best-S",
    "page_desc": "followers: 1052353",
    "checked_at": "2026-10-13T21:25:51.812Z"
   },
@@ -353,7 +353,7 @@
    "url": "https://www.instagram.com/vusithembekwayo/",
    "status": "verified",
    "http": 200,
-   "page_title": "Vusi Thembekwayo (@vusithembekwayo) • Instagram photos and videos",
+   "page_title": "Vusi Thembekwayo (@vusithembekwayo) \u2022 Instagram photos and videos",
    "page_desc": "2M Followers, 107 Following, 1,072 Posts - See Instagram photos and videos from Vusi Thembekwayo (@vusithembekwayo)",
    "checked_at": "2026-10-13T20:04:36.608Z"
   },
@@ -371,13 +371,14 @@
   },
   "instagram": {
    "url": "https://www.instagram.com/satyanadella/",
-   "status": "verified",
+   "status": "unverified",
    "http": 200,
-   "page_title": "Satya Nadella (@satyanadella) • Instagram photos and videos",
+   "page_title": "Satya Nadella (@satyanadella) \u2022 Instagram photos and videos",
    "page_desc": "6 Followers, 0 Following, 0 Posts - See Instagram photos and videos from Satya Nadella (@satyanadella)",
-   "checked_at": "2026-10-13T20:04:39.661Z"
+   "checked_at": "2026-10-13T20:04:39.661Z",
+   "note": "rejected: account is private (Apify private=true); public profiles only"
   },
-  "both_verified": true
+  "both_verified": false
  },
  {
   "name": "Melinda French Gates",
@@ -393,7 +394,7 @@
    "url": "https://www.instagram.com/melindafrenchgates/",
    "status": "verified",
    "http": 200,
-   "page_title": "Melinda French Gates (@melindafrenchgates) • Instagram photos and videos",
+   "page_title": "Melinda French Gates (@melindafrenchgates) \u2022 Instagram photos and videos",
    "page_desc": "1M Followers, 446 Following, 1,456 Posts - See Instagram photos and videos from Melinda French Gates (@melindafrenchgates)",
    "checked_at": "2026-10-13T20:04:41.579Z"
   },
@@ -411,7 +412,7 @@
    "url": "https://www.instagram.com/mkbhd/",
    "status": "verified",
    "http": 200,
-   "page_title": "Marques Brownlee (@mkbhd) • Instagram photos and videos",
+   "page_title": "Marques Brownlee (@mkbhd) \u2022 Instagram photos and videos",
    "page_desc": "5M Followers, 591 Following, 2,118 Posts - See Instagram photos and videos from Marques Brownlee (@mkbhd)",
    "checked_at": "2026-10-13T20:04:44.651Z"
   },
@@ -431,7 +432,7 @@
    "url": "https://www.instagram.com/neilpatel/",
    "status": "verified",
    "http": 200,
-   "page_title": "Neil Patel (@neilpatel) • Instagram photos and videos",
+   "page_title": "Neil Patel (@neilpatel) \u2022 Instagram photos and videos",
    "page_desc": "678K Followers, 133 Following, 3,206 Posts - See Instagram photos and videos from Neil Patel (@neilpatel)",
    "checked_at": "2026-10-13T20:04:46.687Z"
   },
@@ -443,7 +444,7 @@
    "url": "https://www.linkedin.com/in/kevinolearytv/",
    "status": "verified",
    "method": "apify:harvestapi/linkedin-profile-scraper",
-   "page_title": "Kevin O'Leary - Chairman, O’Leary Ventures and Beanstox",
+   "page_title": "Kevin O'Leary - Chairman, O\u2019Leary Ventures and Beanstox",
    "page_desc": "followers: 4614310",
    "checked_at": "2026-10-13T21:25:51.812Z"
   },
@@ -451,7 +452,7 @@
    "url": "https://www.instagram.com/kevinolearytv/",
    "status": "verified",
    "http": 200,
-   "page_title": "Kevin O'Leary (@kevinolearytv) • Instagram photos and videos",
+   "page_title": "Kevin O'Leary (@kevinolearytv) \u2022 Instagram photos and videos",
    "page_desc": "2M Followers, 583 Following, 5,813 Posts - See Instagram photos and videos from Kevin O'Leary (@kevinolearytv)",
    "checked_at": "2026-10-13T20:04:51.611Z"
   },
@@ -469,7 +470,7 @@
    "url": "https://www.instagram.com/lilly/",
    "status": "verified",
    "http": 200,
-   "page_title": "Lilly Singh (@lilly) • Instagram photos and videos",
+   "page_title": "Lilly Singh (@lilly) \u2022 Instagram photos and videos",
    "page_desc": "13M Followers, 2,454 Following, 5,510 Posts - See Instagram photos and videos from Lilly Singh (@lilly)",
    "checked_at": "2026-10-13T20:04:54.097Z"
   },
@@ -487,7 +488,7 @@
    "url": "https://www.instagram.com/whitney/",
    "status": "verified",
    "http": 200,
-   "page_title": "Whitney Wolfe Herd (@whitney) • Instagram photos and videos",
+   "page_title": "Whitney Wolfe Herd (@whitney) \u2022 Instagram photos and videos",
    "page_desc": "286K Followers, 2,470 Following, 29 Posts - See Instagram photos and videos from Whitney Wolfe Herd (@whitney)",
    "checked_at": "2026-10-13T20:04:56.780Z"
   },
@@ -507,7 +508,7 @@
    "url": "https://www.instagram.com/thisisbillgates/",
    "status": "verified",
    "http": 200,
-   "page_title": "Bill Gates (@thisisbillgates) • Instagram photos and videos",
+   "page_title": "Bill Gates (@thisisbillgates) \u2022 Instagram photos and videos",
    "page_desc": "12M Followers, 313 Following, 633 Posts - See Instagram photos and videos from Bill Gates (@thisisbillgates)",
    "checked_at": "2026-10-13T20:04:59.994Z"
   },
@@ -527,7 +528,7 @@
    "url": "https://www.instagram.com/sundarpichai/",
    "status": "verified",
    "http": 200,
-   "page_title": "Sundar Pichai (@sundarpichai) • Instagram photos and videos",
+   "page_title": "Sundar Pichai (@sundarpichai) \u2022 Instagram photos and videos",
    "page_desc": "6M Followers, 45 Following, 148 Posts - See Instagram photos and videos from Sundar Pichai (@sundarpichai)",
    "checked_at": "2026-10-13T20:05:03.190Z"
   },
@@ -545,7 +546,7 @@
    "url": "https://www.instagram.com/emmagrede/",
    "status": "verified",
    "http": 200,
-   "page_title": "Emma Grede (@emmagrede) • Instagram photos and videos",
+   "page_title": "Emma Grede (@emmagrede) \u2022 Instagram photos and videos",
    "page_desc": "2M Followers, 392 Following, 1,565 Posts - See Instagram photos and videos from Emma Grede (@emmagrede)",
    "checked_at": "2026-10-13T20:05:05.546Z"
   },
@@ -565,7 +566,7 @@
    "url": "https://www.instagram.com/thejustinwelsh/",
    "status": "verified",
    "http": 200,
-   "page_title": "Justin Welsh (@thejustinwelsh) • Instagram photos and videos",
+   "page_title": "Justin Welsh (@thejustinwelsh) \u2022 Instagram photos and videos",
    "page_desc": "97K Followers, 1,171 Following, 1,468 Posts - See Instagram photos and videos from Justin Welsh (@thejustinwelsh)",
    "checked_at": "2026-10-13T20:05:07.930Z"
   },
@@ -585,7 +586,7 @@
    "url": "https://www.instagram.com/codiesanchez/",
    "status": "verified",
    "http": 200,
-   "page_title": "Codie Sanchez (@codiesanchez) • Instagram photos and videos",
+   "page_title": "Codie Sanchez (@codiesanchez) \u2022 Instagram photos and videos",
    "page_desc": "3M Followers, 1,835 Following, 2,549 Posts - See Instagram photos and videos from Codie Sanchez (@codiesanchez)",
    "checked_at": "2026-10-13T20:05:09.796Z"
   },

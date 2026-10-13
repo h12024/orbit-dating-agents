@@ -67,6 +67,7 @@ for (const p of C) {
   }
   if (!ig) ig = await check(p.instagram, p.name, "instagram", p.aliases);
   li = guard(p, li);
+  if (p.reject_instagram) ig = { ...ig, status: "unverified", note: "rejected: " + p.reject_instagram };
   out.push({ name: p.name, linkedin: li, instagram: ig, both_verified: li.status === "verified" && ig.status === "verified" });
   console.log(p.both_verified ? "" : "", p.name.padEnd(24), "LI:", li.status, li.http ?? "", " IG:", ig.status, ig.http ?? "");
   }
