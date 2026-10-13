@@ -7,7 +7,7 @@ import { runPipeline, type Stage } from "@/lib/pipeline";
 
 type Tab = "profiles" | "dates" | "rankings";
 type Kind = "live" | "fixture";
-type Health = { mode: Kind; anthropic: boolean; apify: boolean };
+type Health = { mode: Kind; provider: string; keyVar: string; configured: boolean; models: Record<string, string>; apify: boolean };
 
 export default function Home() {
   const [raw, setRaw] = useState("");
@@ -69,8 +69,9 @@ export default function Home() {
       <p className="sub">Paste a LinkedIn and a public Instagram per person. Each person gets an agent that reads them, goes on dates with every other agent, and returns a ranking of who fits best.</p>
 
       {(kind === "fixture" || (!kind && health?.mode === "fixture")) && <div className="card err">FIXTURE DATA: every profile, date and score here is synthetic test output. No model was called and these are not real people or real agent activity.</div>}
-      {health && health.mode === "live" && !health.anthropic && <div className="card err">ANTHROPIC_API_KEY is not configured on the server, so analysis and dating cannot run. Add it to .env.local (or your host's env vars) and restart.</div>}
-      {health && health.mode === "live" && health.anthropic && !health.apify && <div className="card status">APIFY_TOKEN not set: scraping falls back to public page meta tags only (thin data, profiles will be low confidence).</div>}
+      {health && health.mode === "live" && !health.configured && <div className="card err">{health.keyVar} is not configured on the server, so analysis and dating cannot run. Add it to .env.local (or your host's env vars) and restart.{health.provider === "gemini" && " A free key takes a minute at aistudio.google.com/apikey."}</div>}
+      {health && health.mode === "live" && health.configured && health.provider === "gemini" && <div className="card status">AI provider: Gemini free tier ({health.models.analyze} / {health.models.date}). Google may use free-tier prompts to improve its products and daily quotas are small: only paste profiles you are comfortable sharing, and expect large cohorts to hit limits.</div>}
+      {health && health.mode === "live" && health.configured && !health.apify && <div className="card status">APIFY_TOKEN not set: scraping falls back to public page meta tags only (thin data, profiles will be low confidence).</div>}
 
       <div className="card">
         <div className="lbl" style={{ marginTop: 0 }}>One person per line: LinkedIn URL, Instagram URL ({valid.length} valid, max 30)</div>

@@ -1,7 +1,7 @@
 {
  "meta": {
   "kind": "fixture",
-  "generated_at": "2026-10-13T20:19:20.540Z",
+  "generated_at": "2026-10-13T20:27:54.209Z",
   "note": "SYNTHETIC fixture output; no model was called.",
   "people": 25,
   "failed": 0,
@@ -1386,6 +1386,62 @@
  ],
  "dates": [
   {
+   "id": "p2-p17",
+   "a": "p2",
+   "b": "p17",
+   "turns": [
+    {
+     "speaker": "a",
+     "text": "[FIXTURE] I'd like that. Let's keep talking over dinner next week."
+    },
+    {
+     "speaker": "b",
+     "text": "[FIXTURE] Building something I'm proud of, and making room for a real relationship alongside it."
+    },
+    {
+     "speaker": "a",
+     "text": "[FIXTURE] That sounds lovely. For me it's slow mornings and something outdoors. Do you travel much?"
+    },
+    {
+     "speaker": "b",
+     "text": "[FIXTURE] Hi! I'm glad we finally got to sit down. What does a perfect Sunday look like for you?"
+    },
+    {
+     "speaker": "a",
+     "text": "[FIXTURE] Calmly, I hope. I'd rather talk it through than let it sit. What are you working toward right now?"
+    },
+    {
+     "speaker": "b",
+     "text": "[FIXTURE] I'd like that. Let's keep talking over dinner next week."
+    }
+   ],
+   "verdictA": {
+    "score": 31,
+    "chemistry": "[FIXTURE] synthetic",
+    "needs_met": [
+     "[FIXTURE]"
+    ],
+    "friction": [
+     "[FIXTURE]"
+    ],
+    "would_see_again": false,
+    "reason": "[FIXTURE] synthetic verdict, no model was called."
+   },
+   "verdictB": {
+    "score": 41,
+    "chemistry": "[FIXTURE] synthetic",
+    "needs_met": [
+     "[FIXTURE]"
+    ],
+    "friction": [
+     "[FIXTURE]"
+    ],
+    "would_see_again": false,
+    "reason": "[FIXTURE] synthetic verdict, no model was called."
+   },
+   "fixture": true
+  },
+  {
    "id": "p2-p16",
    "a": "p2",
    "b": "p16",
@@ -1442,18 +1498,10 @@
    "fixture": true
   },
   {
-   "id": "p3-p9",
-   "a": "p3",
-   "b": "p9",
+   "id": "p1-p24",
+   "a": "p1",
+   "b": "p24",
    "turns": [
-    {
-     "speaker": "a",
-     "text": "[FIXTURE] That sounds lovely. For me it's slow mornings and something outdoors. Do you travel much?"
-    },
-    {
-     "speaker": "b",
-     "text": "[FIXTURE] I'd like that. Let's keep talking over dinner next week."
-    },
     {
      "speaker": "a",
      "text": "[FIXTURE] Calmly, I hope. I'd rather talk it through than let it sit. What are you working toward right now?"
@@ -1468,23 +1516,19 @@
     },
     {
      "speaker": "b",
-     "text": "[FIXTURE] Hi! I'm glad we finally got to sit down. What does a perfect Sunday look like for you?"
+     "text": "[FIXTURE] Calmly, I hope. I'd rather talk it through than let it sit. What are you working toward right now?"
+    },
+    {
+     "speaker": "a",
+     "text": "[FIXTURE] That sounds lovely. For me it's slow mornings and something outdoors. Do you travel much?"
+    },
+    {
+     "speaker": "b",
+     "text": "[FIXTURE] Building something I'm proud of, and making room for a real relationship alongside it."
     }
    ],
    "verdictA": {
-    "score": 85,
-    "chemistry": "[FIXTURE] synthetic",
-    "needs_met": [
-     "[FIXTURE]"
-    ],
-    "friction": [
-     "[FIXTURE]"
-    ],
-    "would_see_again": true,
-    "reason": "[FIXTURE] synthetic verdict, no model was called."
-   },
-   "verdictB": {
-    "score": 48,
+    "score": 45,
     "chemistry": "[FIXTURE] synthetic",
     "needs_met": [
      "[FIXTURE]"
@@ -1493,6 +1537,18 @@
      "[FIXTURE]"
     ],
     "would_see_again": false,
+    "reason": "[FIXTURE] synthetic verdict, no model was called."
+   },
+   "verdictB": {
+    "score": 58,
+    "chemistry": "[FIXTURE] synthetic",
+    "needs_met": [
+     "[FIXTURE]"
+    ],
+    "friction": [
+     "[FIXTURE]"
+    ],
+    "would_see_again": true,
     "reason": "[FIXTURE] synthetic verdict, no model was called."
    },
    "fixture": true
@@ -1554,62 +1610,6 @@
    "fixture": true
   },
   {
-   "id": "p2-p17",
-   "a": "p2",
-   "b": "p17",
-   "turns": [
-    {
-     "speaker": "a",
-     "text": "[FIXTURE] I'd like that. Let's keep talking over dinner next week."
-    },
-    {
-     "speaker": "b",
-     "text": "[FIXTURE] Building something I'm proud of, and making room for a real relationship alongside it."
-    },
-    {
-     "speaker": "a",
-     "text": "[FIXTURE] That sounds lovely. For me it's slow mornings and something outdoors. Do you travel much?"
-    },
-    {
-     "speaker": "b",
-     "text": "[FIXTURE] Hi! I'm glad we finally got to sit down. What does a perfect Sunday look like for you?"
-    },
-    {
-     "speaker": "a",
-     "text": "[FIXTURE] Calmly, I hope. I'd rather talk it through than let it sit. What are you working toward right now?"
-    },
-    {
-     "speaker": "b",
-     "text": "[FIXTURE] I'd like that. Let's keep talking over dinner next week."
-    }
-   ],
-   "verdictA": {
-    "score": 31,
-    "chemistry": "[FIXTURE] synthetic",
-    "needs_met": [
-     "[FIXTURE]"
-    ],
-    "friction": [
-     "[FIXTURE]"
-    ],
-    "would_see_again": false,
-    "reason": "[FIXTURE] synthetic verdict, no model was called."
-   },
-   "verdictB": {
-    "score": 41,
-    "chemistry": "[FIXTURE] synthetic",
-    "needs_met": [
-     "[FIXTURE]"
-    ],
-    "friction": [
-     "[FIXTURE]"
-    ],
-    "would_see_again": false,
-    "reason": "[FIXTURE] synthetic verdict, no model was called."
-   },
-   "fixture": true
-  },
-  {
    "id": "p2-p18",
    "a": "p2",
    "b": "p18",
@@ -1653,6 +1653,62 @@
    },
    "verdictB": {
     "score": 48,
+    "chemistry": "[FIXTURE] synthetic",
+    "needs_met": [
+     "[FIXTURE]"
+    ],
+    "friction": [
+     "[FIXTURE]"
+    ],
+    "would_see_again": false,
+    "reason": "[FIXTURE] synthetic verdict, no model was called."
+   },
+   "fixture": true
+  },
+  {
+   "id": "p1-p23",
+   "a": "p1",
+   "b": "p23",
+   "turns": [
+    {
+     "speaker": "a",
+     "text": "[FIXTURE] That sounds lovely. For me it's slow mornings and something outdoors. Do you travel much?"
+    },
+    {
+     "speaker": "b",
+     "text": "[FIXTURE] Hi! I'm glad we finally got to sit down. What does a perfect Sunday look like for you?"
+    },
+    {
+     "speaker": "a",
+     "text": "[FIXTURE] Calmly, I hope. I'd rather talk it through than let it sit. What are you working toward right now?"
+    },
+    {
+     "speaker": "b",
+     "text": "[FIXTURE] I try to. Honestly I care a lot about someone who's curious and kind. How do you handle disagreements?"
+    },
+    {
+     "speaker": "a",
+     "text": "[FIXTURE] I'd like that. Let's keep talking over dinner next week."
+    },
+    {
+     "speaker": "b",
+     "text": "[FIXTURE] That sounds lovely. For me it's slow mornings and something outdoors. Do you travel much?"
+    }
+   ],
+   "verdictA": {
+    "score": 76,
+    "chemistry": "[FIXTURE] synthetic",
+    "needs_met": [
+     "[FIXTURE]"
+    ],
+    "friction": [
+     "[FIXTURE]"
+    ],
+    "would_see_again": true,
+    "reason": "[FIXTURE] synthetic verdict, no model was called."
+   },
+   "verdictB": {
+    "score": 33,
     "chemistry": "[FIXTURE] synthetic",
     "needs_met": [
      "[FIXTURE]"
@@ -1778,6 +1834,174 @@
    "fixture": true
   },
   {
+   "id": "p1-p21",
+   "a": "p1",
+   "b": "p21",
+   "turns": [
+    {
+     "speaker": "a",
+     "text": "[FIXTURE] I'd like that. Let's keep talking over dinner next week."
+    },
+    {
+     "speaker": "b",
+     "text": "[FIXTURE] Calmly, I hope. I'd rather talk it through than let it sit. What are you working toward right now?"
+    },
+    {
+     "speaker": "a",
+     "text": "[FIXTURE] That sounds lovely. For me it's slow mornings and something outdoors. Do you travel much?"
+    },
+    {
+     "speaker": "b",
+     "text": "[FIXTURE] I'd like that. Let's keep talking over dinner next week."
+    },
+    {
+     "speaker": "a",
+     "text": "[FIXTURE] Calmly, I hope. I'd rather talk it through than let it sit. What are you working toward right now?"
+    },
+    {
+     "speaker": "b",
+     "text": "[FIXTURE] I try to. Honestly I care a lot about someone who's curious and kind. How do you handle disagreements?"
+    }
+   ],
+   "verdictA": {
+    "score": 74,
+    "chemistry": "[FIXTURE] synthetic",
+    "needs_met": [
+     "[FIXTURE]"
+    ],
+    "friction": [
+     "[FIXTURE]"
+    ],
+    "would_see_again": true,
+    "reason": "[FIXTURE] synthetic verdict, no model was called."
+   },
+   "verdictB": {
+    "score": 72,
+    "chemistry": "[FIXTURE] synthetic",
+    "needs_met": [
+     "[FIXTURE]"
+    ],
+    "friction": [
+     "[FIXTURE]"
+    ],
+    "would_see_again": true,
+    "reason": "[FIXTURE] synthetic verdict, no model was called."
+   },
+   "fixture": true
+  },
+  {
+   "id": "p3-p9",
+   "a": "p3",
+   "b": "p9",
+   "turns": [
+    {
+     "speaker": "a",
+     "text": "[FIXTURE] That sounds lovely. For me it's slow mornings and something outdoors. Do you travel much?"
+    },
+    {
+     "speaker": "b",
+     "text": "[FIXTURE] I'd like that. Let's keep talking over dinner next week."
+    },
+    {
+     "speaker": "a",
+     "text": "[FIXTURE] Calmly, I hope. I'd rather talk it through than let it sit. What are you working toward right now?"
+    },
+    {
+     "speaker": "b",
+     "text": "[FIXTURE] That sounds lovely. For me it's slow mornings and something outdoors. Do you travel much?"
+    },
+    {
+     "speaker": "a",
+     "text": "[FIXTURE] I'd like that. Let's keep talking over dinner next week."
+    },
+    {
+     "speaker": "b",
+     "text": "[FIXTURE] Hi! I'm glad we finally got to sit down. What does a perfect Sunday look like for you?"
+    }
+   ],
+   "verdictA": {
+    "score": 85,
+    "chemistry": "[FIXTURE] synthetic",
+    "needs_met": [
+     "[FIXTURE]"
+    ],
+    "friction": [
+     "[FIXTURE]"
+    ],
+    "would_see_again": true,
+    "reason": "[FIXTURE] synthetic verdict, no model was called."
+   },
+   "verdictB": {
+    "score": 48,
+    "chemistry": "[FIXTURE] synthetic",
+    "needs_met": [
+     "[FIXTURE]"
+    ],
+    "friction": [
+     "[FIXTURE]"
+    ],
+    "would_see_again": false,
+    "reason": "[FIXTURE] synthetic verdict, no model was called."
+   },
+   "fixture": true
+  },
+  {
+   "id": "p1-p22",
+   "a": "p1",
+   "b": "p22",
+   "turns": [
+    {
+     "speaker": "a",
+     "text": "[FIXTURE] Calmly, I hope. I'd rather talk it through than let it sit. What are you working toward right now?"
+    },
+    {
+     "speaker": "b",
+     "text": "[FIXTURE] Building something I'm proud of, and making room for a real relationship alongside it."
+    },
+    {
+     "speaker": "a",
+     "text": "[FIXTURE] I'd like that. Let's keep talking over dinner next week."
+    },
+    {
+     "speaker": "b",
+     "text": "[FIXTURE] Hi! I'm glad we finally got to sit down. What does a perfect Sunday look like for you?"
+    },
+    {
+     "speaker": "a",
+     "text": "[FIXTURE] That sounds lovely. For me it's slow mornings and something outdoors. Do you travel much?"
+    },
+    {
+     "speaker": "b",
+     "text": "[FIXTURE] Calmly, I hope. I'd rather talk it through than let it sit. What are you working toward right now?"
+    }
+   ],
+   "verdictA": {
+    "score": 42,
+    "chemistry": "[FIXTURE] synthetic",
+    "needs_met": [
+     "[FIXTURE]"
+    ],
+    "friction": [
+     "[FIXTURE]"
+    ],
+    "would_see_again": false,
+    "reason": "[FIXTURE] synthetic verdict, no model was called."
+   },
+   "verdictB": {
+    "score": 39,
+    "chemistry": "[FIXTURE] synthetic",
+    "needs_met": [
+     "[FIXTURE]"
+    ],
+    "friction": [
+     "[FIXTURE]"
+    ],
+    "would_see_again": false,
+    "reason": "[FIXTURE] synthetic verdict, no model was called."
+   },
+   "fixture": true
+  },
+  {
    "id": "p3-p6",
    "a": "p3",
    "b": "p6",
@@ -1890,25 +2114,17 @@
    "fixture": true
   },
   {
-   "id": "p4-p18",
+   "id": "p4-p16",
    "a": "p4",
-   "b": "p18",
+   "b": "p16",
    "turns": [
-    {
-     "speaker": "a",
-     "text": "[FIXTURE] Building something I'm proud of, and making room for a real relationship alongside it."
-    },
-    {
-     "speaker": "b",
-     "text": "[FIXTURE] Calmly, I hope. I'd rather talk it through than let it sit. What are you working toward right now?"
-    },
     {
      "speaker": "a",
      "text": "[FIXTURE] Hi! I'm glad we finally got to sit down. What does a perfect Sunday look like for you?"
     },
     {
      "speaker": "b",
-     "text": "[FIXTURE] I'd like that. Let's keep talking over dinner next week."
+     "text": "[FIXTURE] I try to. Honestly I care a lot about someone who's curious and kind. How do you handle disagreements?"
     },
     {
      "speaker": "a",
@@ -1917,10 +2133,18 @@
     {
      "speaker": "b",
      "text": "[FIXTURE] Building something I'm proud of, and making room for a real relationship alongside it."
+    },
+    {
+     "speaker": "a",
+     "text": "[FIXTURE] Building something I'm proud of, and making room for a real relationship alongside it."
+    },
+    {
+     "speaker": "b",
+     "text": "[FIXTURE] That sounds lovely. For me it's slow mornings and something outdoors. Do you travel much?"
     }
    ],
    "verdictA": {
-    "score": 94,
+    "score": 50,
     "chemistry": "[FIXTURE] synthetic",
     "needs_met": [
      "[FIXTURE]"
@@ -1928,11 +2152,11 @@
     "friction": [
      "[FIXTURE]"
     ],
-    "would_see_again": true,
+    "would_see_again": false,
     "reason": "[FIXTURE] synthetic verdict, no model was called."
    },
    "verdictB": {
-    "score": 61,
+    "score": 47,
     "chemistry": "[FIXTURE] synthetic",
     "needs_met": [
      "[FIXTURE]"
@@ -1940,7 +2164,7 @@
     "friction": [
      "[FIXTURE]"
     ],
-    "would_see_again": true,
+    "would_see_again": false,
     "reason": "[FIXTURE] synthetic verdict, no model was called."
    },
    "fixture": true
@@ -2002,245 +2226,21 @@
    "fixture": true
   },
   {
-   "id": "p1-p23",
-   "a": "p1",
-   "b": "p23",
-   "turns": [
-    {
-     "speaker": "a",
-     "text": "[FIXTURE] That sounds lovely. For me it's slow mornings and something outdoors. Do you travel much?"
-    },
-    {
-     "speaker": "b",
-     "text": "[FIXTURE] Hi! I'm glad we finally got to sit down. What does a perfect Sunday look like for you?"
-    },
-    {
-     "speaker": "a",
-     "text": "[FIXTURE] Calmly, I hope. I'd rather talk it through than let it sit. What are you working toward right now?"
-    },
-    {
-     "speaker": "b",
-     "text": "[FIXTURE] I try to. Honestly I care a lot about someone who's curious and kind. How do you handle disagreements?"
-    },
-    {
-     "speaker": "a",
-     "text": "[FIXTURE] I'd like that. Let's keep talking over dinner next week."
-    },
-    {
-     "speaker": "b",
-     "text": "[FIXTURE] That sounds lovely. For me it's slow mornings and something outdoors. Do you travel much?"
-    }
-   ],
-   "verdictA": {
-    "score": 76,
-    "chemistry": "[FIXTURE] synthetic",
-    "needs_met": [
-     "[FIXTURE]"
-    ],
-    "friction": [
-     "[FIXTURE]"
-    ],
-    "would_see_again": true,
-    "reason": "[FIXTURE] synthetic verdict, no model was called."
-   },
-   "verdictB": {
-    "score": 33,
-    "chemistry": "[FIXTURE] synthetic",
-    "needs_met": [
-     "[FIXTURE]"
-    ],
-    "friction": [
-     "[FIXTURE]"
-    ],
-    "would_see_again": false,
-    "reason": "[FIXTURE] synthetic verdict, no model was called."
-   },
-   "fixture": true
-  },
-  {
-   "id": "p1-p24",
-   "a": "p1",
-   "b": "p24",
-   "turns": [
-    {
-     "speaker": "a",
-     "text": "[FIXTURE] Calmly, I hope. I'd rather talk it through than let it sit. What are you working toward right now?"
-    },
-    {
-     "speaker": "b",
-     "text": "[FIXTURE] That sounds lovely. For me it's slow mornings and something outdoors. Do you travel much?"
-    },
-    {
-     "speaker": "a",
-     "text": "[FIXTURE] I'd like that. Let's keep talking over dinner next week."
-    },
-    {
-     "speaker": "b",
-     "text": "[FIXTURE] Calmly, I hope. I'd rather talk it through than let it sit. What are you working toward right now?"
-    },
-    {
-     "speaker": "a",
-     "text": "[FIXTURE] That sounds lovely. For me it's slow mornings and something outdoors. Do you travel much?"
-    },
-    {
-     "speaker": "b",
-     "text": "[FIXTURE] Building something I'm proud of, and making room for a real relationship alongside it."
-    }
-   ],
-   "verdictA": {
-    "score": 45,
-    "chemistry": "[FIXTURE] synthetic",
-    "needs_met": [
-     "[FIXTURE]"
-    ],
-    "friction": [
-     "[FIXTURE]"
-    ],
-    "would_see_again": false,
-    "reason": "[FIXTURE] synthetic verdict, no model was called."
-   },
-   "verdictB": {
-    "score": 58,
-    "chemistry": "[FIXTURE] synthetic",
-    "needs_met": [
-     "[FIXTURE]"
-    ],
-    "friction": [
-     "[FIXTURE]"
-    ],
-    "would_see_again": true,
-    "reason": "[FIXTURE] synthetic verdict, no model was called."
-   },
-   "fixture": true
-  },
-  {
-   "id": "p4-p16",
+   "id": "p4-p18",
    "a": "p4",
-   "b": "p16",
+   "b": "p18",
    "turns": [
+    {
+     "speaker": "a",
+     "text": "[FIXTURE] Building something I'm proud of, and making room for a real relationship alongside it."
+    },
+    {
+     "speaker": "b",
+     "text": "[FIXTURE] Calmly, I hope. I'd rather talk it through than let it sit. What are you working toward right now?"
+    },
     {
      "speaker": "a",
      "text": "[FIXTURE] Hi! I'm glad we finally got to sit down. What does a perfect Sunday look like for you?"
-    },
-    {
-     "speaker": "b",
-     "text": "[FIXTURE] I try to. Honestly I care a lot about someone who's curious and kind. How do you handle disagreements?"
-    },
-    {
-     "speaker": "a",
-     "text": "[FIXTURE] I try to. Honestly I care a lot about someone who's curious and kind. How do you handle disagreements?"
-    },
-    {
-     "speaker": "b",
-     "text": "[FIXTURE] Building something I'm proud of, and making room for a real relationship alongside it."
-    },
-    {
-     "speaker": "a",
-     "text": "[FIXTURE] Building something I'm proud of, and making room for a real relationship alongside it."
-    },
-    {
-     "speaker": "b",
-     "text": "[FIXTURE] That sounds lovely. For me it's slow mornings and something outdoors. Do you travel much?"
-    }
-   ],
-   "verdictA": {
-    "score": 50,
-    "chemistry": "[FIXTURE] synthetic",
-    "needs_met": [
-     "[FIXTURE]"
-    ],
-    "friction": [
-     "[FIXTURE]"
-    ],
-    "would_see_again": false,
-    "reason": "[FIXTURE] synthetic verdict, no model was called."
-   },
-   "verdictB": {
-    "score": 47,
-    "chemistry": "[FIXTURE] synthetic",
-    "needs_met": [
-     "[FIXTURE]"
-    ],
-    "friction": [
-     "[FIXTURE]"
-    ],
-    "would_see_again": false,
-    "reason": "[FIXTURE] synthetic verdict, no model was called."
-   },
-   "fixture": true
-  },
-  {
-   "id": "p1-p22",
-   "a": "p1",
-   "b": "p22",
-   "turns": [
-    {
-     "speaker": "a",
-     "text": "[FIXTURE] Calmly, I hope. I'd rather talk it through than let it sit. What are you working toward right now?"
-    },
-    {
-     "speaker": "b",
-     "text": "[FIXTURE] Building something I'm proud of, and making room for a real relationship alongside it."
-    },
-    {
-     "speaker": "a",
-     "text": "[FIXTURE] I'd like that. Let's keep talking over dinner next week."
-    },
-    {
-     "speaker": "b",
-     "text": "[FIXTURE] Hi! I'm glad we finally got to sit down. What does a perfect Sunday look like for you?"
-    },
-    {
-     "speaker": "a",
-     "text": "[FIXTURE] That sounds lovely. For me it's slow mornings and something outdoors. Do you travel much?"
-    },
-    {
-     "speaker": "b",
-     "text": "[FIXTURE] Calmly, I hope. I'd rather talk it through than let it sit. What are you working toward right now?"
-    }
-   ],
-   "verdictA": {
-    "score": 42,
-    "chemistry": "[FIXTURE] synthetic",
-    "needs_met": [
-     "[FIXTURE]"
-    ],
-    "friction": [
-     "[FIXTURE]"
-    ],
-    "would_see_again": false,
-    "reason": "[FIXTURE] synthetic verdict, no model was called."
-   },
-   "verdictB": {
-    "score": 39,
-    "chemistry": "[FIXTURE] synthetic",
-    "needs_met": [
-     "[FIXTURE]"
-    ],
-    "friction": [
-     "[FIXTURE]"
-    ],
-    "would_see_again": false,
-    "reason": "[FIXTURE] synthetic verdict, no model was called."
-   },
-   "fixture": true
-  },
-  {
-   "id": "p1-p21",
-   "a": "p1",
-   "b": "p21",
-   "turns": [
-    {
-     "speaker": "a",
-     "text": "[FIXTURE] I'd like that. Let's keep talking over dinner next week."
-    },
-    {
-     "speaker": "b",
-     "text": "[FIXTURE] Calmly, I hope. I'd rather talk it through than let it sit. What are you working toward right now?"
-    },
-    {
-     "speaker": "a",
-     "text": "[FIXTURE] That sounds lovely. For me it's slow mornings and something outdoors. Do you travel much?"
     },
     {
      "speaker": "b",
@@ -2248,342 +2248,6 @@
     },
     {
      "speaker": "a",
-     "text": "[FIXTURE] Calmly, I hope. I'd rather talk it through than let it sit. What are you working toward right now?"
-    },
-    {
-     "speaker": "b",
-     "text": "[FIXTURE] I try to. Honestly I care a lot about someone who's curious and kind. How do you handle disagreements?"
-    }
-   ],
-   "verdictA": {
-    "score": 74,
-    "chemistry": "[FIXTURE] synthetic",
-    "needs_met": [
-     "[FIXTURE]"
-    ],
-    "friction": [
-     "[FIXTURE]"
-    ],
-    "would_see_again": true,
-    "reason": "[FIXTURE] synthetic verdict, no model was called."
-   },
-   "verdictB": {
-    "score": 72,
-    "chemistry": "[FIXTURE] synthetic",
-    "needs_met": [
-     "[FIXTURE]"
-    ],
-    "friction": [
-     "[FIXTURE]"
-    ],
-    "would_see_again": true,
-    "reason": "[FIXTURE] synthetic verdict, no model was called."
-   },
-   "fixture": true
-  },
-  {
-   "id": "p7-p9",
-   "a": "p7",
-   "b": "p9",
-   "turns": [
-    {
-     "speaker": "a",
-     "text": "[FIXTURE] Hi! I'm glad we finally got to sit down. What does a perfect Sunday look like for you?"
-    },
-    {
-     "speaker": "b",
-     "text": "[FIXTURE] Calmly, I hope. I'd rather talk it through than let it sit. What are you working toward right now?"
-    },
-    {
-     "speaker": "a",
-     "text": "[FIXTURE] I try to. Honestly I care a lot about someone who's curious and kind. How do you handle disagreements?"
-    },
-    {
-     "speaker": "b",
-     "text": "[FIXTURE] I'd like that. Let's keep talking over dinner next week."
-    },
-    {
-     "speaker": "a",
-     "text": "[FIXTURE] Building something I'm proud of, and making room for a real relationship alongside it."
-    },
-    {
-     "speaker": "b",
-     "text": "[FIXTURE] Hi! I'm glad we finally got to sit down. What does a perfect Sunday look like for you?"
-    }
-   ],
-   "verdictA": {
-    "score": 31,
-    "chemistry": "[FIXTURE] synthetic",
-    "needs_met": [
-     "[FIXTURE]"
-    ],
-    "friction": [
-     "[FIXTURE]"
-    ],
-    "would_see_again": false,
-    "reason": "[FIXTURE] synthetic verdict, no model was called."
-   },
-   "verdictB": {
-    "score": 44,
-    "chemistry": "[FIXTURE] synthetic",
-    "needs_met": [
-     "[FIXTURE]"
-    ],
-    "friction": [
-     "[FIXTURE]"
-    ],
-    "would_see_again": false,
-    "reason": "[FIXTURE] synthetic verdict, no model was called."
-   },
-   "fixture": true
-  },
-  {
-   "id": "p7-p8",
-   "a": "p7",
-   "b": "p8",
-   "turns": [
-    {
-     "speaker": "a",
-     "text": "[FIXTURE] Building something I'm proud of, and making room for a real relationship alongside it."
-    },
-    {
-     "speaker": "b",
-     "text": "[FIXTURE] Hi! I'm glad we finally got to sit down. What does a perfect Sunday look like for you?"
-    },
-    {
-     "speaker": "a",
-     "text": "[FIXTURE] Hi! I'm glad we finally got to sit down. What does a perfect Sunday look like for you?"
-    },
-    {
-     "speaker": "b",
-     "text": "[FIXTURE] I try to. Honestly I care a lot about someone who's curious and kind. How do you handle disagreements?"
-    },
-    {
-     "speaker": "a",
-     "text": "[FIXTURE] I try to. Honestly I care a lot about someone who's curious and kind. How do you handle disagreements?"
-    },
-    {
-     "speaker": "b",
-     "text": "[FIXTURE] That sounds lovely. For me it's slow mornings and something outdoors. Do you travel much?"
-    }
-   ],
-   "verdictA": {
-    "score": 88,
-    "chemistry": "[FIXTURE] synthetic",
-    "needs_met": [
-     "[FIXTURE]"
-    ],
-    "friction": [
-     "[FIXTURE]"
-    ],
-    "would_see_again": true,
-    "reason": "[FIXTURE] synthetic verdict, no model was called."
-   },
-   "verdictB": {
-    "score": 81,
-    "chemistry": "[FIXTURE] synthetic",
-    "needs_met": [
-     "[FIXTURE]"
-    ],
-    "friction": [
-     "[FIXTURE]"
-    ],
-    "would_see_again": true,
-    "reason": "[FIXTURE] synthetic verdict, no model was called."
-   },
-   "fixture": true
-  },
-  {
-   "id": "p7-p6",
-   "a": "p7",
-   "b": "p6",
-   "turns": [
-    {
-     "speaker": "a",
-     "text": "[FIXTURE] I try to. Honestly I care a lot about someone who's curious and kind. How do you handle disagreements?"
-    },
-    {
-     "speaker": "b",
-     "text": "[FIXTURE] Hi! I'm glad we finally got to sit down. What does a perfect Sunday look like for you?"
-    },
-    {
-     "speaker": "a",
-     "text": "[FIXTURE] Building something I'm proud of, and making room for a real relationship alongside it."
-    },
-    {
-     "speaker": "b",
-     "text": "[FIXTURE] I try to. Honestly I care a lot about someone who's curious and kind. How do you handle disagreements?"
-    },
-    {
-     "speaker": "a",
-     "text": "[FIXTURE] Hi! I'm glad we finally got to sit down. What does a perfect Sunday look like for you?"
-    },
-    {
-     "speaker": "b",
-     "text": "[FIXTURE] That sounds lovely. For me it's slow mornings and something outdoors. Do you travel much?"
-    }
-   ],
-   "verdictA": {
-    "score": 61,
-    "chemistry": "[FIXTURE] synthetic",
-    "needs_met": [
-     "[FIXTURE]"
-    ],
-    "friction": [
-     "[FIXTURE]"
-    ],
-    "would_see_again": true,
-    "reason": "[FIXTURE] synthetic verdict, no model was called."
-   },
-   "verdictB": {
-    "score": 78,
-    "chemistry": "[FIXTURE] synthetic",
-    "needs_met": [
-     "[FIXTURE]"
-    ],
-    "friction": [
-     "[FIXTURE]"
-    ],
-    "would_see_again": true,
-    "reason": "[FIXTURE] synthetic verdict, no model was called."
-   },
-   "fixture": true
-  },
-  {
-   "id": "p7-p5",
-   "a": "p7",
-   "b": "p5",
-   "turns": [
-    {
-     "speaker": "a",
-     "text": "[FIXTURE] I try to. Honestly I care a lot about someone who's curious and kind. How do you handle disagreements?"
-    },
-    {
-     "speaker": "b",
-     "text": "[FIXTURE] That sounds lovely. For me it's slow mornings and something outdoors. Do you travel much?"
-    },
-    {
-     "speaker": "a",
-     "text": "[FIXTURE] Building something I'm proud of, and making room for a real relationship alongside it."
-    },
-    {
-     "speaker": "b",
-     "text": "[FIXTURE] Calmly, I hope. I'd rather talk it through than let it sit. What are you working toward right now?"
-    },
-    {
-     "speaker": "a",
-     "text": "[FIXTURE] Hi! I'm glad we finally got to sit down. What does a perfect Sunday look like for you?"
-    },
-    {
-     "speaker": "b",
-     "text": "[FIXTURE] Hi! I'm glad we finally got to sit down. What does a perfect Sunday look like for you?"
-    }
-   ],
-   "verdictA": {
-    "score": 30,
-    "chemistry": "[FIXTURE] synthetic",
-    "needs_met": [
-     "[FIXTURE]"
-    ],
-    "friction": [
-     "[FIXTURE]"
-    ],
-    "would_see_again": false,
-    "reason": "[FIXTURE] synthetic verdict, no model was called."
-   },
-   "verdictB": {
-    "score": 58,
-    "chemistry": "[FIXTURE] synthetic",
-    "needs_met": [
-     "[FIXTURE]"
-    ],
-    "friction": [
-     "[FIXTURE]"
-    ],
-    "would_see_again": true,
-    "reason": "[FIXTURE] synthetic verdict, no model was called."
-   },
-   "fixture": true
-  },
-  {
-   "id": "p6-p25",
-   "a": "p6",
-   "b": "p25",
-   "turns": [
-    {
-     "speaker": "a",
-     "text": "[FIXTURE] I try to. Honestly I care a lot about someone who's curious and kind. How do you handle disagreements?"
-    },
-    {
-     "speaker": "b",
-     "text": "[FIXTURE] Hi! I'm glad we finally got to sit down. What does a perfect Sunday look like for you?"
-    },
-    {
-     "speaker": "a",
-     "text": "[FIXTURE] Building something I'm proud of, and making room for a real relationship alongside it."
-    },
-    {
-     "speaker": "b",
-     "text": "[FIXTURE] I try to. Honestly I care a lot about someone who's curious and kind. How do you handle disagreements?"
-    },
-    {
-     "speaker": "a",
-     "text": "[FIXTURE] Hi! I'm glad we finally got to sit down. What does a perfect Sunday look like for you?"
-    },
-    {
-     "speaker": "b",
-     "text": "[FIXTURE] That sounds lovely. For me it's slow mornings and something outdoors. Do you travel much?"
-    }
-   ],
-   "verdictA": {
-    "score": 53,
-    "chemistry": "[FIXTURE] synthetic",
-    "needs_met": [
-     "[FIXTURE]"
-    ],
-    "friction": [
-     "[FIXTURE]"
-    ],
-    "would_see_again": false,
-    "reason": "[FIXTURE] synthetic verdict, no model was called."
-   },
-   "verdictB": {
-    "score": 50,
-    "chemistry": "[FIXTURE] synthetic",
-    "needs_met": [
-     "[FIXTURE]"
-    ],
-    "friction": [
-     "[FIXTURE]"
-    ],
-    "would_see_again": false,
-    "reason": "[FIXTURE] synthetic verdict, no model was called."
-   },
-   "fixture": true
-  },
-  {
-   "id": "p6-p24",
-   "a": "p6",
-   "b": "p24",
-   "turns": [
-    {
-     "speaker": "a",
-     "text": "[FIXTURE] Building something I'm proud of, and making room for a real relationship alongside it."
-    },
-    {
-     "speaker": "b",
-     "text": "[FIXTURE] I'd like that. Let's keep talking over dinner next week."
-    },
-    {
-     "speaker": "a",
-     "text": "[FIXTURE] Hi! I'm glad we finally got to sit down. What does a perfect Sunday look like for you?"
-    },
-    {
-     "speaker": "b",
-     "text": "[FIXTURE] That sounds lovely. For me it's slow mornings and something outdoors. Do you travel much?"
-    },
-    {
-     "speaker": "a",
      "text": "[FIXTURE] I try to. Honestly I care a lot about someone who's curious and kind. How do you handle disagreements?"
     },
     {
@@ -2592,74 +2256,6 @@
     }
    ],
    "verdictA": {
-    "score": 62,
-    "chemistry": "[FIXTURE] synthetic",
-    "needs_met": [
-     "[FIXTURE]"
-    ],
-    "friction": [
-     "[FIXTURE]"
-    ],
-    "would_see_again": true,
-    "reason": "[FIXTURE] synthetic verdict, no model was called."
-   },
-   "verdictB": {
-    "score": 48,
-    "chemistry": "[FIXTURE] synthetic",
-    "needs_met": [
-     "[FIXTURE]"
-    ],
-    "friction": [
-     "[FIXTURE]"
-    ],
-    "would_see_again": false,
-    "reason": "[FIXTURE] synthetic verdict, no model was called."
-   },
-   "fixture": true
-  },
-  {
-   "id": "p6-p23",
-   "a": "p6",
-   "b": "p23",
-   "turns": [
-    {
-     "speaker": "a",
-     "text": "[FIXTURE] Hi! I'm glad we finally got to sit down. What does a perfect Sunday look like for you?"
-    },
-    {
-     "speaker": "b",
-     "text": "[FIXTURE] Hi! I'm glad we finally got to sit down. What does a perfect Sunday look like for you?"
-    },
-    {
-     "speaker": "a",
-     "text": "[FIXTURE] I try to. Honestly I care a lot about someone who's curious and kind. How do you handle disagreements?"
-    },
-    {
-     "speaker": "b",
-     "text": "[FIXTURE] I try to. Honestly I care a lot about someone who's curious and kind. How do you handle disagreements?"
-    },
-    {
-     "speaker": "a",
-     "text": "[FIXTURE] Building something I'm proud of, and making room for a real relationship alongside it."
-    },
-    {
-     "speaker": "b",
-     "text": "[FIXTURE] That sounds lovely. For me it's slow mornings and something outdoors. Do you travel much?"
-    }
-   ],
-   "verdictA": {
-    "score": 74,
-    "chemistry": "[FIXTURE] synthetic",
-    "needs_met": [
-     "[FIXTURE]"
-    ],
-    "friction": [
-     "[FIXTURE]"
-    ],
-    "would_see_again": true,
-    "reason": "[FIXTURE] synthetic verdict, no model was called."
-   },
-   "verdictB": {
     "score": 94,
     "chemistry": "[FIXTURE] synthetic",
     "needs_met": [
@@ -2671,52 +2267,8 @@
     "would_see_again": true,
     "reason": "[FIXTURE] synthetic verdict, no model was called."
    },
-   "fixture": true
-  },
-  {
-   "id": "p6-p22",
-   "a": "p6",
-   "b": "p22",
-   "turns": [
-    {
-     "speaker": "a",
-     "text": "[FIXTURE] I try to. Honestly I care a lot about someone who's curious and kind. How do you handle disagreements?"
-    },
-    {
-     "speaker": "b",
-     "text": "[FIXTURE] Building something I'm proud of, and making room for a real relationship alongside it."
-    },
-    {
-     "speaker": "a",
-     "text": "[FIXTURE] Building something I'm proud of, and making room for a real relationship alongside it."
-    },
-    {
-     "speaker": "b",
-     "text": "[FIXTURE] Hi! I'm glad we finally got to sit down. What does a perfect Sunday look like for you?"
-    },
-    {
-     "speaker": "a",
-     "text": "[FIXTURE] Hi! I'm glad we finally got to sit down. What does a perfect Sunday look like for you?"
-    },
-    {
-     "speaker": "b",
-     "text": "[FIXTURE] That sounds lovely. For me it's slow mornings and something outdoors. Do you travel much?"
-    }
-   ],
-   "verdictA": {
-    "score": 35,
-    "chemistry": "[FIXTURE] synthetic",
-    "needs_met": [
-     "[FIXTURE]"
-    ],
-    "friction": [
-     "[FIXTURE]"
-    ],
-    "would_see_again": false,
-    "reason": "[FIXTURE] synthetic verdict, no model was called."
-   },
    "verdictB": {
-    "score": 79,
+    "score": 61,
     "chemistry": "[FIXTURE] synthetic",
     "needs_met": [
      "[FIXTURE]"
@@ -2842,13 +2394,13 @@
    "fixture": true
   },
   {
-   "id": "p5-p23",
-   "a": "p5",
-   "b": "p23",
+   "id": "p6-p25",
+   "a": "p6",
+   "b": "p25",
    "turns": [
     {
      "speaker": "a",
-     "text": "[FIXTURE] Calmly, I hope. I'd rather talk it through than let it sit. What are you working toward right now?"
+     "text": "[FIXTURE] I try to. Honestly I care a lot about someone who's curious and kind. How do you handle disagreements?"
     },
     {
      "speaker": "b",
@@ -2856,7 +2408,7 @@
     },
     {
      "speaker": "a",
-     "text": "[FIXTURE] I'd like that. Let's keep talking over dinner next week."
+     "text": "[FIXTURE] Building something I'm proud of, and making room for a real relationship alongside it."
     },
     {
      "speaker": "b",
@@ -2864,15 +2416,15 @@
     },
     {
      "speaker": "a",
-     "text": "[FIXTURE] That sounds lovely. For me it's slow mornings and something outdoors. Do you travel much?"
+     "text": "[FIXTURE] Hi! I'm glad we finally got to sit down. What does a perfect Sunday look like for you?"
     },
     {
      "speaker": "b",
-     "text": "[FIXTURE] Calmly, I hope. I'd rather talk it through than let it sit. What are you working toward right now?"
+     "text": "[FIXTURE] That sounds lovely. For me it's slow mornings and something outdoors. Do you travel much?"
     }
    ],
    "verdictA": {
-    "score": 34,
+    "score": 53,
     "chemistry": "[FIXTURE] synthetic",
     "needs_met": [
      "[FIXTURE]"
@@ -2884,7 +2436,7 @@
     "reason": "[FIXTURE] synthetic verdict, no model was called."
    },
    "verdictB": {
-    "score": 72,
+    "score": 50,
     "chemistry": "[FIXTURE] synthetic",
     "needs_met": [
      "[FIXTURE]"
@@ -2892,7 +2444,7 @@
     "friction": [
      "[FIXTURE]"
     ],
-    "would_see_again": true,
+    "would_see_again": false,
     "reason": "[FIXTURE] synthetic verdict, no model was called."
    },
    "fixture": true
@@ -2954,6 +2506,454 @@
    "fixture": true
   },
   {
+   "id": "p5-p23",
+   "a": "p5",
+   "b": "p23",
+   "turns": [
+    {
+     "speaker": "a",
+     "text": "[FIXTURE] Calmly, I hope. I'd rather talk it through than let it sit. What are you working toward right now?"
+    },
+    {
+     "speaker": "b",
+     "text": "[FIXTURE] Hi! I'm glad we finally got to sit down. What does a perfect Sunday look like for you?"
+    },
+    {
+     "speaker": "a",
+     "text": "[FIXTURE] I'd like that. Let's keep talking over dinner next week."
+    },
+    {
+     "speaker": "b",
+     "text": "[FIXTURE] I try to. Honestly I care a lot about someone who's curious and kind. How do you handle disagreements?"
+    },
+    {
+     "speaker": "a",
+     "text": "[FIXTURE] That sounds lovely. For me it's slow mornings and something outdoors. Do you travel much?"
+    },
+    {
+     "speaker": "b",
+     "text": "[FIXTURE] Calmly, I hope. I'd rather talk it through than let it sit. What are you working toward right now?"
+    }
+   ],
+   "verdictA": {
+    "score": 34,
+    "chemistry": "[FIXTURE] synthetic",
+    "needs_met": [
+     "[FIXTURE]"
+    ],
+    "friction": [
+     "[FIXTURE]"
+    ],
+    "would_see_again": false,
+    "reason": "[FIXTURE] synthetic verdict, no model was called."
+   },
+   "verdictB": {
+    "score": 72,
+    "chemistry": "[FIXTURE] synthetic",
+    "needs_met": [
+     "[FIXTURE]"
+    ],
+    "friction": [
+     "[FIXTURE]"
+    ],
+    "would_see_again": true,
+    "reason": "[FIXTURE] synthetic verdict, no model was called."
+   },
+   "fixture": true
+  },
+  {
+   "id": "p6-p24",
+   "a": "p6",
+   "b": "p24",
+   "turns": [
+    {
+     "speaker": "a",
+     "text": "[FIXTURE] Building something I'm proud of, and making room for a real relationship alongside it."
+    },
+    {
+     "speaker": "b",
+     "text": "[FIXTURE] I'd like that. Let's keep talking over dinner next week."
+    },
+    {
+     "speaker": "a",
+     "text": "[FIXTURE] Hi! I'm glad we finally got to sit down. What does a perfect Sunday look like for you?"
+    },
+    {
+     "speaker": "b",
+     "text": "[FIXTURE] That sounds lovely. For me it's slow mornings and something outdoors. Do you travel much?"
+    },
+    {
+     "speaker": "a",
+     "text": "[FIXTURE] I try to. Honestly I care a lot about someone who's curious and kind. How do you handle disagreements?"
+    },
+    {
+     "speaker": "b",
+     "text": "[FIXTURE] Building something I'm proud of, and making room for a real relationship alongside it."
+    }
+   ],
+   "verdictA": {
+    "score": 62,
+    "chemistry": "[FIXTURE] synthetic",
+    "needs_met": [
+     "[FIXTURE]"
+    ],
+    "friction": [
+     "[FIXTURE]"
+    ],
+    "would_see_again": true,
+    "reason": "[FIXTURE] synthetic verdict, no model was called."
+   },
+   "verdictB": {
+    "score": 48,
+    "chemistry": "[FIXTURE] synthetic",
+    "needs_met": [
+     "[FIXTURE]"
+    ],
+    "friction": [
+     "[FIXTURE]"
+    ],
+    "would_see_again": false,
+    "reason": "[FIXTURE] synthetic verdict, no model was called."
+   },
+   "fixture": true
+  },
+  {
+   "id": "p6-p23",
+   "a": "p6",
+   "b": "p23",
+   "turns": [
+    {
+     "speaker": "a",
+     "text": "[FIXTURE] Hi! I'm glad we finally got to sit down. What does a perfect Sunday look like for you?"
+    },
+    {
+     "speaker": "b",
+     "text": "[FIXTURE] Hi! I'm glad we finally got to sit down. What does a perfect Sunday look like for you?"
+    },
+    {
+     "speaker": "a",
+     "text": "[FIXTURE] I try to. Honestly I care a lot about someone who's curious and kind. How do you handle disagreements?"
+    },
+    {
+     "speaker": "b",
+     "text": "[FIXTURE] I try to. Honestly I care a lot about someone who's curious and kind. How do you handle disagreements?"
+    },
+    {
+     "speaker": "a",
+     "text": "[FIXTURE] Building something I'm proud of, and making room for a real relationship alongside it."
+    },
+    {
+     "speaker": "b",
+     "text": "[FIXTURE] That sounds lovely. For me it's slow mornings and something outdoors. Do you travel much?"
+    }
+   ],
+   "verdictA": {
+    "score": 74,
+    "chemistry": "[FIXTURE] synthetic",
+    "needs_met": [
+     "[FIXTURE]"
+    ],
+    "friction": [
+     "[FIXTURE]"
+    ],
+    "would_see_again": true,
+    "reason": "[FIXTURE] synthetic verdict, no model was called."
+   },
+   "verdictB": {
+    "score": 94,
+    "chemistry": "[FIXTURE] synthetic",
+    "needs_met": [
+     "[FIXTURE]"
+    ],
+    "friction": [
+     "[FIXTURE]"
+    ],
+    "would_see_again": true,
+    "reason": "[FIXTURE] synthetic verdict, no model was called."
+   },
+   "fixture": true
+  },
+  {
+   "id": "p7-p9",
+   "a": "p7",
+   "b": "p9",
+   "turns": [
+    {
+     "speaker": "a",
+     "text": "[FIXTURE] Hi! I'm glad we finally got to sit down. What does a perfect Sunday look like for you?"
+    },
+    {
+     "speaker": "b",
+     "text": "[FIXTURE] Calmly, I hope. I'd rather talk it through than let it sit. What are you working toward right now?"
+    },
+    {
+     "speaker": "a",
+     "text": "[FIXTURE] I try to. Honestly I care a lot about someone who's curious and kind. How do you handle disagreements?"
+    },
+    {
+     "speaker": "b",
+     "text": "[FIXTURE] I'd like that. Let's keep talking over dinner next week."
+    },
+    {
+     "speaker": "a",
+     "text": "[FIXTURE] Building something I'm proud of, and making room for a real relationship alongside it."
+    },
+    {
+     "speaker": "b",
+     "text": "[FIXTURE] Hi! I'm glad we finally got to sit down. What does a perfect Sunday look like for you?"
+    }
+   ],
+   "verdictA": {
+    "score": 31,
+    "chemistry": "[FIXTURE] synthetic",
+    "needs_met": [
+     "[FIXTURE]"
+    ],
+    "friction": [
+     "[FIXTURE]"
+    ],
+    "would_see_again": false,
+    "reason": "[FIXTURE] synthetic verdict, no model was called."
+   },
+   "verdictB": {
+    "score": 44,
+    "chemistry": "[FIXTURE] synthetic",
+    "needs_met": [
+     "[FIXTURE]"
+    ],
+    "friction": [
+     "[FIXTURE]"
+    ],
+    "would_see_again": false,
+    "reason": "[FIXTURE] synthetic verdict, no model was called."
+   },
+   "fixture": true
+  },
+  {
+   "id": "p7-p8",
+   "a": "p7",
+   "b": "p8",
+   "turns": [
+    {
+     "speaker": "a",
+     "text": "[FIXTURE] Building something I'm proud of, and making room for a real relationship alongside it."
+    },
+    {
+     "speaker": "b",
+     "text": "[FIXTURE] Hi! I'm glad we finally got to sit down. What does a perfect Sunday look like for you?"
+    },
+    {
+     "speaker": "a",
+     "text": "[FIXTURE] Hi! I'm glad we finally got to sit down. What does a perfect Sunday look like for you?"
+    },
+    {
+     "speaker": "b",
+     "text": "[FIXTURE] I try to. Honestly I care a lot about someone who's curious and kind. How do you handle disagreements?"
+    },
+    {
+     "speaker": "a",
+     "text": "[FIXTURE] I try to. Honestly I care a lot about someone who's curious and kind. How do you handle disagreements?"
+    },
+    {
+     "speaker": "b",
+     "text": "[FIXTURE] That sounds lovely. For me it's slow mornings and something outdoors. Do you travel much?"
+    }
+   ],
+   "verdictA": {
+    "score": 88,
+    "chemistry": "[FIXTURE] synthetic",
+    "needs_met": [
+     "[FIXTURE]"
+    ],
+    "friction": [
+     "[FIXTURE]"
+    ],
+    "would_see_again": true,
+    "reason": "[FIXTURE] synthetic verdict, no model was called."
+   },
+   "verdictB": {
+    "score": 81,
+    "chemistry": "[FIXTURE] synthetic",
+    "needs_met": [
+     "[FIXTURE]"
+    ],
+    "friction": [
+     "[FIXTURE]"
+    ],
+    "would_see_again": true,
+    "reason": "[FIXTURE] synthetic verdict, no model was called."
+   },
+   "fixture": true
+  },
+  {
+   "id": "p6-p22",
+   "a": "p6",
+   "b": "p22",
+   "turns": [
+    {
+     "speaker": "a",
+     "text": "[FIXTURE] I try to. Honestly I care a lot about someone who's curious and kind. How do you handle disagreements?"
+    },
+    {
+     "speaker": "b",
+     "text": "[FIXTURE] Building something I'm proud of, and making room for a real relationship alongside it."
+    },
+    {
+     "speaker": "a",
+     "text": "[FIXTURE] Building something I'm proud of, and making room for a real relationship alongside it."
+    },
+    {
+     "speaker": "b",
+     "text": "[FIXTURE] Hi! I'm glad we finally got to sit down. What does a perfect Sunday look like for you?"
+    },
+    {
+     "speaker": "a",
+     "text": "[FIXTURE] Hi! I'm glad we finally got to sit down. What does a perfect Sunday look like for you?"
+    },
+    {
+     "speaker": "b",
+     "text": "[FIXTURE] That sounds lovely. For me it's slow mornings and something outdoors. Do you travel much?"
+    }
+   ],
+   "verdictA": {
+    "score": 35,
+    "chemistry": "[FIXTURE] synthetic",
+    "needs_met": [
+     "[FIXTURE]"
+    ],
+    "friction": [
+     "[FIXTURE]"
+    ],
+    "would_see_again": false,
+    "reason": "[FIXTURE] synthetic verdict, no model was called."
+   },
+   "verdictB": {
+    "score": 79,
+    "chemistry": "[FIXTURE] synthetic",
+    "needs_met": [
+     "[FIXTURE]"
+    ],
+    "friction": [
+     "[FIXTURE]"
+    ],
+    "would_see_again": true,
+    "reason": "[FIXTURE] synthetic verdict, no model was called."
+   },
+   "fixture": true
+  },
+  {
+   "id": "p7-p6",
+   "a": "p7",
+   "b": "p6",
+   "turns": [
+    {
+     "speaker": "a",
+     "text": "[FIXTURE] I try to. Honestly I care a lot about someone who's curious and kind. How do you handle disagreements?"
+    },
+    {
+     "speaker": "b",
+     "text": "[FIXTURE] Hi! I'm glad we finally got to sit down. What does a perfect Sunday look like for you?"
+    },
+    {
+     "speaker": "a",
+     "text": "[FIXTURE] Building something I'm proud of, and making room for a real relationship alongside it."
+    },
+    {
+     "speaker": "b",
+     "text": "[FIXTURE] I try to. Honestly I care a lot about someone who's curious and kind. How do you handle disagreements?"
+    },
+    {
+     "speaker": "a",
+     "text": "[FIXTURE] Hi! I'm glad we finally got to sit down. What does a perfect Sunday look like for you?"
+    },
+    {
+     "speaker": "b",
+     "text": "[FIXTURE] That sounds lovely. For me it's slow mornings and something outdoors. Do you travel much?"
+    }
+   ],
+   "verdictA": {
+    "score": 61,
+    "chemistry": "[FIXTURE] synthetic",
+    "needs_met": [
+     "[FIXTURE]"
+    ],
+    "friction": [
+     "[FIXTURE]"
+    ],
+    "would_see_again": true,
+    "reason": "[FIXTURE] synthetic verdict, no model was called."
+   },
+   "verdictB": {
+    "score": 78,
+    "chemistry": "[FIXTURE] synthetic",
+    "needs_met": [
+     "[FIXTURE]"
+    ],
+    "friction": [
+     "[FIXTURE]"
+    ],
+    "would_see_again": true,
+    "reason": "[FIXTURE] synthetic verdict, no model was called."
+   },
+   "fixture": true
+  },
+  {
+   "id": "p7-p5",
+   "a": "p7",
+   "b": "p5",
+   "turns": [
+    {
+     "speaker": "a",
+     "text": "[FIXTURE] I try to. Honestly I care a lot about someone who's curious and kind. How do you handle disagreements?"
+    },
+    {
+     "speaker": "b",
+     "text": "[FIXTURE] That sounds lovely. For me it's slow mornings and something outdoors. Do you travel much?"
+    },
+    {
+     "speaker": "a",
+     "text": "[FIXTURE] Building something I'm proud of, and making room for a real relationship alongside it."
+    },
+    {
+     "speaker": "b",
+     "text": "[FIXTURE] Calmly, I hope. I'd rather talk it through than let it sit. What are you working toward right now?"
+    },
+    {
+     "speaker": "a",
+     "text": "[FIXTURE] Hi! I'm glad we finally got to sit down. What does a perfect Sunday look like for you?"
+    },
+    {
+     "speaker": "b",
+     "text": "[FIXTURE] Hi! I'm glad we finally got to sit down. What does a perfect Sunday look like for you?"
+    }
+   ],
+   "verdictA": {
+    "score": 30,
+    "chemistry": "[FIXTURE] synthetic",
+    "needs_met": [
+     "[FIXTURE]"
+    ],
+    "friction": [
+     "[FIXTURE]"
+    ],
+    "would_see_again": false,
+    "reason": "[FIXTURE] synthetic verdict, no model was called."
+   },
+   "verdictB": {
+    "score": 58,
+    "chemistry": "[FIXTURE] synthetic",
+    "needs_met": [
+     "[FIXTURE]"
+    ],
+    "friction": [
+     "[FIXTURE]"
+    ],
+    "would_see_again": true,
+    "reason": "[FIXTURE] synthetic verdict, no model was called."
+   },
+   "fixture": true
+  },
+  {
    "id": "p8-p13",
    "a": "p8",
    "b": "p13",
@@ -3005,62 +3005,6 @@
      "[FIXTURE]"
     ],
     "would_see_again": false,
-    "reason": "[FIXTURE] synthetic verdict, no model was called."
-   },
-   "fixture": true
-  },
-  {
-   "id": "p8-p12",
-   "a": "p8",
-   "b": "p12",
-   "turns": [
-    {
-     "speaker": "a",
-     "text": "[FIXTURE] Hi! I'm glad we finally got to sit down. What does a perfect Sunday look like for you?"
-    },
-    {
-     "speaker": "b",
-     "text": "[FIXTURE] Calmly, I hope. I'd rather talk it through than let it sit. What are you working toward right now?"
-    },
-    {
-     "speaker": "a",
-     "text": "[FIXTURE] I try to. Honestly I care a lot about someone who's curious and kind. How do you handle disagreements?"
-    },
-    {
-     "speaker": "b",
-     "text": "[FIXTURE] I'd like that. Let's keep talking over dinner next week."
-    },
-    {
-     "speaker": "a",
-     "text": "[FIXTURE] Building something I'm proud of, and making room for a real relationship alongside it."
-    },
-    {
-     "speaker": "b",
-     "text": "[FIXTURE] Building something I'm proud of, and making room for a real relationship alongside it."
-    }
-   ],
-   "verdictA": {
-    "score": 37,
-    "chemistry": "[FIXTURE] synthetic",
-    "needs_met": [
-     "[FIXTURE]"
-    ],
-    "friction": [
-     "[FIXTURE]"
-    ],
-    "would_see_again": false,
-    "reason": "[FIXTURE] synthetic verdict, no model was called."
-   },
-   "verdictB": {
-    "score": 76,
-    "chemistry": "[FIXTURE] synthetic",
-    "needs_met": [
-     "[FIXTURE]"
-    ],
-    "friction": [
-     "[FIXTURE]"
-    ],
-    "would_see_again": true,
     "reason": "[FIXTURE] synthetic verdict, no model was called."
    },
    "fixture": true
@@ -3165,6 +3109,62 @@
    },
    "verdictB": {
     "score": 74,
+    "chemistry": "[FIXTURE] synthetic",
+    "needs_met": [
+     "[FIXTURE]"
+    ],
+    "friction": [
+     "[FIXTURE]"
+    ],
+    "would_see_again": true,
+    "reason": "[FIXTURE] synthetic verdict, no model was called."
+   },
+   "fixture": true
+  },
+  {
+   "id": "p8-p12",
+   "a": "p8",
+   "b": "p12",
+   "turns": [
+    {
+     "speaker": "a",
+     "text": "[FIXTURE] Hi! I'm glad we finally got to sit down. What does a perfect Sunday look like for you?"
+    },
+    {
+     "speaker": "b",
+     "text": "[FIXTURE] Calmly, I hope. I'd rather talk it through than let it sit. What are you working toward right now?"
+    },
+    {
+     "speaker": "a",
+     "text": "[FIXTURE] I try to. Honestly I care a lot about someone who's curious and kind. How do you handle disagreements?"
+    },
+    {
+     "speaker": "b",
+     "text": "[FIXTURE] I'd like that. Let's keep talking over dinner next week."
+    },
+    {
+     "speaker": "a",
+     "text": "[FIXTURE] Building something I'm proud of, and making room for a real relationship alongside it."
+    },
+    {
+     "speaker": "b",
+     "text": "[FIXTURE] Building something I'm proud of, and making room for a real relationship alongside it."
+    }
+   ],
+   "verdictA": {
+    "score": 37,
+    "chemistry": "[FIXTURE] synthetic",
+    "needs_met": [
+     "[FIXTURE]"
+    ],
+    "friction": [
+     "[FIXTURE]"
+    ],
+    "would_see_again": false,
+    "reason": "[FIXTURE] synthetic verdict, no model was called."
+   },
+   "verdictB": {
+    "score": 76,
     "chemistry": "[FIXTURE] synthetic",
     "needs_met": [
      "[FIXTURE]"
@@ -3346,62 +3346,6 @@
    "fixture": true
   },
   {
-   "id": "p10-p1",
-   "a": "p10",
-   "b": "p1",
-   "turns": [
-    {
-     "speaker": "a",
-     "text": "[FIXTURE] Building something I'm proud of, and making room for a real relationship alongside it."
-    },
-    {
-     "speaker": "b",
-     "text": "[FIXTURE] That sounds lovely. For me it's slow mornings and something outdoors. Do you travel much?"
-    },
-    {
-     "speaker": "a",
-     "text": "[FIXTURE] Hi! I'm glad we finally got to sit down. What does a perfect Sunday look like for you?"
-    },
-    {
-     "speaker": "b",
-     "text": "[FIXTURE] Calmly, I hope. I'd rather talk it through than let it sit. What are you working toward right now?"
-    },
-    {
-     "speaker": "a",
-     "text": "[FIXTURE] I try to. Honestly I care a lot about someone who's curious and kind. How do you handle disagreements?"
-    },
-    {
-     "speaker": "b",
-     "text": "[FIXTURE] Hi! I'm glad we finally got to sit down. What does a perfect Sunday look like for you?"
-    }
-   ],
-   "verdictA": {
-    "score": 51,
-    "chemistry": "[FIXTURE] synthetic",
-    "needs_met": [
-     "[FIXTURE]"
-    ],
-    "friction": [
-     "[FIXTURE]"
-    ],
-    "would_see_again": false,
-    "reason": "[FIXTURE] synthetic verdict, no model was called."
-   },
-   "verdictB": {
-    "score": 65,
-    "chemistry": "[FIXTURE] synthetic",
-    "needs_met": [
-     "[FIXTURE]"
-    ],
-    "friction": [
-     "[FIXTURE]"
-    ],
-    "would_see_again": true,
-    "reason": "[FIXTURE] synthetic verdict, no model was called."
-   },
-   "fixture": true
-  },
-  {
    "id": "p10-p12",
    "a": "p10",
    "b": "p12",
@@ -3501,6 +3445,62 @@
    },
    "verdictB": {
     "score": 63,
+    "chemistry": "[FIXTURE] synthetic",
+    "needs_met": [
+     "[FIXTURE]"
+    ],
+    "friction": [
+     "[FIXTURE]"
+    ],
+    "would_see_again": true,
+    "reason": "[FIXTURE] synthetic verdict, no model was called."
+   },
+   "fixture": true
+  },
+  {
+   "id": "p10-p1",
+   "a": "p10",
+   "b": "p1",
+   "turns": [
+    {
+     "speaker": "a",
+     "text": "[FIXTURE] Building something I'm proud of, and making room for a real relationship alongside it."
+    },
+    {
+     "speaker": "b",
+     "text": "[FIXTURE] That sounds lovely. For me it's slow mornings and something outdoors. Do you travel much?"
+    },
+    {
+     "speaker": "a",
+     "text": "[FIXTURE] Hi! I'm glad we finally got to sit down. What does a perfect Sunday look like for you?"
+    },
+    {
+     "speaker": "b",
+     "text": "[FIXTURE] Calmly, I hope. I'd rather talk it through than let it sit. What are you working toward right now?"
+    },
+    {
+     "speaker": "a",
+     "text": "[FIXTURE] I try to. Honestly I care a lot about someone who's curious and kind. How do you handle disagreements?"
+    },
+    {
+     "speaker": "b",
+     "text": "[FIXTURE] Hi! I'm glad we finally got to sit down. What does a perfect Sunday look like for you?"
+    }
+   ],
+   "verdictA": {
+    "score": 51,
+    "chemistry": "[FIXTURE] synthetic",
+    "needs_met": [
+     "[FIXTURE]"
+    ],
+    "friction": [
+     "[FIXTURE]"
+    ],
+    "would_see_again": false,
+    "reason": "[FIXTURE] synthetic verdict, no model was called."
+   },
+   "verdictB": {
+    "score": 65,
     "chemistry": "[FIXTURE] synthetic",
     "needs_met": [
      "[FIXTURE]"
@@ -3962,62 +3962,6 @@
    "fixture": true
   },
   {
-   "id": "p12-p16",
-   "a": "p12",
-   "b": "p16",
-   "turns": [
-    {
-     "speaker": "a",
-     "text": "[FIXTURE] Calmly, I hope. I'd rather talk it through than let it sit. What are you working toward right now?"
-    },
-    {
-     "speaker": "b",
-     "text": "[FIXTURE] I try to. Honestly I care a lot about someone who's curious and kind. How do you handle disagreements?"
-    },
-    {
-     "speaker": "a",
-     "text": "[FIXTURE] I'd like that. Let's keep talking over dinner next week."
-    },
-    {
-     "speaker": "b",
-     "text": "[FIXTURE] Building something I'm proud of, and making room for a real relationship alongside it."
-    },
-    {
-     "speaker": "a",
-     "text": "[FIXTURE] That sounds lovely. For me it's slow mornings and something outdoors. Do you travel much?"
-    },
-    {
-     "speaker": "b",
-     "text": "[FIXTURE] That sounds lovely. For me it's slow mornings and something outdoors. Do you travel much?"
-    }
-   ],
-   "verdictA": {
-    "score": 58,
-    "chemistry": "[FIXTURE] synthetic",
-    "needs_met": [
-     "[FIXTURE]"
-    ],
-    "friction": [
-     "[FIXTURE]"
-    ],
-    "would_see_again": true,
-    "reason": "[FIXTURE] synthetic verdict, no model was called."
-   },
-   "verdictB": {
-    "score": 39,
-    "chemistry": "[FIXTURE] synthetic",
-    "needs_met": [
-     "[FIXTURE]"
-    ],
-    "friction": [
-     "[FIXTURE]"
-    ],
-    "would_see_again": false,
-    "reason": "[FIXTURE] synthetic verdict, no model was called."
-   },
-   "fixture": true
-  },
-  {
    "id": "p13-p19",
    "a": "p13",
    "b": "p19",
@@ -4069,6 +4013,62 @@
      "[FIXTURE]"
     ],
     "would_see_again": true,
+    "reason": "[FIXTURE] synthetic verdict, no model was called."
+   },
+   "fixture": true
+  },
+  {
+   "id": "p12-p16",
+   "a": "p12",
+   "b": "p16",
+   "turns": [
+    {
+     "speaker": "a",
+     "text": "[FIXTURE] Calmly, I hope. I'd rather talk it through than let it sit. What are you working toward right now?"
+    },
+    {
+     "speaker": "b",
+     "text": "[FIXTURE] I try to. Honestly I care a lot about someone who's curious and kind. How do you handle disagreements?"
+    },
+    {
+     "speaker": "a",
+     "text": "[FIXTURE] I'd like that. Let's keep talking over dinner next week."
+    },
+    {
+     "speaker": "b",
+     "text": "[FIXTURE] Building something I'm proud of, and making room for a real relationship alongside it."
+    },
+    {
+     "speaker": "a",
+     "text": "[FIXTURE] That sounds lovely. For me it's slow mornings and something outdoors. Do you travel much?"
+    },
+    {
+     "speaker": "b",
+     "text": "[FIXTURE] That sounds lovely. For me it's slow mornings and something outdoors. Do you travel much?"
+    }
+   ],
+   "verdictA": {
+    "score": 58,
+    "chemistry": "[FIXTURE] synthetic",
+    "needs_met": [
+     "[FIXTURE]"
+    ],
+    "friction": [
+     "[FIXTURE]"
+    ],
+    "would_see_again": true,
+    "reason": "[FIXTURE] synthetic verdict, no model was called."
+   },
+   "verdictB": {
+    "score": 39,
+    "chemistry": "[FIXTURE] synthetic",
+    "needs_met": [
+     "[FIXTURE]"
+    ],
+    "friction": [
+     "[FIXTURE]"
+    ],
+    "would_see_again": false,
     "reason": "[FIXTURE] synthetic verdict, no model was called."
    },
    "fixture": true
@@ -4690,62 +4690,6 @@
    "fixture": true
   },
   {
-   "id": "p16-p24",
-   "a": "p16",
-   "b": "p24",
-   "turns": [
-    {
-     "speaker": "a",
-     "text": "[FIXTURE] Hi! I'm glad we finally got to sit down. What does a perfect Sunday look like for you?"
-    },
-    {
-     "speaker": "b",
-     "text": "[FIXTURE] That sounds lovely. For me it's slow mornings and something outdoors. Do you travel much?"
-    },
-    {
-     "speaker": "a",
-     "text": "[FIXTURE] I try to. Honestly I care a lot about someone who's curious and kind. How do you handle disagreements?"
-    },
-    {
-     "speaker": "b",
-     "text": "[FIXTURE] Calmly, I hope. I'd rather talk it through than let it sit. What are you working toward right now?"
-    },
-    {
-     "speaker": "a",
-     "text": "[FIXTURE] Building something I'm proud of, and making room for a real relationship alongside it."
-    },
-    {
-     "speaker": "b",
-     "text": "[FIXTURE] Hi! I'm glad we finally got to sit down. What does a perfect Sunday look like for you?"
-    }
-   ],
-   "verdictA": {
-    "score": 91,
-    "chemistry": "[FIXTURE] synthetic",
-    "needs_met": [
-     "[FIXTURE]"
-    ],
-    "friction": [
-     "[FIXTURE]"
-    ],
-    "would_see_again": true,
-    "reason": "[FIXTURE] synthetic verdict, no model was called."
-   },
-   "verdictB": {
-    "score": 60,
-    "chemistry": "[FIXTURE] synthetic",
-    "needs_met": [
-     "[FIXTURE]"
-    ],
-    "friction": [
-     "[FIXTURE]"
-    ],
-    "would_see_again": true,
-    "reason": "[FIXTURE] synthetic verdict, no model was called."
-   },
-   "fixture": true
-  },
-  {
    "id": "p16-p23",
    "a": "p16",
    "b": "p23",
@@ -4789,6 +4733,62 @@
    },
    "verdictB": {
     "score": 87,
+    "chemistry": "[FIXTURE] synthetic",
+    "needs_met": [
+     "[FIXTURE]"
+    ],
+    "friction": [
+     "[FIXTURE]"
+    ],
+    "would_see_again": true,
+    "reason": "[FIXTURE] synthetic verdict, no model was called."
+   },
+   "fixture": true
+  },
+  {
+   "id": "p16-p24",
+   "a": "p16",
+   "b": "p24",
+   "turns": [
+    {
+     "speaker": "a",
+     "text": "[FIXTURE] Hi! I'm glad we finally got to sit down. What does a perfect Sunday look like for you?"
+    },
+    {
+     "speaker": "b",
+     "text": "[FIXTURE] That sounds lovely. For me it's slow mornings and something outdoors. Do you travel much?"
+    },
+    {
+     "speaker": "a",
+     "text": "[FIXTURE] I try to. Honestly I care a lot about someone who's curious and kind. How do you handle disagreements?"
+    },
+    {
+     "speaker": "b",
+     "text": "[FIXTURE] Calmly, I hope. I'd rather talk it through than let it sit. What are you working toward right now?"
+    },
+    {
+     "speaker": "a",
+     "text": "[FIXTURE] Building something I'm proud of, and making room for a real relationship alongside it."
+    },
+    {
+     "speaker": "b",
+     "text": "[FIXTURE] Hi! I'm glad we finally got to sit down. What does a perfect Sunday look like for you?"
+    }
+   ],
+   "verdictA": {
+    "score": 91,
+    "chemistry": "[FIXTURE] synthetic",
+    "needs_met": [
+     "[FIXTURE]"
+    ],
+    "friction": [
+     "[FIXTURE]"
+    ],
+    "would_see_again": true,
+    "reason": "[FIXTURE] synthetic verdict, no model was called."
+   },
+   "verdictB": {
+    "score": 60,
     "chemistry": "[FIXTURE] synthetic",
     "needs_met": [
      "[FIXTURE]"
@@ -5026,62 +5026,6 @@
    "fixture": true
   },
   {
-   "id": "p18-p10",
-   "a": "p18",
-   "b": "p10",
-   "turns": [
-    {
-     "speaker": "a",
-     "text": "[FIXTURE] Calmly, I hope. I'd rather talk it through than let it sit. What are you working toward right now?"
-    },
-    {
-     "speaker": "b",
-     "text": "[FIXTURE] I try to. Honestly I care a lot about someone who's curious and kind. How do you handle disagreements?"
-    },
-    {
-     "speaker": "a",
-     "text": "[FIXTURE] I'd like that. Let's keep talking over dinner next week."
-    },
-    {
-     "speaker": "b",
-     "text": "[FIXTURE] Building something I'm proud of, and making room for a real relationship alongside it."
-    },
-    {
-     "speaker": "a",
-     "text": "[FIXTURE] That sounds lovely. For me it's slow mornings and something outdoors. Do you travel much?"
-    },
-    {
-     "speaker": "b",
-     "text": "[FIXTURE] Calmly, I hope. I'd rather talk it through than let it sit. What are you working toward right now?"
-    }
-   ],
-   "verdictA": {
-    "score": 88,
-    "chemistry": "[FIXTURE] synthetic",
-    "needs_met": [
-     "[FIXTURE]"
-    ],
-    "friction": [
-     "[FIXTURE]"
-    ],
-    "would_see_again": true,
-    "reason": "[FIXTURE] synthetic verdict, no model was called."
-   },
-   "verdictB": {
-    "score": 32,
-    "chemistry": "[FIXTURE] synthetic",
-    "needs_met": [
-     "[FIXTURE]"
-    ],
-    "friction": [
-     "[FIXTURE]"
-    ],
-    "would_see_again": false,
-    "reason": "[FIXTURE] synthetic verdict, no model was called."
-   },
-   "fixture": true
-  },
-  {
    "id": "p17-p6",
    "a": "p17",
    "b": "p6",
@@ -5125,6 +5069,62 @@
    },
    "verdictB": {
     "score": 46,
+    "chemistry": "[FIXTURE] synthetic",
+    "needs_met": [
+     "[FIXTURE]"
+    ],
+    "friction": [
+     "[FIXTURE]"
+    ],
+    "would_see_again": false,
+    "reason": "[FIXTURE] synthetic verdict, no model was called."
+   },
+   "fixture": true
+  },
+  {
+   "id": "p18-p10",
+   "a": "p18",
+   "b": "p10",
+   "turns": [
+    {
+     "speaker": "a",
+     "text": "[FIXTURE] Calmly, I hope. I'd rather talk it through than let it sit. What are you working toward right now?"
+    },
+    {
+     "speaker": "b",
+     "text": "[FIXTURE] I try to. Honestly I care a lot about someone who's curious and kind. How do you handle disagreements?"
+    },
+    {
+     "speaker": "a",
+     "text": "[FIXTURE] I'd like that. Let's keep talking over dinner next week."
+    },
+    {
+     "speaker": "b",
+     "text": "[FIXTURE] Building something I'm proud of, and making room for a real relationship alongside it."
+    },
+    {
+     "speaker": "a",
+     "text": "[FIXTURE] That sounds lovely. For me it's slow mornings and something outdoors. Do you travel much?"
+    },
+    {
+     "speaker": "b",
+     "text": "[FIXTURE] Calmly, I hope. I'd rather talk it through than let it sit. What are you working toward right now?"
+    }
+   ],
+   "verdictA": {
+    "score": 88,
+    "chemistry": "[FIXTURE] synthetic",
+    "needs_met": [
+     "[FIXTURE]"
+    ],
+    "friction": [
+     "[FIXTURE]"
+    ],
+    "would_see_again": true,
+    "reason": "[FIXTURE] synthetic verdict, no model was called."
+   },
+   "verdictB": {
+    "score": 32,
     "chemistry": "[FIXTURE] synthetic",
     "needs_met": [
      "[FIXTURE]"
@@ -5306,62 +5306,6 @@
    "fixture": true
   },
   {
-   "id": "p19-p15",
-   "a": "p19",
-   "b": "p15",
-   "turns": [
-    {
-     "speaker": "a",
-     "text": "[FIXTURE] Hi! I'm glad we finally got to sit down. What does a perfect Sunday look like for you?"
-    },
-    {
-     "speaker": "b",
-     "text": "[FIXTURE] That sounds lovely. For me it's slow mornings and something outdoors. Do you travel much?"
-    },
-    {
-     "speaker": "a",
-     "text": "[FIXTURE] I try to. Honestly I care a lot about someone who's curious and kind. How do you handle disagreements?"
-    },
-    {
-     "speaker": "b",
-     "text": "[FIXTURE] Calmly, I hope. I'd rather talk it through than let it sit. What are you working toward right now?"
-    },
-    {
-     "speaker": "a",
-     "text": "[FIXTURE] Building something I'm proud of, and making room for a real relationship alongside it."
-    },
-    {
-     "speaker": "b",
-     "text": "[FIXTURE] I try to. Honestly I care a lot about someone who's curious and kind. How do you handle disagreements?"
-    }
-   ],
-   "verdictA": {
-    "score": 63,
-    "chemistry": "[FIXTURE] synthetic",
-    "needs_met": [
-     "[FIXTURE]"
-    ],
-    "friction": [
-     "[FIXTURE]"
-    ],
-    "would_see_again": true,
-    "reason": "[FIXTURE] synthetic verdict, no model was called."
-   },
-   "verdictB": {
-    "score": 45,
-    "chemistry": "[FIXTURE] synthetic",
-    "needs_met": [
-     "[FIXTURE]"
-    ],
-    "friction": [
-     "[FIXTURE]"
-    ],
-    "would_see_again": false,
-    "reason": "[FIXTURE] synthetic verdict, no model was called."
-   },
-   "fixture": true
-  },
-  {
    "id": "p20-p8",
    "a": "p20",
    "b": "p8",
@@ -5405,6 +5349,62 @@
    },
    "verdictB": {
     "score": 38,
+    "chemistry": "[FIXTURE] synthetic",
+    "needs_met": [
+     "[FIXTURE]"
+    ],
+    "friction": [
+     "[FIXTURE]"
+    ],
+    "would_see_again": false,
+    "reason": "[FIXTURE] synthetic verdict, no model was called."
+   },
+   "fixture": true
+  },
+  {
+   "id": "p19-p15",
+   "a": "p19",
+   "b": "p15",
+   "turns": [
+    {
+     "speaker": "a",
+     "text": "[FIXTURE] Hi! I'm glad we finally got to sit down. What does a perfect Sunday look like for you?"
+    },
+    {
+     "speaker": "b",
+     "text": "[FIXTURE] That sounds lovely. For me it's slow mornings and something outdoors. Do you travel much?"
+    },
+    {
+     "speaker": "a",
+     "text": "[FIXTURE] I try to. Honestly I care a lot about someone who's curious and kind. How do you handle disagreements?"
+    },
+    {
+     "speaker": "b",
+     "text": "[FIXTURE] Calmly, I hope. I'd rather talk it through than let it sit. What are you working toward right now?"
+    },
+    {
+     "speaker": "a",
+     "text": "[FIXTURE] Building something I'm proud of, and making room for a real relationship alongside it."
+    },
+    {
+     "speaker": "b",
+     "text": "[FIXTURE] I try to. Honestly I care a lot about someone who's curious and kind. How do you handle disagreements?"
+    }
+   ],
+   "verdictA": {
+    "score": 63,
+    "chemistry": "[FIXTURE] synthetic",
+    "needs_met": [
+     "[FIXTURE]"
+    ],
+    "friction": [
+     "[FIXTURE]"
+    ],
+    "would_see_again": true,
+    "reason": "[FIXTURE] synthetic verdict, no model was called."
+   },
+   "verdictB": {
+    "score": 45,
     "chemistry": "[FIXTURE] synthetic",
     "needs_met": [
      "[FIXTURE]"
@@ -5754,62 +5754,6 @@
    "fixture": true
   },
   {
-   "id": "p21-p16",
-   "a": "p21",
-   "b": "p16",
-   "turns": [
-    {
-     "speaker": "a",
-     "text": "[FIXTURE] I'd like that. Let's keep talking over dinner next week."
-    },
-    {
-     "speaker": "b",
-     "text": "[FIXTURE] Building something I'm proud of, and making room for a real relationship alongside it."
-    },
-    {
-     "speaker": "a",
-     "text": "[FIXTURE] That sounds lovely. For me it's slow mornings and something outdoors. Do you travel much?"
-    },
-    {
-     "speaker": "b",
-     "text": "[FIXTURE] Hi! I'm glad we finally got to sit down. What does a perfect Sunday look like for you?"
-    },
-    {
-     "speaker": "a",
-     "text": "[FIXTURE] Calmly, I hope. I'd rather talk it through than let it sit. What are you working toward right now?"
-    },
-    {
-     "speaker": "b",
-     "text": "[FIXTURE] I'd like that. Let's keep talking over dinner next week."
-    }
-   ],
-   "verdictA": {
-    "score": 47,
-    "chemistry": "[FIXTURE] synthetic",
-    "needs_met": [
-     "[FIXTURE]"
-    ],
-    "friction": [
-     "[FIXTURE]"
-    ],
-    "would_see_again": false,
-    "reason": "[FIXTURE] synthetic verdict, no model was called."
-   },
-   "verdictB": {
-    "score": 54,
-    "chemistry": "[FIXTURE] synthetic",
-    "needs_met": [
-     "[FIXTURE]"
-    ],
-    "friction": [
-     "[FIXTURE]"
-    ],
-    "would_see_again": false,
-    "reason": "[FIXTURE] synthetic verdict, no model was called."
-   },
-   "fixture": true
-  },
-  {
    "id": "p22-p4",
    "a": "p22",
    "b": "p4",
@@ -5866,37 +5810,37 @@
    "fixture": true
   },
   {
-   "id": "p22-p3",
-   "a": "p22",
-   "b": "p3",
+   "id": "p21-p16",
+   "a": "p21",
+   "b": "p16",
    "turns": [
     {
      "speaker": "a",
+     "text": "[FIXTURE] I'd like that. Let's keep talking over dinner next week."
+    },
+    {
+     "speaker": "b",
+     "text": "[FIXTURE] Building something I'm proud of, and making room for a real relationship alongside it."
+    },
+    {
+     "speaker": "a",
+     "text": "[FIXTURE] That sounds lovely. For me it's slow mornings and something outdoors. Do you travel much?"
+    },
+    {
+     "speaker": "b",
      "text": "[FIXTURE] Hi! I'm glad we finally got to sit down. What does a perfect Sunday look like for you?"
+    },
+    {
+     "speaker": "a",
+     "text": "[FIXTURE] Calmly, I hope. I'd rather talk it through than let it sit. What are you working toward right now?"
     },
     {
      "speaker": "b",
      "text": "[FIXTURE] I'd like that. Let's keep talking over dinner next week."
-    },
-    {
-     "speaker": "a",
-     "text": "[FIXTURE] I try to. Honestly I care a lot about someone who's curious and kind. How do you handle disagreements?"
-    },
-    {
-     "speaker": "b",
-     "text": "[FIXTURE] That sounds lovely. For me it's slow mornings and something outdoors. Do you travel much?"
-    },
-    {
-     "speaker": "a",
-     "text": "[FIXTURE] Building something I'm proud of, and making room for a real relationship alongside it."
-    },
-    {
-     "speaker": "b",
-     "text": "[FIXTURE] Hi! I'm glad we finally got to sit down. What does a perfect Sunday look like for you?"
     }
    ],
    "verdictA": {
-    "score": 74,
+    "score": 47,
     "chemistry": "[FIXTURE] synthetic",
     "needs_met": [
      "[FIXTURE]"
@@ -5904,11 +5848,11 @@
     "friction": [
      "[FIXTURE]"
     ],
-    "would_see_again": true,
+    "would_see_again": false,
     "reason": "[FIXTURE] synthetic verdict, no model was called."
    },
    "verdictB": {
-    "score": 37,
+    "score": 54,
     "chemistry": "[FIXTURE] synthetic",
     "needs_met": [
      "[FIXTURE]"
@@ -5978,21 +5922,13 @@
    "fixture": true
   },
   {
-   "id": "p23-p18",
-   "a": "p23",
-   "b": "p18",
+   "id": "p22-p3",
+   "a": "p22",
+   "b": "p3",
    "turns": [
     {
      "speaker": "a",
-     "text": "[FIXTURE] I try to. Honestly I care a lot about someone who's curious and kind. How do you handle disagreements?"
-    },
-    {
-     "speaker": "b",
-     "text": "[FIXTURE] Calmly, I hope. I'd rather talk it through than let it sit. What are you working toward right now?"
-    },
-    {
-     "speaker": "a",
-     "text": "[FIXTURE] Building something I'm proud of, and making room for a real relationship alongside it."
+     "text": "[FIXTURE] Hi! I'm glad we finally got to sit down. What does a perfect Sunday look like for you?"
     },
     {
      "speaker": "b",
@@ -6000,7 +5936,15 @@
     },
     {
      "speaker": "a",
-     "text": "[FIXTURE] Hi! I'm glad we finally got to sit down. What does a perfect Sunday look like for you?"
+     "text": "[FIXTURE] I try to. Honestly I care a lot about someone who's curious and kind. How do you handle disagreements?"
+    },
+    {
+     "speaker": "b",
+     "text": "[FIXTURE] That sounds lovely. For me it's slow mornings and something outdoors. Do you travel much?"
+    },
+    {
+     "speaker": "a",
+     "text": "[FIXTURE] Building something I'm proud of, and making room for a real relationship alongside it."
     },
     {
      "speaker": "b",
@@ -6008,7 +5952,7 @@
     }
    ],
    "verdictA": {
-    "score": 88,
+    "score": 74,
     "chemistry": "[FIXTURE] synthetic",
     "needs_met": [
      "[FIXTURE]"
@@ -6020,7 +5964,7 @@
     "reason": "[FIXTURE] synthetic verdict, no model was called."
    },
    "verdictB": {
-    "score": 79,
+    "score": 37,
     "chemistry": "[FIXTURE] synthetic",
     "needs_met": [
      "[FIXTURE]"
@@ -6028,7 +5972,7 @@
     "friction": [
      "[FIXTURE]"
     ],
-    "would_see_again": true,
+    "would_see_again": false,
     "reason": "[FIXTURE] synthetic verdict, no model was called."
    },
    "fixture": true
@@ -6085,6 +6029,62 @@
      "[FIXTURE]"
     ],
     "would_see_again": false,
+    "reason": "[FIXTURE] synthetic verdict, no model was called."
+   },
+   "fixture": true
+  },
+  {
+   "id": "p23-p18",
+   "a": "p23",
+   "b": "p18",
+   "turns": [
+    {
+     "speaker": "a",
+     "text": "[FIXTURE] I try to. Honestly I care a lot about someone who's curious and kind. How do you handle disagreements?"
+    },
+    {
+     "speaker": "b",
+     "text": "[FIXTURE] Calmly, I hope. I'd rather talk it through than let it sit. What are you working toward right now?"
+    },
+    {
+     "speaker": "a",
+     "text": "[FIXTURE] Building something I'm proud of, and making room for a real relationship alongside it."
+    },
+    {
+     "speaker": "b",
+     "text": "[FIXTURE] I'd like that. Let's keep talking over dinner next week."
+    },
+    {
+     "speaker": "a",
+     "text": "[FIXTURE] Hi! I'm glad we finally got to sit down. What does a perfect Sunday look like for you?"
+    },
+    {
+     "speaker": "b",
+     "text": "[FIXTURE] Hi! I'm glad we finally got to sit down. What does a perfect Sunday look like for you?"
+    }
+   ],
+   "verdictA": {
+    "score": 88,
+    "chemistry": "[FIXTURE] synthetic",
+    "needs_met": [
+     "[FIXTURE]"
+    ],
+    "friction": [
+     "[FIXTURE]"
+    ],
+    "would_see_again": true,
+    "reason": "[FIXTURE] synthetic verdict, no model was called."
+   },
+   "verdictB": {
+    "score": 79,
+    "chemistry": "[FIXTURE] synthetic",
+    "needs_met": [
+     "[FIXTURE]"
+    ],
+    "friction": [
+     "[FIXTURE]"
+    ],
+    "would_see_again": true,
     "reason": "[FIXTURE] synthetic verdict, no model was called."
    },
    "fixture": true
@@ -6370,62 +6370,6 @@
    "fixture": true
   },
   {
-   "id": "p25-p23",
-   "a": "p25",
-   "b": "p23",
-   "turns": [
-    {
-     "speaker": "a",
-     "text": "[FIXTURE] I try to. Honestly I care a lot about someone who's curious and kind. How do you handle disagreements?"
-    },
-    {
-     "speaker": "b",
-     "text": "[FIXTURE] Hi! I'm glad we finally got to sit down. What does a perfect Sunday look like for you?"
-    },
-    {
-     "speaker": "a",
-     "text": "[FIXTURE] Building something I'm proud of, and making room for a real relationship alongside it."
-    },
-    {
-     "speaker": "b",
-     "text": "[FIXTURE] I try to. Honestly I care a lot about someone who's curious and kind. How do you handle disagreements?"
-    },
-    {
-     "speaker": "a",
-     "text": "[FIXTURE] Hi! I'm glad we finally got to sit down. What does a perfect Sunday look like for you?"
-    },
-    {
-     "speaker": "b",
-     "text": "[FIXTURE] I'd like that. Let's keep talking over dinner next week."
-    }
-   ],
-   "verdictA": {
-    "score": 38,
-    "chemistry": "[FIXTURE] synthetic",
-    "needs_met": [
-     "[FIXTURE]"
-    ],
-    "friction": [
-     "[FIXTURE]"
-    ],
-    "would_see_again": false,
-    "reason": "[FIXTURE] synthetic verdict, no model was called."
-   },
-   "verdictB": {
-    "score": 83,
-    "chemistry": "[FIXTURE] synthetic",
-    "needs_met": [
-     "[FIXTURE]"
-    ],
-    "friction": [
-     "[FIXTURE]"
-    ],
-    "would_see_again": true,
-    "reason": "[FIXTURE] synthetic verdict, no model was called."
-   },
-   "fixture": true
-  },
-  {
    "id": "p25-p22",
    "a": "p25",
    "b": "p22",
@@ -6469,6 +6413,62 @@
    },
    "verdictB": {
     "score": 78,
+    "chemistry": "[FIXTURE] synthetic",
+    "needs_met": [
+     "[FIXTURE]"
+    ],
+    "friction": [
+     "[FIXTURE]"
+    ],
+    "would_see_again": true,
+    "reason": "[FIXTURE] synthetic verdict, no model was called."
+   },
+   "fixture": true
+  },
+  {
+   "id": "p25-p23",
+   "a": "p25",
+   "b": "p23",
+   "turns": [
+    {
+     "speaker": "a",
+     "text": "[FIXTURE] I try to. Honestly I care a lot about someone who's curious and kind. How do you handle disagreements?"
+    },
+    {
+     "speaker": "b",
+     "text": "[FIXTURE] Hi! I'm glad we finally got to sit down. What does a perfect Sunday look like for you?"
+    },
+    {
+     "speaker": "a",
+     "text": "[FIXTURE] Building something I'm proud of, and making room for a real relationship alongside it."
+    },
+    {
+     "speaker": "b",
+     "text": "[FIXTURE] I try to. Honestly I care a lot about someone who's curious and kind. How do you handle disagreements?"
+    },
+    {
+     "speaker": "a",
+     "text": "[FIXTURE] Hi! I'm glad we finally got to sit down. What does a perfect Sunday look like for you?"
+    },
+    {
+     "speaker": "b",
+     "text": "[FIXTURE] I'd like that. Let's keep talking over dinner next week."
+    }
+   ],
+   "verdictA": {
+    "score": 38,
+    "chemistry": "[FIXTURE] synthetic",
+    "needs_met": [
+     "[FIXTURE]"
+    ],
+    "friction": [
+     "[FIXTURE]"
+    ],
+    "would_see_again": false,
+    "reason": "[FIXTURE] synthetic verdict, no model was called."
+   },
+   "verdictB": {
+    "score": 83,
     "chemistry": "[FIXTURE] synthetic",
     "needs_met": [
      "[FIXTURE]"
@@ -6561,6 +6561,28 @@
     "why": "[FIXTURE] synthetic triage"
    }
   ],
+  "p1": [
+   {
+    "id": "p24",
+    "score": 94,
+    "why": "[FIXTURE] synthetic triage"
+   },
+   {
+    "id": "p23",
+    "score": 93,
+    "why": "[FIXTURE] synthetic triage"
+   },
+   {
+    "id": "p22",
+    "score": 92,
+    "why": "[FIXTURE] synthetic triage"
+   },
+   {
+    "id": "p21",
+    "score": 91,
+    "why": "[FIXTURE] synthetic triage"
+   }
+  ],
   "p3": [
    {
     "id": "p9",
@@ -6605,47 +6627,25 @@
     "why": "[FIXTURE] synthetic triage"
    }
   ],
-  "p1": [
+  "p5": [
    {
-    "id": "p24",
-    "score": 94,
-    "why": "[FIXTURE] synthetic triage"
-   },
-   {
-    "id": "p23",
+    "id": "p25",
     "score": 93,
     "why": "[FIXTURE] synthetic triage"
    },
    {
+    "id": "p24",
+    "score": 92,
+    "why": "[FIXTURE] synthetic triage"
+   },
+   {
+    "id": "p23",
+    "score": 91,
+    "why": "[FIXTURE] synthetic triage"
+   },
+   {
     "id": "p22",
-    "score": 92,
-    "why": "[FIXTURE] synthetic triage"
-   },
-   {
-    "id": "p21",
-    "score": 91,
-    "why": "[FIXTURE] synthetic triage"
-   }
-  ],
-  "p7": [
-   {
-    "id": "p9",
-    "score": 92,
-    "why": "[FIXTURE] synthetic triage"
-   },
-   {
-    "id": "p8",
-    "score": 91,
-    "why": "[FIXTURE] synthetic triage"
-   },
-   {
-    "id": "p6",
-    "score": 89,
-    "why": "[FIXTURE] synthetic triage"
-   },
-   {
-    "id": "p5",
-    "score": 88,
+    "score": 90,
     "why": "[FIXTURE] synthetic triage"
    }
   ],
@@ -6671,25 +6671,25 @@
     "why": "[FIXTURE] synthetic triage"
    }
   ],
-  "p5": [
+  "p7": [
    {
-    "id": "p25",
-    "score": 93,
-    "why": "[FIXTURE] synthetic triage"
-   },
-   {
-    "id": "p24",
+    "id": "p9",
     "score": 92,
     "why": "[FIXTURE] synthetic triage"
    },
    {
-    "id": "p23",
+    "id": "p8",
     "score": 91,
     "why": "[FIXTURE] synthetic triage"
    },
    {
-    "id": "p22",
-    "score": 90,
+    "id": "p6",
+    "score": 89,
+    "why": "[FIXTURE] synthetic triage"
+   },
+   {
+    "id": "p5",
+    "score": 88,
     "why": "[FIXTURE] synthetic triage"
    }
   ],
