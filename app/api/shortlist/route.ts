@@ -16,8 +16,12 @@ export async function POST(req: Request) {
       role: "analyze", system: SHORTLIST_SYSTEM, maxTokens: 1500, temperature: 0.3,
       messages: [{ role: "user", content: `PERSON:\n${dossier(me)}\n\nCANDIDATES:\n${others.map((o) => card(o.id, o.profile)).join("\n")}\n\nPick the top ${k} (plus one wildcard included in that count).` }],
     });
-    const valid = new Set(others.map((o) => o.id));
-    const picks = (r.picks ?? []).filter((p) => valid.has(p.id)).map((p) => ({ id: p.id, score: clamp(p.score, 0, 100, 50), why: String(p.why ?? "").slice(0, 300) })).slice(0, k);
+    // Models sometimes return "[p3]", "P3" or the person's name instead of the bare id: normalise before validating.
+    const byKey = new Map<string, string>();
+    for (const o of others) { byKey.set(o.id.toLowerCase(), o.id); byKey.set(o.profile.name.toLowerCase(), o.id); }
+    const norm = (v: unknown) => byKey.get(String(v ?? "").toLowerCase().replace(/[\[\]\s]/g, "")) ?? byKey.get(String(v ?? "").toLowerCase().trim());
+    const seen = new Set<string>();
+    const picks = (r.picks ?? []).map((p) => ({ ...p, id: norm(p.id) as string })).filter((p) => p.id && !seen.has(p.id) && seen.add(p.id)).map((p) => ({ id: p.id, score: clamp(p.score, 0, 100, 50), why: String(p.why ?? "").slice(0, 300) })).slice(0, k);
     return Response.json({ picks });
   } catch (e: any) {
     return llmErrorResponse(e);

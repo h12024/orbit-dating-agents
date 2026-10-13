@@ -66,3 +66,10 @@ test("rateLimit blocks after the per-hour quota for one IP only", () => {
   assert.equal(blocked, 10); // limit is 60
   assert.equal(rateLimit(mk("8.8.8.8"), "scrape"), null);
 });
+
+test("extractJSON handles fences, trailing objects and braces inside strings", () => {
+  assert.deepEqual(extractJSON('```json\n{"a":1}\n```'), { a: 1 });
+  assert.deepEqual(extractJSON('{"a":"x}y"} {"b":2}'), { a: "x}y" });
+  assert.deepEqual(extractJSON('Here: {"picks":[{"id":"p1"}]}\nHope this helps }'), { picks: [{ id: "p1" }] });
+  assert.throws(() => extractJSON("{broken"));
+});

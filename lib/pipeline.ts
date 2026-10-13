@@ -10,7 +10,7 @@ export type Hooks = {
   log?: (m: string) => void;
 };
 export type Options = { base?: string; k?: number; rounds?: number; concurrency?: number; resume?: RunResult };
-export type RunResult = { people: Person[]; dates: DateResult[]; shortlists: Record<string, Shortlist>; halted?: string };
+export type RunResult = { people: Person[]; dates: DateResult[]; shortlists: Record<string, Shortlist>; halted?: string; errors?: number };
 
 // Daily provider quota is gone: stop scheduling work and return what we have so the run can be resumed after the reset.
 class Halt extends Error {}
@@ -35,7 +35,7 @@ async function pool<T>(items: T[], n: number, fn: (x: T) => Promise<void>, stop:
 export async function runPipeline(rows: { linkedin: string; instagram: string }[], opts: Options = {}, h: Hooks = {}): Promise<RunResult> {
   const base = opts.base ?? "", K = opts.k ?? 4, rounds = opts.rounds ?? 3, conc = opts.concurrency ?? 4;
   const say = (m: string) => h.log?.(m);
-  let halted = "";
+  let halted = "", errors = 0;
   const done = opts.resume?.people ?? [];
   // Resume keeps already-analysed people (matched by LinkedIn URL) so a quota-limited run can continue next day.
   let people: Person[] = rows.map((r, i) => done.find((d) => d.linkedin === r.linkedin && d.status === "ready") ?? ({ id: `p${i + 1}`, linkedin: r.linkedin, instagram: r.instagram, status: "queued" } as Person));
@@ -74,7 +74,7 @@ export async function runPipeline(rows: { linkedin: string; instagram: string }[
       const { picks } = await post<{ picks: Shortlist }>(base, "/api/shortlist", { me: p.profile, others: good.filter((o) => o.id !== p.id).map((o) => ({ id: o.id, profile: o.profile })), k: K });
       shortlists[p.id] = picks; h.shortlists?.({ ...shortlists });
       say(`${p.profile!.name} wants to meet: ${picks.map((x) => good.find((q) => q.id === x.id)?.profile?.name).join(", ")}`);
-    } catch (e: any) { if (e instanceof Halt) { halted = e.message; say(`HALT: ${e.message}`); return; } say(`Triage failed for ${p.id}: ${e.message}`); }
+    } catch (e: any) { if (e instanceof Halt) { halted = e.message; say(`HALT: ${e.message}`); return; } errors++; say(`Triage failed for ${p.id}: ${e.message}`); }
   }, () => !!halted);
 
   const pairs = new Map<string, [string, string]>();
@@ -88,8 +88,8 @@ export async function runPipeline(rows: { linkedin: string; instagram: string }[
       const r = await post<Omit<DateResult, "id" | "a" | "b">>(base, "/api/date", { a: pa, b: pb, rounds });
       dates = [...dates, { id: `${a}-${b}`, a, b, ...r }]; h.dates?.(dates);
       say(`Date done: ${pa.name} x ${pb.name} -> ${r.verdictA.score}/${r.verdictB.score}`);
-    } catch (e: any) { if (e instanceof Halt) { halted = e.message; say(`HALT: ${e.message}`); return; } say(`Date failed ${pa.name} x ${pb.name}: ${e.message}`); }
+    } catch (e: any) { if (e instanceof Halt) { halted = e.message; say(`HALT: ${e.message}`); return; } errors++; say(`Date failed ${pa.name} x ${pb.name}: ${e.message}`); }
   }, () => !!halted);
   h.stage?.("done"); say(halted ? `Stopped early: ${halted}` : "All dates complete. Rankings ready.");
-  return { people, dates, shortlists, halted: halted || undefined };
+  return { people, dates, shortlists, halted: halted || undefined, errors };
 }

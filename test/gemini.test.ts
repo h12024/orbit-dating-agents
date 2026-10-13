@@ -61,3 +61,9 @@ test("invalid key surfaces Google's message; missing key fails before any reques
   delete process.env.GEMINI_API_KEY;
   await assert.rejects(askGemini("m-nokey", opts), /GEMINI_API_KEY is not set/);
 });
+
+test("MALFORMED_RESPONSE with no text is retried, not fatal", () =>
+  withStub((_s, n) => (n === 1 ? { status: 200, body: { candidates: [{ finishReason: "MALFORMED_RESPONSE" }] } } : reply("recovered")), async (s) => {
+    assert.equal(await askGemini("m-malformed", opts), "recovered");
+    assert.equal(s.seen.length, 2);
+  }));

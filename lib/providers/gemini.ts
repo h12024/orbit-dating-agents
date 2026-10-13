@@ -38,17 +38,27 @@ export async function askGemini(model: string, o: CallOpts): Promise<string> {
       },
     };
     await gate(model);
-    const res = await fetch(`${base}/models/${encodeURIComponent(model)}:generateContent`, {
-      method: "POST", headers: { "content-type": "application/json", "x-goog-api-key": key }, body: JSON.stringify(body), signal: AbortSignal.timeout(50_000),
-    });
-    const raw = await res.text();
+    const timeoutMs = Number(process.env.GEMINI_TIMEOUT_MS) || 55_000;
+    let res: Response, raw: string;
+    try {
+      res = await fetch(`${base}/models/${encodeURIComponent(model)}:generateContent`, {
+        method: "POST", headers: { "content-type": "application/json", "x-goog-api-key": key }, body: JSON.stringify(body), signal: AbortSignal.timeout(timeoutMs),
+      });
+      raw = await res.text();
+    } catch (e: any) {
+      if (attempt < 2) { await sleep(2000 * (attempt + 1)); continue; } // a slow/overloaded model: try again before giving up
+      throw new Error(`Gemini ${model} timed out after ${Math.round(timeoutMs / 1000)}s (${e.name === "TimeoutError" ? "overloaded or slow" : e.message}); raise GEMINI_TIMEOUT_MS or choose a faster model`);
+    }
 
     if (res.ok) {
       const data = JSON.parse(raw);
       const cand = data.candidates?.[0];
       if (!cand) throw new Error(`Gemini returned no candidate${data.promptFeedback?.blockReason ? ` (prompt blocked: ${data.promptFeedback.blockReason})` : ""}`);
       const text = (cand.content?.parts ?? []).filter((p: any) => !p.thought).map((p: any) => p.text ?? "").join("").trim();
-      if (!text) throw new Error(`Gemini returned empty text (finishReason: ${cand.finishReason ?? "unknown"})`);
+      if (!text) {
+        if (attempt < 3 && /MALFORMED|OTHER|UNEXPECTED/.test(cand.finishReason ?? "")) { await sleep(1000 * (attempt + 1)); continue; } // transient model glitch
+        throw new Error(`Gemini returned empty text (finishReason: ${cand.finishReason ?? "unknown"})`);
+      }
       return text;
     }
     if (res.status === 400 && thinking && /thinking/i.test(raw)) { noThinking.add(model); continue; }
@@ -58,7 +68,7 @@ export async function askGemini(model: string, o: CallOpts): Promise<string> {
       if (attempt >= 3 || wait > 60_000) throw new QuotaError(`Gemini rate limit hit for ${model} (retry in ~${Math.round(wait / 1000)}s)`, "rate");
       await sleep(wait + 500); continue;
     }
-    if (res.status >= 500 && attempt < 3) { await sleep(1500 * (attempt + 1)); continue; }
+    if (res.status >= 500 && attempt < 4) { await sleep(3000 * (attempt + 1)); continue; } // 503 "high demand" spikes are usually brief
     let msg = raw.slice(0, 200);
     try { msg = JSON.parse(raw).error?.message ?? msg; } catch {}
     throw new Error(`Gemini API ${res.status}: ${msg}`);
