@@ -71,6 +71,8 @@ npm run build
 ```
 
 ## Deploy (Vercel)
+See `docs/DEPLOY.md` and `scripts/deploy-vercel.sh` (preflight by default; deploys only with `--confirm`).
+
 ```
 npx vercel login                      # browser login, once
 npx vercel link

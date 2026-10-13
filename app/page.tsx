@@ -7,7 +7,7 @@ import { runPipeline, type Stage } from "@/lib/pipeline";
 
 type Tab = "profiles" | "dates" | "rankings";
 type Kind = "live" | "fixture";
-type Health = { mode: Kind; provider: string; keyVar: string; configured: boolean; models: Record<string, string>; apify: boolean };
+type Health = { mode: Kind; provider: string; keyVar: string; configured: boolean; models: Record<string, string>; apify: boolean; maxPeople: number };
 
 export default function Home() {
   const [raw, setRaw] = useState("");
@@ -34,6 +34,7 @@ export default function Home() {
   const bad = parsed.filter((p) => !p.linkedin || !p.instagram);
   const ready = people.filter((p) => p.status === "ready");
   const busy = stage !== "idle" && stage !== "done";
+  const max = health?.maxPeople ?? 30;
 
   async function run() {
     setNotice(""); setKind(health?.mode ?? "live"); setDates([]); setShortlists({}); setLog([]); setTab("profiles"); setSelPerson(null); setSelDate(null);
@@ -42,6 +43,7 @@ export default function Home() {
       people: setPeople, dates: setDates, shortlists: setShortlists, plan: (total) => { setDatePlan({ total }); setTab("dates"); }, log: say,
       stage: (s) => { setStage(s); if (s === "done") setTab("rankings"); },
     });
+    if (res.halted) setNotice(`Run stopped early: ${res.halted} Nothing was lost: try again later, or open the finished demo to see a complete run.`);
     if (!res.dates.length) setTab("profiles");
   }
 
@@ -74,13 +76,13 @@ export default function Home() {
       {health && health.mode === "live" && health.configured && !health.apify && <div className="card status">APIFY_TOKEN not set: scraping falls back to public page meta tags only (thin data, profiles will be low confidence).</div>}
 
       <div className="card">
-        <div className="lbl" style={{ marginTop: 0 }}>One person per line: LinkedIn URL, Instagram URL ({valid.length} valid, max 30)</div>
+        <div className="lbl" style={{ marginTop: 0 }}>One person per line: LinkedIn URL, Instagram URL ({valid.length} valid, max {max})</div>
         <textarea rows={7} value={raw} onChange={(e) => setRaw(e.target.value)} disabled={busy}
           placeholder={"https://www.linkedin.com/in/someone, https://www.instagram.com/someone\nhttps://www.linkedin.com/in/other, https://www.instagram.com/other"} />
         {notice && <p className="err">{notice}</p>}
         {bad.length > 0 && <p className="err">Line {bad.map((b) => b.line).join(", ")}: needs both a LinkedIn and an Instagram URL.</p>}
         <div className="row" style={{ marginTop: 12 }}>
-          <button onClick={run} disabled={valid.length < 2 || valid.length > 30 || busy}>Send the agents out</button>
+          <button onClick={run} disabled={valid.length < 2 || valid.length > max || busy}>Send the agents out</button>
           <button className="ghost" onClick={() => loadDemo("demo.json")} disabled={busy}>Load finished demo</button>
           <button className="ghost" onClick={() => loadDemo("fixture-demo.json")} disabled={busy}>Load fixture demo (synthetic)</button>
           {people.length > 0 && <button className="ghost" onClick={exportJson}>Export run (JSON)</button>}
