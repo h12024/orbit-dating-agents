@@ -1,11 +1,11 @@
 import type { Scraped } from "./types";
+import { instagramUsername, linkedinUsername } from "./guard";
+import { isFixture } from "./fixtures";
 
 const TOKEN = () => process.env.APIFY_TOKEN;
 const LI_ACTOR = () => process.env.APIFY_LINKEDIN_ACTOR || "apimaestro~linkedin-profile-detail";
 const IG_ACTOR = () => process.env.APIFY_INSTAGRAM_ACTOR || "apify~instagram-profile-scraper";
 
-export const linkedinUsername = (url: string) => url.match(/linkedin\.com\/in\/([^/?#]+)/i)?.[1] ?? null;
-export const instagramUsername = (url: string) => url.match(/instagram\.com\/([^/?#]+)/i)?.[1] ?? null;
 
 async function apify(actor: string, input: unknown): Promise<any[]> {
   const res = await fetch(
@@ -28,7 +28,8 @@ function compact(obj: unknown, limit: number): string {
 }
 
 async function metaFallback(url: string): Promise<string> {
-  const res = await fetch(url, { headers: { "user-agent": "Mozilla/5.0 (compatible; facebookexternalhit/1.1)" }, redirect: "follow" });
+  const res = await fetch(url, { headers: { "user-agent": "Mozilla/5.0 (compatible; facebookexternalhit/1.1)" }, redirect: "follow", signal: AbortSignal.timeout(15000) });
+  if (res.status === 999 || res.status === 429) throw new Error(`Blocked by platform (HTTP ${res.status}); set APIFY_TOKEN to scrape reliably`);
   const html = await res.text();
   const pick = (p: string) => html.match(new RegExp(`<meta[^>]+(?:property|name)="${p}"[^>]+content="([^"]*)"`, "i"))?.[1] ?? "";
   const dec = (t: string) => t.replace(/&#x([0-9a-f]+);/gi, (_, h) => String.fromCodePoint(parseInt(h, 16))).replace(/&#(\d+);/g, (_, d) => String.fromCodePoint(+d)).replace(/&amp;/g, "&").replace(/&quot;/g, '"');
@@ -38,12 +39,13 @@ async function metaFallback(url: string): Promise<string> {
 export async function scrapeLinkedIn(url: string): Promise<Scraped["linkedin"]> {
   const username = linkedinUsername(url);
   if (!username) return { ok: false, source: "none", text: "", error: "Not a linkedin.com/in/ URL" };
+  if (isFixture()) return { ok: true, source: "fixture", text: `[FIXTURE] synthetic LinkedIn text for linkedin.com/in/${username}` };
   try {
     if (TOKEN()) {
-      const items = await apify(LI_ACTOR(), { username, url });
+      const items = await apify(LI_ACTOR(), { username });
       if (items[0]) return { ok: true, source: "apify:linkedin", text: compact(items[0], 9000) };
     }
-    const text = await metaFallback(url);
+    const text = await metaFallback(`https://www.linkedin.com/in/${username}/`);
     if (text) return { ok: true, source: "og-meta", text };
     return { ok: false, source: "none", text: "", error: "LinkedIn returned nothing (set APIFY_TOKEN)" };
   } catch (e: any) {
@@ -54,6 +56,7 @@ export async function scrapeLinkedIn(url: string): Promise<Scraped["linkedin"]> 
 export async function scrapeInstagram(url: string): Promise<Scraped["instagram"]> {
   const username = instagramUsername(url);
   if (!username) return { ok: false, source: "none", text: "", error: "Not an instagram.com URL" };
+  if (isFixture()) return { ok: true, source: "fixture", text: `[FIXTURE] synthetic Instagram text for @${username}` };
   try {
     if (TOKEN()) {
       const items = await apify(IG_ACTOR(), { usernames: [username] });

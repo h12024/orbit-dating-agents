@@ -1,12 +1,16 @@
 import { DATE_MODEL, ask, askJSON } from "@/lib/llm";
 import { VERDICT_SYSTEM, agentSystem, transcript, verdictUser } from "@/lib/prompts";
-import type { Profile, Turn, Verdict } from "@/lib/types";
+import { clamp, cleanProfile, rateLimit, readBody } from "@/lib/guard";
+import type { Turn, Verdict } from "@/lib/types";
 export const maxDuration = 60;
 
 // One date = two real agents taking alternating turns, each grounded only in its own principal's dossier,
 // followed by two independent private debriefs. Agent A always opens.
 export async function POST(req: Request) {
-  const { a, b, rounds = 3 } = (await req.json()) as { a: Profile; b: Profile; rounds?: number };
+  const limited = rateLimit(req, "date"); if (limited) return limited;
+  const body = await readBody(req); if (body instanceof Response) return body;
+  const a = cleanProfile(body.a), b = cleanProfile(body.b), rounds = clamp(body.rounds, 1, 4, 3);
+  if (!a || !b) return Response.json({ error: "Two profiled people are required" }, { status: 400 });
   try {
     const turns: Turn[] = [];
     for (let i = 0; i < rounds * 2; i++) {
@@ -24,7 +28,8 @@ export async function POST(req: Request) {
       askJSON<Verdict>({ model: DATE_MODEL, system: VERDICT_SYSTEM, maxTokens: 500, temperature: 0.2, messages: [{ role: "user", content: verdictUser(a, b, tx) }] }),
       askJSON<Verdict>({ model: DATE_MODEL, system: VERDICT_SYSTEM, maxTokens: 500, temperature: 0.2, messages: [{ role: "user", content: verdictUser(b, a, tx) }] }),
     ]);
-    return Response.json({ turns, verdictA, verdictB });
+    const fix = (v: Verdict): Verdict => ({ score: clamp(v.score, 0, 100, 50), chemistry: String(v.chemistry ?? "").slice(0, 300), needs_met: (v.needs_met ?? []).slice(0, 8).map(String), friction: (v.friction ?? []).slice(0, 8).map(String), would_see_again: !!v.would_see_again, reason: String(v.reason ?? "").slice(0, 600) });
+    return Response.json({ turns, verdictA: fix(verdictA), verdictB: fix(verdictB), fixture: process.env.LLM_MODE === "fixture" });
   } catch (e: any) {
     return Response.json({ error: e.message }, { status: 500 });
   }

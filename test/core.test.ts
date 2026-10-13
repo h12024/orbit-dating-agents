@@ -31,3 +31,38 @@ test("extractJSON tolerates prose around the object", () => {
   assert.deepEqual(extractJSON('Sure!\n{"a":1}\nthanks'), { a: 1 });
   assert.throws(() => extractJSON("no json"));
 });
+
+import { cleanProfile, clamp, instagramUsername, linkedinUsername, rateLimit } from "../lib/guard.ts";
+
+test("URL validators accept real profile URLs and reject SSRF-style input", () => {
+  assert.equal(linkedinUsername("https://www.linkedin.com/in/simonsinek/"), "simonsinek");
+  assert.equal(instagramUsername("https://www.instagram.com/garyvee/"), "garyvee");
+  for (const bad of ["http://localhost:3000/in/x", "https://evil.com/?u=linkedin.com/in/abc", "https://linkedin.com.evil.com/in/abc", "https://169.254.169.254/", "https://www.linkedin.com/in/a/../../x", 5 as any])
+    assert.equal(linkedinUsername(bad), null, String(bad));
+  assert.equal(instagramUsername("https://instagram.com.evil.com/x"), null);
+  assert.equal(instagramUsername("https://www.instagram.com/" + "a".repeat(40)), null);
+});
+
+test("cleanProfile rejects junk and truncates oversized fields", () => {
+  assert.equal(cleanProfile(null), null);
+  assert.equal(cleanProfile({ name: "" }), null);
+  const p = cleanProfile({ name: "A", summary: "x".repeat(99999), hobbies: Array(100).fill("h"), confidence: "bogus" })!;
+  assert.equal(p.summary.length, 1200);
+  assert.equal(p.hobbies.length, 12);
+  assert.equal(p.confidence, "low");
+  assert.deepEqual(p.needs, []);
+});
+
+test("clamp bounds numbers and falls back for non-numbers", () => {
+  assert.equal(clamp(99, 1, 4, 3), 4);
+  assert.equal(clamp("x", 1, 4, 3), 3);
+  assert.equal(clamp(NaN, 1, 4, 3), 3);
+});
+
+test("rateLimit blocks after the per-hour quota for one IP only", () => {
+  const mk = (ip: string) => new Request("http://x/api", { headers: { "x-forwarded-for": ip } });
+  let blocked = 0;
+  for (let i = 0; i < 70; i++) if (rateLimit(mk("9.9.9.9"), "scrape")) blocked++;
+  assert.equal(blocked, 10); // limit is 60
+  assert.equal(rateLimit(mk("8.8.8.8"), "scrape"), null);
+});
