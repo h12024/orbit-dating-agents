@@ -4,10 +4,10 @@
   "linkedin": {
    "url": "https://www.linkedin.com/in/adammgrant/",
    "status": "verified",
-   "http": 200,
-   "page_title": "Adam Grant - Penguin Publishing Group | LinkedIn",
-   "page_desc": "Recognized as Wharton&#39;s top-rated professor, the world&#39;s #2 most influential management… · Experience: Penguin Publishing Group · Education: Harvard Uni",
-   "checked_at": "2026-10-13T20:03:34.965Z"
+   "method": "apify:harvestapi/linkedin-profile-scraper",
+   "page_title": "Adam Grant - Organizational psychologist at Wharton, #1 NYT bestselling author of THINK AGAIN, host of the TED po",
+   "page_desc": "followers: 5647237",
+   "checked_at": "2026-10-13T21:25:51.812Z"
   },
   "instagram": {
    "url": "https://www.instagram.com/adamgrant/",
@@ -24,10 +24,10 @@
   "linkedin": {
    "url": "https://www.linkedin.com/in/shettyjay/",
    "status": "verified",
-   "http": 200,
-   "page_title": "Jay Shetty - Juni Adaptogenic Sparkling Tea | LinkedIn",
-   "page_desc": "Jay Shetty, a global bestselling author, award-winning podcast host of On Purpose, and… · Experience: Juni Adaptogenic Sparkling Tea · Education: Cass Business ",
-   "checked_at": "2026-10-13T20:03:37.754Z"
+   "method": "apify:harvestapi/linkedin-profile-scraper",
+   "page_title": "Jay Shetty - Storyteller, Podcaster & Former Monk | Chief Purpose Officer at Calm",
+   "page_desc": "followers: 763687",
+   "checked_at": "2026-10-13T21:25:51.812Z"
   },
   "instagram": {
    "url": "https://www.instagram.com/jayshetty/",
@@ -44,10 +44,10 @@
   "linkedin": {
    "url": "https://www.linkedin.com/in/warikoo/",
    "status": "verified",
-   "http": 200,
-   "page_title": "Ankur Warikoo - Monzy.co | LinkedIn",
-   "page_desc": "My overarching mission is to empower people to make choices in life from a point of… · Experience: Monzy.co · Education: Indian School of Business · Location: I",
-   "checked_at": "2026-10-13T20:03:43.175Z"
+   "method": "apify:harvestapi/linkedin-profile-scraper",
+   "page_title": "Ankur Warikoo - Founder @WebVeda, @IndiaGeniusChallenge @Monzy • 6X Bestselling Author • 16M+ community",
+   "page_desc": "followers: 2640344",
+   "checked_at": "2026-10-13T21:25:51.812Z"
   },
   "instagram": {
    "url": "https://www.instagram.com/ankurwarikoo/",
@@ -64,10 +64,10 @@
   "linkedin": {
    "url": "https://www.linkedin.com/in/melrobbins/",
    "status": "verified",
-   "http": 200,
-   "page_title": "Mel Robbins - Pure Genius Protein | LinkedIn",
-   "page_desc": "Mel Robbins is the creator and host of the award-winning The Mel Robbins Podcast, one of… · Experience: Pure Genius Protein · Location: Greater Boston · 500+ co",
-   "checked_at": "2026-10-13T20:03:46.598Z"
+   "method": "apify:harvestapi/linkedin-profile-scraper",
+   "page_title": "Mel Robbins - #1 NYT Best Selling Author of The Let Them Theory | Host of Award-Winning The Mel Robbins Podcast | ",
+   "page_desc": "followers: 1833298",
+   "checked_at": "2026-10-13T21:25:51.812Z"
   },
   "instagram": {
    "url": "https://www.instagram.com/melrobbins/",
@@ -84,10 +84,10 @@
   "linkedin": {
    "url": "https://www.linkedin.com/in/simonsinek/",
    "status": "verified",
-   "http": 200,
-   "page_title": "Simon Sinek - The Curve | LinkedIn",
-   "page_desc": "Simon Sinek is an unshakable optimist who believes in a bright future and our ability to… · Experience: The Curve · Location: New York · 56 connections on Linke",
-   "checked_at": "2026-10-13T20:03:49.517Z"
+   "method": "apify:harvestapi/linkedin-profile-scraper",
+   "page_title": "Simon Sinek - Optimist, New York Times bestselling author of \"Start with Why\" and \"The Infinite Game\", and founder",
+   "page_desc": "followers: 9084431",
+   "checked_at": "2026-10-13T21:25:51.812Z"
   },
   "instagram": {
    "url": "https://www.instagram.com/simonsinek/",
@@ -104,10 +104,10 @@
   "linkedin": {
    "url": "https://www.linkedin.com/in/brenebrown/",
    "status": "verified",
-   "http": 200,
-   "page_title": "Brené Brown - The University of Texas at Austin - Red McCombs School of Business | LinkedIn",
-   "page_desc": "Brené Brown is a research professor at the University of Houston, where she holds the… · Experience: The University of Texas at Austin - Red McCombs School of B",
-   "checked_at": "2026-10-13T20:03:52.604Z"
+   "method": "apify:harvestapi/linkedin-profile-scraper",
+   "page_title": "Brené Brown - University of Houston + University of Texas at Austin | Researcher. Storyteller. Courage-builder. ",
+   "page_desc": "followers: 5004179",
+   "checked_at": "2026-10-13T21:25:51.812Z"
   },
   "instagram": {
    "url": "https://www.instagram.com/brenebrown/",
@@ -124,10 +124,10 @@
   "linkedin": {
    "url": "https://www.linkedin.com/in/garyvaynerchuk/",
    "status": "verified",
-   "http": 200,
-   "page_title": "Gary Vaynerchuk - VaynerX  | LinkedIn",
-   "page_desc": "Gary Vaynerchuk is a serial entrepreneur and serves as the Chairman of VaynerX, the CEO… · Experience: VaynerX  · Location: New York · 500+ connections on Linke",
-   "checked_at": "2026-10-13T20:03:55.404Z"
+   "method": "apify:harvestapi/linkedin-profile-scraper",
+   "page_title": "Gary Vaynerchuk - Chairman – VaynerX, CEO – VaynerMedia, Creator – VeeFriends",
+   "page_desc": "followers: 6050070",
+   "checked_at": "2026-10-13T21:25:51.812Z"
   },
   "instagram": {
    "url": "https://www.instagram.com/garyvee/",
@@ -144,10 +144,10 @@
   "linkedin": {
    "url": "https://www.linkedin.com/in/ariannahuffington/",
    "status": "verified",
-   "http": 200,
-   "page_title": "Arianna Huffington - Thrive Global | LinkedIn",
-   "page_desc": "I’m the founder and CEO of Thrive Global, a behavior change technology company with the… · Experience: Thrive Global · Education: Cambridge University · Locatio",
-   "checked_at": "2026-10-13T20:03:58.878Z"
+   "method": "apify:harvestapi/linkedin-profile-scraper",
+   "page_title": "Arianna Huffington - Founder and CEO at Thrive Global | Passionate about Health and AI",
+   "page_desc": "followers: 9598946",
+   "checked_at": "2026-10-13T21:25:51.812Z"
   },
   "instagram": {
    "url": "https://www.instagram.com/ariannahuff/",
@@ -163,9 +163,11 @@
   "name": "Richard Branson",
   "linkedin": {
    "url": "https://www.linkedin.com/in/rbranson/",
-   "status": "unverified",
-   "note": "apify returned no profile for slug \"rbranson\"",
-   "checked_at": "2026-10-13T21:03:33.949Z"
+   "status": "verified",
+   "method": "apify:harvestapi/linkedin-profile-scraper",
+   "page_title": "Richard Branson - Founder at Virgin Group",
+   "page_desc": "followers: 18645087",
+   "checked_at": "2026-10-13T21:25:51.812Z"
   },
   "instagram": {
    "url": "https://www.instagram.com/richardbranson/",
@@ -175,17 +177,17 @@
    "page_desc": "5M Followers, 519 Following, 4,646 Posts - See Instagram photos and videos from Richard Branson (@richardbranson)",
    "checked_at": "2026-10-13T20:04:03.578Z"
   },
-  "both_verified": false
+  "both_verified": true
  },
  {
   "name": "Reid Hoffman",
   "linkedin": {
    "url": "https://www.linkedin.com/in/reidhoffman/",
    "status": "verified",
-   "http": 200,
-   "page_title": "Reid Hoffman - Manas AI | LinkedIn",
-   "page_desc": "My current priority is investing in and building with AI to benefit humanity.  Recently… · Experience: Manas AI · Education: Università degli Studi di Perugia ·",
-   "checked_at": "2026-10-13T20:04:06.634Z"
+   "method": "apify:harvestapi/linkedin-profile-scraper",
+   "page_title": "Reid Hoffman - Co-Founder, LinkedIn, Manas AI & Inflection AI. Founding Team, PayPal.  Author of Superagency.  Podc",
+   "page_desc": "followers: 2796764",
+   "checked_at": "2026-10-13T21:25:51.812Z"
   },
   "instagram": {
    "url": "https://www.instagram.com/reidhoffman/",
@@ -201,9 +203,11 @@
   "name": "Sara Blakely",
   "linkedin": {
    "url": "https://www.linkedin.com/in/sarablakely27/",
-   "status": "unverified",
-   "note": "apify returned no profile for slug \"sarablakely27\"",
-   "checked_at": "2026-10-13T21:03:35.723Z"
+   "status": "verified",
+   "method": "apify:harvestapi/linkedin-profile-scraper",
+   "page_title": "Sara Blakely - Founder and Inventor of Spanx & Sneex",
+   "page_desc": "followers: 2341271",
+   "checked_at": "2026-10-13T21:25:51.812Z"
   },
   "instagram": {
    "url": "https://www.instagram.com/sarablakely/",
@@ -213,17 +217,17 @@
    "page_desc": "1M Followers, 484 Following, 1,577 Posts - See Instagram photos and videos from Sara Blakely (@sarablakely)",
    "checked_at": "2026-10-13T20:04:10.831Z"
   },
-  "both_verified": false
+  "both_verified": true
  },
  {
   "name": "Daymond John",
   "linkedin": {
    "url": "https://www.linkedin.com/in/daymondjohn/",
    "status": "verified",
-   "http": 200,
-   "page_title": "Daymond John - ABC Television | LinkedIn",
-   "page_desc": "From humble beginnings to a self-made multimillionaire with over $6 billion to date in… · Experience: ABC Television · Education: FUBU Foundation · Location: Ne",
-   "checked_at": "2026-10-13T20:04:13.194Z"
+   "method": "apify:harvestapi/linkedin-profile-scraper",
+   "page_title": "Daymond John - CEO of FUBU and The Shark Group, TV Personality on ABC Shark Tank, Public Speaker",
+   "page_desc": "followers: 2720467",
+   "checked_at": "2026-10-13T21:25:51.812Z"
   },
   "instagram": {
    "url": "https://www.instagram.com/thesharkdaymond/",
@@ -240,10 +244,10 @@
   "linkedin": {
    "url": "https://www.linkedin.com/in/timferriss/",
    "status": "verified",
-   "method": "apify:linkedin-profile-detail",
+   "method": "apify:harvestapi/linkedin-profile-scraper",
    "page_title": "Tim Ferriss - Author of 5 #1 NYT/WSJ bestsellers, early-stage investor, Tim Ferriss Show podcast (1B+ downloads), ",
    "page_desc": "followers: 1539102",
-   "checked_at": "2026-10-13T21:00:59.863Z"
+   "checked_at": "2026-10-13T21:25:51.812Z"
   },
   "instagram": {
    "url": "https://www.instagram.com/timferriss/",
@@ -260,10 +264,10 @@
   "linkedin": {
    "url": "https://www.linkedin.com/in/nyassin/",
    "status": "verified",
-   "method": "apify:linkedin-profile-detail",
+   "method": "apify:harvestapi/linkedin-profile-scraper",
    "page_title": "Nuseir Yassin - CEO at Nas Company",
    "page_desc": "followers: 215420",
-   "checked_at": "2026-10-13T21:01:03.783Z"
+   "checked_at": "2026-10-13T21:25:51.812Z"
   },
   "instagram": {
    "url": "https://www.instagram.com/nasdaily/",
@@ -280,10 +284,10 @@
   "linkedin": {
    "url": "https://www.linkedin.com/in/alexhormozi/",
    "status": "verified",
-   "method": "apify:linkedin-profile-detail",
+   "method": "apify:harvestapi/linkedin-profile-scraper",
    "page_title": "Alex Hormozi - Founder Acquisition.com x Co-Founder Skool.com. Get your free scaling roadmap👇",
-   "page_desc": "followers: 1070764",
-   "checked_at": "2026-10-13T21:01:08.986Z"
+   "page_desc": "followers: 1070782",
+   "checked_at": "2026-10-13T21:25:51.812Z"
   },
   "instagram": {
    "url": "https://www.instagram.com/hormozi/",
@@ -299,9 +303,11 @@
   "name": "Sheryl Sandberg",
   "linkedin": {
    "url": "https://www.linkedin.com/in/sheryl-sandberg-5126652/",
-   "status": "unverified",
-   "note": "apify returned no profile for slug \"sheryl-sandberg-5126652\"",
-   "checked_at": "2026-10-13T21:03:39.530Z"
+   "status": "verified",
+   "method": "apify:harvestapi/linkedin-profile-scraper",
+   "page_title": "Sheryl Sandberg - Founder, Lean In",
+   "page_desc": "followers: 107823",
+   "checked_at": "2026-10-13T21:25:51.812Z"
   },
   "instagram": {
    "url": "https://www.instagram.com/sherylsandberg/",
@@ -311,17 +317,17 @@
    "page_desc": "1M Followers, 2,091 Following, 1,620 Posts - See Instagram photos and videos from Sheryl Sandberg (@sherylsandberg)",
    "checked_at": "2026-10-13T20:04:30.467Z"
   },
-  "both_verified": false
+  "both_verified": true
  },
  {
   "name": "Nikhil Kamath",
   "linkedin": {
    "url": "https://www.linkedin.com/in/nikhilkamathcio/",
    "status": "verified",
-   "method": "apify:linkedin-profile-detail",
+   "method": "apify:harvestapi/linkedin-profile-scraper",
    "page_title": "Nikhil Kamath - Investor & Entrepreneur",
-   "page_desc": "followers: 1726949",
-   "checked_at": "2026-10-13T21:01:18.607Z"
+   "page_desc": "followers: 1726953",
+   "checked_at": "2026-10-13T21:25:51.812Z"
   },
   "instagram": {
    "url": "https://www.instagram.com/nikhilkamathcio/",
@@ -338,10 +344,10 @@
   "linkedin": {
    "url": "https://www.linkedin.com/in/vusithembekwayo/",
    "status": "verified",
-   "method": "apify:linkedin-profile-detail",
+   "method": "apify:harvestapi/linkedin-profile-scraper",
    "page_title": "Vusi Thembekwayo - Venture Investor & Operator.  I’ve spent 2 decades scaling businesses across 4 continents. 3x Best-S",
-   "page_desc": "followers: 1052350",
-   "checked_at": "2026-10-13T21:01:23.445Z"
+   "page_desc": "followers: 1052353",
+   "checked_at": "2026-10-13T21:25:51.812Z"
   },
   "instagram": {
    "url": "https://www.instagram.com/vusithembekwayo/",
@@ -358,10 +364,10 @@
   "linkedin": {
    "url": "https://www.linkedin.com/in/satyanadella/",
    "status": "verified",
-   "method": "apify:linkedin-profile-detail",
+   "method": "apify:harvestapi/linkedin-profile-scraper",
    "page_title": "Satya Nadella - Chairman and CEO at Microsoft",
-   "page_desc": "followers: 12223905",
-   "checked_at": "2026-10-13T21:01:28.262Z"
+   "page_desc": "followers: 12223924",
+   "checked_at": "2026-10-13T21:25:51.812Z"
   },
   "instagram": {
    "url": "https://www.instagram.com/satyanadella/",
@@ -378,10 +384,10 @@
   "linkedin": {
    "url": "https://www.linkedin.com/in/melindagates/",
    "status": "verified",
-   "method": "apify:linkedin-profile-detail",
+   "method": "apify:harvestapi/linkedin-profile-scraper",
    "page_title": "Melinda French Gates - Founder of Pivotal. Co-founder of the Gates Foundation. Author of The Moment of Lift & The Next Day.",
-   "page_desc": "followers: 6723287",
-   "checked_at": "2026-10-13T21:01:33.428Z"
+   "page_desc": "followers: 6723292",
+   "checked_at": "2026-10-13T21:25:51.812Z"
   },
   "instagram": {
    "url": "https://www.instagram.com/melindafrenchgates/",
@@ -416,10 +422,10 @@
   "linkedin": {
    "url": "https://www.linkedin.com/in/neilkpatel/",
    "status": "verified",
-   "method": "apify:linkedin-profile-detail",
+   "method": "apify:harvestapi/linkedin-profile-scraper",
    "page_title": "Neil Patel - Co-Founder at Neil Patel Digital",
-   "page_desc": "followers: 833370",
-   "checked_at": "2026-10-13T21:01:41.864Z"
+   "page_desc": "followers: 833371",
+   "checked_at": "2026-10-13T21:25:51.812Z"
   },
   "instagram": {
    "url": "https://www.instagram.com/neilpatel/",
@@ -436,10 +442,10 @@
   "linkedin": {
    "url": "https://www.linkedin.com/in/kevinolearytv/",
    "status": "verified",
-   "method": "apify:linkedin-profile-detail",
+   "method": "apify:harvestapi/linkedin-profile-scraper",
    "page_title": "Kevin O'Leary - Chairman, O’Leary Ventures and Beanstox",
-   "page_desc": "followers: 4614301",
-   "checked_at": "2026-10-13T21:01:46.163Z"
+   "page_desc": "followers: 4614310",
+   "checked_at": "2026-10-13T21:25:51.812Z"
   },
   "instagram": {
    "url": "https://www.instagram.com/kevinolearytv/",
@@ -492,10 +498,10 @@
   "linkedin": {
    "url": "https://www.linkedin.com/in/williamhgates/",
    "status": "verified",
-   "method": "apify:linkedin-profile-detail",
+   "method": "apify:harvestapi/linkedin-profile-scraper",
    "page_title": "Bill Gates - Chair, Gates Foundation and Founder, Breakthrough Energy",
-   "page_desc": "followers: 40727930",
-   "checked_at": "2026-10-13T21:01:59.029Z"
+   "page_desc": "followers: 40727938",
+   "checked_at": "2026-10-13T21:25:51.812Z"
   },
   "instagram": {
    "url": "https://www.instagram.com/thisisbillgates/",
@@ -512,10 +518,10 @@
   "linkedin": {
    "url": "https://www.linkedin.com/in/sundarpichai/",
    "status": "verified",
-   "method": "apify:linkedin-profile-detail",
-   "page_title": "Sundar  Pichai - CEO at Google",
-   "page_desc": "followers: 5489485",
-   "checked_at": "2026-10-13T21:02:02.761Z"
+   "method": "apify:harvestapi/linkedin-profile-scraper",
+   "page_title": "Sundar  Pichai  - CEO at Google",
+   "page_desc": "followers: 5489608",
+   "checked_at": "2026-10-13T21:25:51.812Z"
   },
   "instagram": {
    "url": "https://www.instagram.com/sundarpichai/",
@@ -549,9 +555,11 @@
   "name": "Justin Welsh",
   "linkedin": {
    "url": "https://www.linkedin.com/in/justinwelsh/",
-   "status": "unverified",
-   "note": "apify returned no profile for slug \"justinwelsh\"",
-   "checked_at": "2026-10-13T21:03:48.172Z"
+   "status": "verified",
+   "method": "apify:harvestapi/linkedin-profile-scraper",
+   "page_title": "Justin Welsh - Writer & Entrepreneur. I write The Saturday Essay for 200,000+ ambitious people living and working o",
+   "page_desc": "followers: 885382",
+   "checked_at": "2026-10-13T21:25:51.812Z"
   },
   "instagram": {
    "url": "https://www.instagram.com/thejustinwelsh/",
@@ -561,15 +569,17 @@
    "page_desc": "97K Followers, 1,171 Following, 1,468 Posts - See Instagram photos and videos from Justin Welsh (@thejustinwelsh)",
    "checked_at": "2026-10-13T20:05:07.930Z"
   },
-  "both_verified": false
+  "both_verified": true
  },
  {
   "name": "Codie Sanchez",
   "linkedin": {
    "url": "https://www.linkedin.com/in/codiesanchez/",
-   "status": "unverified",
-   "note": "apify returned no profile for slug \"codiesanchez\"",
-   "checked_at": "2026-10-13T21:03:49.662Z"
+   "status": "verified",
+   "method": "apify:harvestapi/linkedin-profile-scraper",
+   "page_title": "Codie A. Sanchez - Founder, Entrepreneur, Author | My new book Own Or Be Owned just dropped. If this channel or the boo",
+   "page_desc": "followers: 612637",
+   "checked_at": "2026-10-13T21:25:51.812Z"
   },
   "instagram": {
    "url": "https://www.instagram.com/codiesanchez/",
@@ -579,6 +589,6 @@
    "page_desc": "3M Followers, 1,835 Following, 2,549 Posts - See Instagram photos and videos from Codie Sanchez (@codiesanchez)",
    "checked_at": "2026-10-13T20:05:09.796Z"
   },
-  "both_verified": false
+  "both_verified": true
  }
 ]

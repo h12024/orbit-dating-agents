@@ -57,7 +57,8 @@ export default function Home() {
     if (!r.ok) return setNotice(file === "demo.json" ? "No finished demo is published yet. Run a cohort with live keys and save the export to public/demo.json." : "Fixture demo missing: run npm run demo:fixture.");
     const d = await r.json();
     setNotice(""); setKind(d.meta?.kind === "fixture" ? "fixture" : "live"); setPeople(d.people); setDates(d.dates); setShortlists(d.shortlists);
-    setSelPerson(null); setSelDate(null); setRankPerson(null); setLog([`Loaded ${file} (generated ${d.meta?.generated_at ?? "unknown"}).`]); setStage("done"); setTab("rankings");
+    setSelPerson(null); setSelDate(null); setRankPerson(null); setLog([`Loaded ${file} (generated ${d.meta?.generated_at ?? "unknown"}).`]);
+    if (d.meta?.kind !== "fixture" && d.people.length < 25) setNotice(`This is a real run of only ${d.people.length} people, not the full 25-person cohort.`); setStage("done"); setTab("rankings");
   }
 
   const ids = ready.map((p) => p.id);

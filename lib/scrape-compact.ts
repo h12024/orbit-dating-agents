@@ -41,3 +41,15 @@ export function compactInstagram(item: any, limit = 12000): string {
   });
   return JSON.stringify(out ?? {}).slice(0, limit);
 }
+
+// harvestapi/linkedin-profile-scraper items: same philosophy as compactLinkedIn (keep substance, drop media/ids/emails/other-people data).
+const HARVEST_DROP = new Set(["id", "linkedinUrl", "emails", "profilePicture", "coverPicture", "photo", "objectUrn", "registeredAt", "profileActions", "composeOptionType", "moreProfiles", "sectionTotals", "originalQuery", "receivedRecommendations", "profileLocales", "primaryLocale", "multiLocaleHeadline", "premium", "memorialized", "openToWork", "hiring", "services", "causes", "organizations", "courses", "patents", "interests", "projects"]);
+export function compactLinkedInHarvest(item: any, limit = 12000): string {
+  if (!item || typeof item !== "object" || item.error) return "";
+  const kept: Record<string, any> = {};
+  for (const [k, v] of Object.entries(item)) if (!HARVEST_DROP.has(k)) kept[k] = v;
+  if (Array.isArray(kept.experience)) kept.experience = kept.experience.slice(0, 10);
+  if (Array.isArray(kept.skills)) kept.skills = kept.skills.slice(0, 20).map((s: any) => s?.name ?? s);
+  const cleaned = clean(kept);
+  return JSON.stringify(cleaned ?? {}).slice(0, limit);
+}

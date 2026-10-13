@@ -40,9 +40,19 @@
   "instagram": "https://www.instagram.com/ariannahuff/"
  },
  {
+  "name": "Richard Branson",
+  "linkedin": "https://www.linkedin.com/in/rbranson/",
+  "instagram": "https://www.instagram.com/richardbranson/"
+ },
+ {
   "name": "Reid Hoffman",
   "linkedin": "https://www.linkedin.com/in/reidhoffman/",
   "instagram": "https://www.instagram.com/reidhoffman/"
+ },
+ {
+  "name": "Sara Blakely",
+  "linkedin": "https://www.linkedin.com/in/sarablakely27/",
+  "instagram": "https://www.instagram.com/sarablakely/"
  },
  {
   "name": "Daymond John",
@@ -63,6 +73,11 @@
   "name": "Alex Hormozi",
   "linkedin": "https://www.linkedin.com/in/alexhormozi/",
   "instagram": "https://www.instagram.com/hormozi/"
+ },
+ {
+  "name": "Sheryl Sandberg",
+  "linkedin": "https://www.linkedin.com/in/sheryl-sandberg-5126652/",
+  "instagram": "https://www.instagram.com/sherylsandberg/"
  },
  {
   "name": "Nikhil Kamath",
@@ -103,5 +118,15 @@
   "name": "Sundar Pichai",
   "linkedin": "https://www.linkedin.com/in/sundarpichai/",
   "instagram": "https://www.instagram.com/sundarpichai/"
+ },
+ {
+  "name": "Justin Welsh",
+  "linkedin": "https://www.linkedin.com/in/justinwelsh/",
+  "instagram": "https://www.instagram.com/thejustinwelsh/"
+ },
+ {
+  "name": "Codie Sanchez",
+  "linkedin": "https://www.linkedin.com/in/codiesanchez/",
+  "instagram": "https://www.instagram.com/codiesanchez/"
  }
 ]
