@@ -7,7 +7,10 @@
     "build": "next build",
     "start": "next start",
     "test": "node --test test/*.test.ts",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "demo:fixture": "bash scripts/make-fixture-demo.sh",
+    "demo:real": "node scripts/run-cohort.mjs data/cohort.json public/demo.json",
+    "verify:people": "node scripts/verify-people.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.40.0",

@@ -31,4 +31,5 @@ for (const p of C) {
   console.log(p.both_verified ? "" : "", p.name.padEnd(24), "LI:", li.status, li.http ?? "", " IG:", ig.status, ig.http ?? "");
   }
 fs.writeFileSync(new URL("../data/people.json", import.meta.url), JSON.stringify(out, null, 1));
+fs.writeFileSync(new URL("../data/cohort.json", import.meta.url), JSON.stringify(out.filter((o) => o.both_verified).map((o) => ({ name: o.name, linkedin: o.linkedin.url, instagram: o.instagram.url })), null, 1));
 console.log("both verified:", out.filter((o) => o.both_verified).length, "/", out.length);

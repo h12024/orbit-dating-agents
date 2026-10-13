@@ -3,22 +3,11 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import type { DateResult, Person, Shortlist } from "@/lib/types";
 import { rankFor } from "@/lib/rank";
 import { parseLines } from "@/lib/parse";
+import { runPipeline, type Stage } from "@/lib/pipeline";
 
 type Tab = "profiles" | "dates" | "rankings";
-type Stage = "idle" | "profiles" | "triage" | "dating" | "done";
-const K = 4; // dates per person after triage
-
-async function post<T>(url: string, body: unknown): Promise<T> {
-  const r = await fetch(url, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(body) });
-  const j = await r.json();
-  if (!r.ok || j.error) throw new Error(j.error || `HTTP ${r.status}`);
-  return j;
-}
-
-async function pool<T>(items: T[], n: number, fn: (x: T) => Promise<void>) {
-  let i = 0;
-  await Promise.all(Array.from({ length: Math.min(n, items.length) }, async () => { while (i < items.length) await fn(items[i++]); }));
-}
+type Kind = "live" | "fixture";
+type Health = { mode: Kind; anthropic: boolean; apify: boolean };
 
 export default function Home() {
   const [raw, setRaw] = useState("");
@@ -32,76 +21,41 @@ export default function Home() {
   const [rankPerson, setRankPerson] = useState<string | null>(null);
   const [log, setLog] = useState<string[]>([]);
   const [datePlan, setDatePlan] = useState({ total: 0 });
-  const peopleRef = useRef<Person[]>([]);
-  const [health, setHealth] = useState<{ mode: string; anthropic: boolean; apify: boolean } | null>(null);
+  const [health, setHealth] = useState<Health | null>(null);
+  const [kind, setKind] = useState<Kind | null>(null); // what the DISPLAYED data is: real model output or synthetic fixture
+  const [notice, setNotice] = useState("");
   useEffect(() => { fetch("/api/health").then((r) => r.json()).then(setHealth).catch(() => {}); }, []);
 
   const say = (m: string) => setLog((l) => [...l.slice(-80), m]);
-  const patch = (id: string, p: Partial<Person>) => {
-    peopleRef.current = peopleRef.current.map((x) => (x.id === id ? { ...x, ...p } : x));
-    setPeople(peopleRef.current);
-  };
   const byId = useMemo(() => Object.fromEntries(people.map((p) => [p.id, p])), [people]);
   const name = (id: string) => byId[id]?.profile?.name ?? id;
   const parsed = useMemo(() => parseLines(raw), [raw]);
+  const valid = parsed.filter((p) => p.linkedin && p.instagram);
   const bad = parsed.filter((p) => !p.linkedin || !p.instagram);
   const ready = people.filter((p) => p.status === "ready");
+  const busy = stage !== "idle" && stage !== "done";
 
   async function run() {
-    const rows = parsed.filter((p) => p.linkedin && p.instagram);
-    const init: Person[] = rows.map((r, i) => ({ id: `p${i + 1}`, linkedin: r.linkedin, instagram: r.instagram, status: "queued" }));
-    peopleRef.current = init; setPeople(init); setDates([]); setShortlists({}); setLog([]); setTab("profiles"); setStage("profiles");
-
-    // 1. scrape both sources + analyze each person
-    await pool(init, 4, async (p) => {
-      try {
-        patch(p.id, { status: "scraping" }); say(`Scraping LinkedIn + Instagram for ${p.id}...`);
-        const scraped = await post<Person["scraped"]>("/api/scrape", { linkedin: p.linkedin, instagram: p.instagram });
-        patch(p.id, { status: "analyzing", scraped, avatar: scraped!.instagram.avatar });
-        say(`Agent ${p.id} reading ${scraped!.linkedin.source} + ${scraped!.instagram.source}...`);
-        const { profile } = await post<{ profile: Person["profile"] }>("/api/analyze", { scraped, linkedin: p.linkedin, instagram: p.instagram });
-        patch(p.id, { status: "ready", profile }); say(`Profile ready: ${profile!.name}`);
-      } catch (e: any) { patch(p.id, { status: "failed", error: e.message }); say(`FAILED ${p.id}: ${e.message}`); }
+    setNotice(""); setKind(health?.mode ?? "live"); setDates([]); setShortlists({}); setLog([]); setTab("profiles"); setSelPerson(null); setSelDate(null);
+    const rows = valid.map((r) => ({ linkedin: r.linkedin.replace(/^http:/, "https:"), instagram: r.instagram.replace(/^http:/, "https:").replace(/[?#].*$/, "") }));
+    const res = await runPipeline(rows, {}, {
+      people: setPeople, dates: setDates, shortlists: setShortlists, plan: (total) => { setDatePlan({ total }); setTab("dates"); }, log: say,
+      stage: (s) => { setStage(s); if (s === "done") setTab("rankings"); },
     });
-
-    const good = peopleRef.current.filter((p) => p.status === "ready");
-    if (good.length < 2) { setStage("done"); say("Need at least 2 analyzed people to date."); return; }
-
-    // 2. triage: each agent picks who it wants to meet (avoids O(n^2) dates)
-    setStage("triage"); say("Each agent is scanning the pool and picking who to meet...");
-    const sl: Record<string, Shortlist> = {};
-    await pool(good, 4, async (p) => {
-      try {
-        const { picks } = await post<{ picks: Shortlist }>("/api/shortlist", { me: p.profile, others: good.filter((o) => o.id !== p.id).map((o) => ({ id: o.id, profile: o.profile })), k: K });
-        sl[p.id] = picks; setShortlists({ ...sl });
-        say(`${p.profile!.name} wants to meet: ${picks.map((x) => byId[x.id]?.profile?.name ?? peopleRef.current.find((q) => q.id === x.id)?.profile?.name).join(", ")}`);
-      } catch (e: any) { say(`Triage failed for ${p.id}: ${e.message}`); }
-    });
-
-    // 3. dates, deduped pairs (A picked B or B picked A)
-    const pairs = new Map<string, [string, string]>();
-    for (const [a, picks] of Object.entries(sl)) for (const pk of picks) { const key = [a, pk.id].sort().join("|"); if (!pairs.has(key)) pairs.set(key, [a, pk.id]); }
-    const list = [...pairs.values()];
-    setDatePlan({ total: list.length }); setStage("dating"); setTab("dates"); say(`${list.length} dates scheduled.`);
-    const done: DateResult[] = [];
-    await pool(list, 5, async ([a, b]) => {
-      const pa = peopleRef.current.find((p) => p.id === a)!.profile!, pb = peopleRef.current.find((p) => p.id === b)!.profile!;
-      try {
-        const r = await post<Omit<DateResult, "id" | "a" | "b">>("/api/date", { a: pa, b: pb, rounds: 3 });
-        done.push({ id: `${a}-${b}`, a, b, ...r }); setDates([...done]);
-        say(`Date done: ${pa.name} x ${pb.name} -> ${r.verdictA.score}/${r.verdictB.score}`);
-      } catch (e: any) { say(`Date failed ${pa.name} x ${pb.name}: ${e.message}`); }
-    });
-    setStage("done"); setTab("rankings"); say("All dates complete. Rankings ready.");
+    if (!res.dates.length) setTab("profiles");
   }
 
   const exportJson = () => {
-    const blob = new Blob([JSON.stringify({ people, dates, shortlists }, null, 1)], { type: "application/json" });
-    const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = "demo.json"; a.click();
+    const meta = { kind, generated_at: new Date().toISOString(), note: kind === "fixture" ? "SYNTHETIC fixture output; no model was called." : "Generated by live model calls." };
+    const blob = new Blob([JSON.stringify({ meta, people, dates, shortlists }, null, 1)], { type: "application/json" });
+    const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = kind === "fixture" ? "fixture-demo.json" : "demo.json"; a.click();
   };
-  async function loadDemo() {
-    const r = await fetch("/demo.json"); if (!r.ok) return alert("No /demo.json found. Run a cohort, hit Export, and save the file to public/demo.json.");
-    const d = await r.json(); peopleRef.current = d.people; setPeople(d.people); setDates(d.dates); setShortlists(d.shortlists); setStage("done"); setTab("rankings");
+  async function loadDemo(file: "demo.json" | "fixture-demo.json") {
+    const r = await fetch("/" + file);
+    if (!r.ok) return setNotice(file === "demo.json" ? "No finished demo is published yet. Run a cohort with live keys and save the export to public/demo.json." : "Fixture demo missing: run npm run demo:fixture.");
+    const d = await r.json();
+    setNotice(""); setKind(d.meta?.kind === "fixture" ? "fixture" : "live"); setPeople(d.people); setDates(d.dates); setShortlists(d.shortlists);
+    setSelPerson(null); setSelDate(null); setRankPerson(null); setLog([`Loaded ${file} (generated ${d.meta?.generated_at ?? "unknown"}).`]); setStage("done"); setTab("rankings");
   }
 
   const ids = ready.map((p) => p.id);
@@ -114,18 +68,20 @@ export default function Home() {
       <h1>Your agent dates so you don't have to.</h1>
       <p className="sub">Paste a LinkedIn and a public Instagram per person. Each person gets an agent that reads them, goes on dates with every other agent, and returns a ranking of who fits best.</p>
 
-      {health?.mode === "fixture" && <div className="card err">FIXTURE MODE: all profiles, dates and scores below are synthetic test data. No model was called. Not real agent activity.</div>}
+      {(kind === "fixture" || (!kind && health?.mode === "fixture")) && <div className="card err">FIXTURE DATA: every profile, date and score here is synthetic test output. No model was called and these are not real people or real agent activity.</div>}
       {health && health.mode === "live" && !health.anthropic && <div className="card err">ANTHROPIC_API_KEY is not configured on the server, so analysis and dating cannot run. Add it to .env.local (or your host's env vars) and restart.</div>}
       {health && health.mode === "live" && health.anthropic && !health.apify && <div className="card status">APIFY_TOKEN not set: scraping falls back to public page meta tags only (thin data, profiles will be low confidence).</div>}
 
       <div className="card">
-        <div className="lbl" style={{ marginTop: 0 }}>One person per line: LinkedIn URL, Instagram URL ({parsed.filter((p) => p.linkedin && p.instagram).length} valid)</div>
-        <textarea rows={7} value={raw} onChange={(e) => setRaw(e.target.value)} disabled={stage !== "idle" && stage !== "done"}
+        <div className="lbl" style={{ marginTop: 0 }}>One person per line: LinkedIn URL, Instagram URL ({valid.length} valid, max 30)</div>
+        <textarea rows={7} value={raw} onChange={(e) => setRaw(e.target.value)} disabled={busy}
           placeholder={"https://www.linkedin.com/in/someone, https://www.instagram.com/someone\nhttps://www.linkedin.com/in/other, https://www.instagram.com/other"} />
+        {notice && <p className="err">{notice}</p>}
         {bad.length > 0 && <p className="err">Line {bad.map((b) => b.line).join(", ")}: needs both a LinkedIn and an Instagram URL.</p>}
         <div className="row" style={{ marginTop: 12 }}>
-          <button onClick={run} disabled={parsed.filter((p) => p.linkedin && p.instagram).length < 2 || (stage !== "idle" && stage !== "done")}>Send the agents out</button>
-          <button className="ghost" onClick={loadDemo}>Load finished demo</button>
+          <button onClick={run} disabled={valid.length < 2 || valid.length > 30 || busy}>Send the agents out</button>
+          <button className="ghost" onClick={() => loadDemo("demo.json")} disabled={busy}>Load finished demo</button>
+          <button className="ghost" onClick={() => loadDemo("fixture-demo.json")} disabled={busy}>Load fixture demo (synthetic)</button>
           {people.length > 0 && <button className="ghost" onClick={exportJson}>Export run (JSON)</button>}
         </div>
       </div>
@@ -133,7 +89,7 @@ export default function Home() {
       {stage !== "idle" && <>
         <div className="steps">{steps.map(([s, t, d]) => {
           const cur = order.indexOf(stage), me = order.indexOf(s), on = cur >= me;
-          const pct = s === "profiles" ? (people.length ? (100 * (people.filter((p) => p.status === "ready" || p.status === "failed").length)) / people.length : 0) : s === "dating" ? (datePlan.total ? (100 * dates.length) / datePlan.total : 0) : on && cur > me ? 100 : 0;
+          const pct = s === "profiles" ? (people.length ? (100 * (people.filter((p) => p.status === "ready" || p.status === "failed").length)) / people.length : 0) : s === "dating" ? (datePlan.total ? (100 * dates.length) / datePlan.total : 0) : s === "done" ? (stage === "done" ? 100 : 0) : 0;
           return <div key={s} className={"step" + (on ? " on" : "")}><b>{t}</b><span className="status">{d}</span><div className="bar"><i style={{ width: (cur > me ? 100 : pct) + "%" }} /></div></div>;
         })}</div>
         <div className="card feed">{log.map((l, i) => <div key={i}>{l}</div>)}</div>
