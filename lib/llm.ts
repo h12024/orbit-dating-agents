@@ -6,7 +6,7 @@ import { QuotaError, type CallOpts, type Role } from "./providers/types.ts";
 
 export type Provider = "gemini" | "anthropic";
 const DEFAULTS: Record<Provider, Record<Role, string>> = {
-  gemini: { analyze: "gemini-3.8-flash", date: "gemini-3.5-flash-lite", verdict: "gemini-3.1-flash-lite" }, // all free-tier eligible; quotas are per model, so three models = three buckets
+  gemini: { analyze: "gemini-3.5-flash-lite", date: "gemini-3.5-flash-lite", verdict: "gemini-3.1-flash-lite" }, // all free-tier eligible; quotas are per model, so three models = three buckets
   anthropic: { analyze: "claude-sonnet-5-5", date: "claude-haiku-5-5", verdict: "claude-haiku-5-5" },
 };
 

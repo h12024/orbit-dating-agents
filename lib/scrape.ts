@@ -42,7 +42,7 @@ export async function scrapeLinkedIn(url: string): Promise<Scraped["linkedin"]> 
   if (isFixture()) return { ok: true, source: "fixture", text: `[FIXTURE] synthetic LinkedIn text for linkedin.com/in/${username}` };
   try {
     if (TOKEN()) {
-      const items = await apify(LI_ACTOR(), { username });
+      const items = await apify(LI_ACTOR(), { username, includeEmail: false }); // schema verified against the actor build; never fetch emails
       if (items[0]) return { ok: true, source: "apify:linkedin", text: compact(items[0], 9000) };
     }
     const text = await metaFallback(`https://www.linkedin.com/in/${username}/`);

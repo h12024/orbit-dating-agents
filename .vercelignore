@@ -1,0 +1,6 @@
+*.incomplete.json
+*.checkpoint.json
+.env*
+test
+docs
+data/runs

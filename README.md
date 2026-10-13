@@ -23,7 +23,7 @@ The AI layer is provider-agnostic (`lib/llm.ts`): **Gemini** (official REST `gen
 |---|---|---|
 | `GEMINI_API_KEY` (or `ANTHROPIC_API_KEY`) | **Required.** Profile analysis, triage, dates, debriefs. Free Gemini key, no card: https://aistudio.google.com/apikey | UI banner + API returns a clear error |
 | `APIFY_TOKEN` | Strongly recommended. Reliable LinkedIn/Instagram scraping | Falls back to public meta tags: LinkedIn headline only, Instagram follower counts only (low-confidence profiles). LinkedIn also returns HTTP 999 after ~10 unauthenticated fetches. We do not bypass that. |
-| `ANALYZE_MODEL`, `DATE_MODEL`, `VERDICT_MODEL` | Optional model overrides | Gemini: `gemini-3.8-flash` / `gemini-3.5-flash-lite` / `gemini-3.1-flash-lite` |
+| `ANALYZE_MODEL`, `DATE_MODEL`, `VERDICT_MODEL` | Optional model overrides | Gemini: `gemini-3.5-flash-lite` / `gemini-3.5-flash-lite` / `gemini-3.1-flash-lite` |
 | `GEMINI_RPM` | Optional pacing per model per process | off (relies on 429 retry/backoff) |
 | `APIFY_LINKEDIN_ACTOR`, `APIFY_INSTAGRAM_ACTOR` | Optional actor overrides | `apimaestro~linkedin-profile-detail`, `apify~instagram-profile-scraper` (verify before a big run) |
 | `RATE_LIMIT_SCALE` | Optional multiplier for per-IP limits | 1 |
