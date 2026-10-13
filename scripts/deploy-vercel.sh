@@ -15,7 +15,7 @@ REMOTE=$(git remote get-url origin); echo "  origin: $REMOTE"; [[ "$REMOTE" == *
 [ -z "$(git status --short)" ] && echo "  working tree: clean" || warn "uncommitted changes (deploys would not match GitHub)"
 [ "$(git rev-parse HEAD)" = "$(git rev-parse origin/master)" ] && echo "  HEAD == origin/master ($(git rev-parse --short HEAD))" || warn "HEAD differs from origin/master"
 echo "== 2. Local env present (names only)"; for v in "${VARS[@]}"; do grep -q "^$v=." .env.local && echo "  $v: set" || warn "$v MISSING in .env.local"; done
-echo "== 3. Checks"; npm test --silent 2>&1 | grep -E "^ℹ (pass|fail)" | tr '\n' ' '; echo; npm run -s typecheck && echo "  typecheck OK" || warn "typecheck failed"; npx next build >/dev/null 2>&1 && echo "  build OK" || warn "build failed"
+echo "== 3. Checks"; npm test --silent 2>&1 | grep -E "^ℹ (pass|fail)" | tr '\n' ' '; echo; npm run -s typecheck && echo "  typecheck OK" || warn "typecheck failed"; if [ "${SKIP_BUILD:-0}" = 1 ]; then echo "  build SKIPPED (SKIP_BUILD=1; a dev server is using .next). Vercel builds remotely."; else npx next build >/dev/null 2>&1 && echo "  build OK" || warn "build failed"; fi
 echo "== 4. Upload manifest audit (what 'vercel --prod' would publish)"
 UP=$(git ls-files -co | grep -vE '^(node_modules|\.next|\.git|\.vercel)/' | python3 -c "
 import sys,fnmatch,os
