@@ -69,12 +69,28 @@ export async function runPipeline(rows: { linkedin: string; instagram: string }[
   if (halted || good.length < 2) { h.stage?.("done"); say(halted ? "Stopped: provider quota exhausted. Re-run with resume after the quota resets." : "Need at least 2 analyzed people to date."); return { people, dates, shortlists, halted: halted || undefined }; }
 
   h.stage?.("triage"); say("Each agent is scanning the pool and picking who to meet...");
+  // Small pools: with K or fewer other people, triage would pick everyone anyway, so everyone dates everyone (no model call needed).
+  for (const p of good) {
+    const others = good.filter((o) => o.id !== p.id);
+    if (!shortlists[p.id] && others.length <= K) {
+      shortlists[p.id] = others.map((o) => ({ id: o.id, score: 50, why: "Small pool: every agent dates every other agent." }));
+      say(`${p.profile!.name} meets everyone (small pool): ${others.map((o) => o.profile!.name).join(", ")}`);
+    }
+  }
+  h.shortlists?.({ ...shortlists });
   await pool(good.filter((p) => !shortlists[p.id]), conc, async (p) => {
     try {
       const { picks } = await post<{ picks: Shortlist }>(base, "/api/shortlist", { me: p.profile, others: good.filter((o) => o.id !== p.id).map((o) => ({ id: o.id, profile: o.profile })), k: K });
+      if (!picks.length) throw new Error("triage returned no valid picks");
       shortlists[p.id] = picks; h.shortlists?.({ ...shortlists });
       say(`${p.profile!.name} wants to meet: ${picks.map((x) => good.find((q) => q.id === x.id)?.profile?.name).join(", ")}`);
-    } catch (e: any) { if (e instanceof Halt) { halted = e.message; say(`HALT: ${e.message}`); return; } errors++; say(`Triage failed for ${p.id}: ${e.message}`); }
+    } catch (e: any) {
+      if (e instanceof Halt) { halted = e.message; say(`HALT: ${e.message}`); return; }
+      // Triage failed or came back empty: still give this person dates (the next K profiles in the list), and say so plainly.
+      const i = good.findIndex((q) => q.id === p.id), others = Array.from({ length: Math.min(K, good.length - 1) }, (_, n) => good[(i + 1 + n) % good.length]);
+      shortlists[p.id] = others.map((o) => ({ id: o.id, score: 40, why: "Fallback pairing: triage returned no usable picks." })); h.shortlists?.({ ...shortlists });
+      say(`Triage gave no picks for ${p.profile!.name} (${e.message}); pairing with ${others.map((o) => o.profile!.name).join(", ")} instead.`);
+    }
   }, () => !!halted);
 
   const pairs = new Map<string, [string, string]>();
