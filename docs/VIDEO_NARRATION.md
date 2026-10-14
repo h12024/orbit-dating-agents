@@ -1,6 +1,6 @@
 # Narration script (record your own voice)
 
-Video: `orbit-dates-demo.mp4`, 1920x1080, **2:35 (155 s)**, silent screen capture of the live site (https://agentic-dating-nine.vercel.app) loading the finished 25-person demo. On-screen captions are already burned in. **No audio has been added**: this file is the script for you to read; the narration does not exist yet.
+Video: `orbit-dates-demo.mp4`, 1920x1080, **2:35 (155 s)**, silent screen capture of the live site (https://agentic-dating-nine.vercel.app) loading the finished 25-person demo. On-screen captions are already burned in. This file is the script the narration was recorded from.
 
 Length: 278 words over 155 s (about 108 words/min; the busiest segment is 2.1 words/s). That is a relaxed pace with pauses. Timestamps come from the recorder's own scene markers, so they match the footage exactly.
 
@@ -74,3 +74,10 @@ ffmpeg -i orbit-dates-demo.mp4 -i narration.wav -map 0:v -map 1:a -c:v copy -c:a
 
 If your recording starts late or early, shift it with `-itsoffset 0.5` before `-i narration.wav` (positive = later). Keep the video under 3:00; with `-shortest` it will not run longer than the footage.
 
+
+## Status: narration added
+
+The narrator's own recording was synced to the footage: each sentence is placed on the moment its caption appears (timed from per-caption markers captured while recording), the voice was loudness-normalised (about -36 LUFS to -16 LUFS), and a few still moments were held or trimmed by up to a few seconds so the pace matches the spoken delivery. The timestamps in the table above refer to the original silent cut; the final video is **2:46 (165.6 s)**.
+
+- `orbit-dates-demo.mp4`: final video with narration (1920x1080, H.264, AAC).
+- `orbit-dates-demo-silent.mp4`: same footage, no audio, retimed to match the narrated cut's recording.
