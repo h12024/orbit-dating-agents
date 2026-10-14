@@ -15,12 +15,13 @@ export type RunResult = { people: Person[]; dates: DateResult[]; shortlists: Rec
 // Daily provider quota is gone: stop scheduling work and return what we have so the run can be resumed after the reset.
 class Halt extends Error {}
 
+const opts_retryMs = () => Number((globalThis as any).process?.env?.PIPELINE_RETRY_MS) || 4000;
 async function post<T>(base: string, url: string, body: unknown): Promise<T> {
   for (let attempt = 0; ; attempt++) {
     const r = await fetch(base + url, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(body) });
     const j = await r.json().catch(() => ({}));
-    if (r.status === 429 && attempt < 2) { await new Promise((res) => setTimeout(res, 3000 * (attempt + 1))); continue; }
-    if (j.code === "quota_exhausted") throw new Halt(j.error);
+    if (j.code === "quota_exhausted") throw new Halt(j.error);                       // real quota/credit exhaustion: stop now, resume later
+    if (r.status === 429 && attempt < 4) { await new Promise((res) => setTimeout(res, (opts_retryMs()) * (attempt + 1))); continue; } // congestion / per-minute limits: back off and retry
     if (!r.ok || j.error) throw new Error(j.error || `HTTP ${r.status}`);
     return j;
   }
@@ -44,7 +45,8 @@ export async function runPipeline(rows: { linkedin: string; instagram: string }[
   const patch = (id: string, p: Partial<Person>) => { people = people.map((x) => (x.id === id ? { ...x, ...p } : x)); h.people?.(people); };
   h.people?.(people); h.stage?.("profiles");
 
-  await pool(people.filter((p) => p.status !== "ready"), conc, async (p) => {
+  // Scrapers (Apify free plan) cannot run many actors at once, so profile reading uses lower concurrency than the later stages.
+  await pool(people.filter((p) => p.status !== "ready"), Math.min(conc, 2), async (p) => {
     try {
       patch(p.id, { status: "scraping" }); say(`Scraping LinkedIn + Instagram for ${p.id}...`);
       const scraped = await post<Person["scraped"]>(base, "/api/scrape", { linkedin: p.linkedin, instagram: p.instagram });

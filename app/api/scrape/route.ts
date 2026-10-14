@@ -11,5 +11,7 @@ export async function POST(req: Request) {
   // The scraper account hit its own daily/credit limit: tell the pipeline to stop and resume later instead of analysing half a profile.
   const q = li.quota ? li : ig.quota ? ig : null;
   if (q) return Response.json({ error: q.error, code: "quota_exhausted" }, { status: 429 });
+  const busy = li.busy ? li : ig.busy ? ig : null;
+  if (busy) return Response.json({ error: busy.error, code: "rate_limited" }, { status: 429, headers: { "retry-after": "10" } });
   return Response.json({ linkedin: li, instagram: ig });
 }

@@ -17,8 +17,8 @@ export type Profile = {
 };
 
 export type Scraped = {
-  linkedin: { ok: boolean; source: string; text: string; error?: string; quota?: boolean };
-  instagram: { ok: boolean; source: string; text: string; avatar?: string; error?: string; quota?: boolean };
+  linkedin: { ok: boolean; source: string; text: string; error?: string; quota?: boolean; busy?: boolean };
+  instagram: { ok: boolean; source: string; text: string; avatar?: string; error?: string; quota?: boolean; busy?: boolean };
 };
 
 export type Person = {

@@ -60,3 +60,29 @@ test("a limit message is not cached and non-limit actor messages are plain failu
     assert.equal(fs.readdirSync(process.env.SCRAPE_CACHE_DIR!).length, 0);
   } finally { s.close(); fs.rmSync(process.env.SCRAPE_CACHE_DIR!, { recursive: true, force: true }); }
 });
+
+// STUB with controllable HTTP status (Apify answers 402 for both congestion and exhausted credit).
+function stubStatus(seq: { status: number; body: any }[]) {
+  let n = 0; const server = http.createServer((req, res) => { let raw = ""; req.on("data", (c) => (raw += c)); req.on("end", () => { const r = seq[Math.min(n++, seq.length - 1)]; res.writeHead(r.status, { "content-type": "application/json" }); res.end(JSON.stringify(r.body)); }); });
+  return new Promise<{ count: () => number; close: () => void }>((ok) => server.listen(0, "127.0.0.1", () => { process.env.APIFY_BASE_URL = `http://127.0.0.1:${(server.address() as any).port}`; process.env.APIFY_TOKEN = "stub-token"; ok({ count: () => n, close: () => server.close() }); }));
+}
+const busyBody = { error: { type: "actor-memory-limit-exceeded", message: "By launching this job you will exceed the memory limit of 8192MB for all your Actor runs" } };
+const creditBody = { error: { type: "not-enough-usage-to-run-paid-actor", message: "Insufficient credit" } };
+
+test("402 memory-limit (congestion) is retried and then succeeds; never reported as quota", async () => {
+  process.env.SCRAPE_CACHE = "off"; process.env.APIFY_BUSY_WAIT_MS = "5,5";
+  const s = await stubStatus([{ status: 402, body: busyBody }, { status: 402, body: busyBody }, { status: 201, body: [profile] }]);
+  try { const r = await scrapeLinkedIn(LI); assert.ok(r.ok && r.source === "apify:linkedin" && !r.quota && !r.busy); assert.equal(s.count(), 3); } finally { s.close(); }
+});
+
+test("persistent congestion is reported as busy (retryable), not as exhausted quota", async () => {
+  process.env.SCRAPE_CACHE = "off"; process.env.APIFY_BUSY_WAIT_MS = "5,5";
+  const s = await stubStatus([{ status: 402, body: busyBody }]);
+  try { const r = await scrapeLinkedIn(LI); assert.equal(r.ok, false); assert.equal(r.busy, true); assert.equal(r.quota, undefined); assert.equal(s.count(), 3); } finally { s.close(); }
+});
+
+test("402 without a congestion marker is real credit exhaustion: quota flag, no retries", async () => {
+  process.env.SCRAPE_CACHE = "off"; process.env.APIFY_BUSY_WAIT_MS = "5,5";
+  const s = await stubStatus([{ status: 402, body: creditBody }]);
+  try { const r = await scrapeLinkedIn(LI); assert.equal(r.quota, true); assert.equal(r.busy, undefined); assert.equal(s.count(), 1); } finally { s.close(); }
+});

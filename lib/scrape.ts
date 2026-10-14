@@ -11,12 +11,25 @@ const IG_ACTOR = () => process.env.APIFY_INSTAGRAM_ACTOR || "apify~instagram-pro
 
 // The actor's own daily/credit limit. Not a failed profile: the run must stop and resume later (never analyse the limit message).
 export class ActorLimitError extends Error {}
+// Apify answers 402 "actor-memory-limit-exceeded" when too many runs are in flight for the plan. That is congestion, not exhausted credit: retry.
+export class ActorBusyError extends Error {}
 
+const BUSY_WAITS = () => (process.env.APIFY_BUSY_WAIT_MS ?? "3000,5000").split(",").map(Number);
 async function apify(actor: string, input: unknown): Promise<any[]> {
+  const waits = BUSY_WAITS();
+  for (let attempt = 0; ; attempt++) {
+    try { return await apifyOnce(actor, input); }
+    catch (e) { if (e instanceof ActorBusyError && attempt < waits.length) { await new Promise((r) => setTimeout(r, waits[attempt])); continue; } throw e; }
+  }
+}
+async function apifyOnce(actor: string, input: unknown): Promise<any[]> {
   const res = await fetch(`${BASE()}/acts/${actor}/run-sync-get-dataset-items?token=${TOKEN()}&timeout=55`,
     { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(input), signal: AbortSignal.timeout(70_000) });
   const body = await res.text();
-  if (res.status === 402) throw new ActorLimitError("Apify account has no credit left for this actor");
+  if (res.status === 402) {
+    if (/memory|concurren|too[- ]many|actor-memory-limit/i.test(body)) throw new ActorBusyError("Apify is busy (too many scrapes at once)");
+    throw new ActorLimitError("Apify account has no credit left for this actor");
+  }
   if (!res.ok) throw new Error(`Apify ${actor} ${res.status}: ${body.slice(0, 200).replace(TOKEN() ?? "\0", "<token>")}`);
   return JSON.parse(body);
 }
@@ -56,7 +69,7 @@ export async function scrapeLinkedIn(url: string): Promise<Scraped["linkedin"]> 
     if (text) return { ok: true, source: "og-meta", text };
     return { ok: false, source: "none", text: "", error: "LinkedIn returned nothing (set APIFY_TOKEN)" };
   } catch (e: any) {
-    return { ok: false, source: "none", text: "", error: e.message, quota: e instanceof ActorLimitError || undefined };
+    return { ok: false, source: "none", text: "", error: e.message, quota: e instanceof ActorLimitError || undefined, busy: e instanceof ActorBusyError || undefined };
   }
 }
 
@@ -83,6 +96,6 @@ export async function scrapeInstagram(url: string): Promise<Scraped["instagram"]
     if (text) return { ok: true, source: "og-meta", text };
     return { ok: false, source: "none", text: "", error: "Instagram returned nothing (set APIFY_TOKEN)" };
   } catch (e: any) {
-    return { ok: false, source: "none", text: "", error: e.message, quota: e instanceof ActorLimitError || undefined };
+    return { ok: false, source: "none", text: "", error: e.message, quota: e instanceof ActorLimitError || undefined, busy: e instanceof ActorBusyError || undefined };
   }
 }

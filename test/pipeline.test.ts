@@ -53,3 +53,29 @@ test("a normal triage answer is used as given", async () => {
     assert.equal(s.calls["/api/shortlist"], 7);
   } finally { s.close(); }
 });
+
+// Scrape route that misbehaves: answers 429 with a code a few times, then works.
+function stubScrape(first: { n: number; code: string }) {
+  let scrapes = 0; const profile = (n: string) => ({ name: n, headline: "h", location: "l", summary: "s", needs: ["n"], hobbies: ["h"], interests: [], values: [], personality: [], communication_style: "c", lifestyle: "l", dealbreakers: [], looking_for: "x", evidence: ["e"], confidence: "high" });
+  const v = { score: 70, chemistry: "c", needs_met: ["n"], friction: [], would_see_again: true, reason: "r" };
+  const server = http.createServer((req, res) => { let raw = ""; req.on("data", (c) => (raw += c)); req.on("end", () => {
+    const send = (o: any, st = 200) => { res.writeHead(st, { "content-type": "application/json" }); res.end(JSON.stringify(o)); };
+    if (req.url === "/api/scrape") { scrapes++; return scrapes <= first.n ? send({ error: "limit", code: first.code }, 429) : send({ linkedin: { ok: true, source: "stub", text: "x" }, instagram: { ok: true, source: "stub", text: "y" } }); }
+    if (req.url === "/api/analyze") return send({ profile: profile("P" + Math.random().toString(36).slice(2, 6)) });
+    if (req.url === "/api/date") return send({ turns: [{ speaker: "a", text: "hi" }, { speaker: "b", text: "yo" }], verdictA: v, verdictB: v });
+    send({ picks: [] });
+  }); });
+  return new Promise<{ base: string; scrapes: () => number; close: () => void }>((ok) => server.listen(0, "127.0.0.1", () => ok({ base: `http://127.0.0.1:${(server.address() as any).port}`, scrapes: () => scrapes, close: () => server.close() })));
+}
+
+test("congestion 429 (rate_limited) is retried with backoff and the run completes", async () => {
+  process.env.PIPELINE_RETRY_MS = "5";
+  const s = await stubScrape({ n: 3, code: "rate_limited" });
+  try { const r = await runPipeline(rows(3), { base: s.base, rounds: 1 }, {}); assert.equal(r.halted, undefined); assert.equal(r.people.filter((p) => p.status === "ready").length, 3); assert.equal(r.dates.length, 3); } finally { s.close(); }
+});
+
+test("real quota exhaustion halts at once: no retries, nothing analysed, resumable", async () => {
+  process.env.PIPELINE_RETRY_MS = "5";
+  const s = await stubScrape({ n: 999, code: "quota_exhausted" });
+  try { const r = await runPipeline(rows(4), { base: s.base, rounds: 1 }, {}); assert.ok(r.halted, "halted"); assert.ok(s.scrapes() <= 2, `scrape calls ${s.scrapes()} (no retries; concurrency 2)`); assert.equal(r.dates.length, 0); } finally { s.close(); }
+});
