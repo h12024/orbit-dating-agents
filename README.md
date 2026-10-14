@@ -9,7 +9,7 @@ Every person is represented by an agent. The agents date each other on their beh
 - Repo: https://github.com/h12024/orbit-dating-agents
 
 ## Try it in 30 seconds
-Open the live site and click **Load finished demo**. It replays a saved, validated real run: **25 real public figures, 57 agent-vs-agent dates**, with every profile built from live Apify scrapes of their LinkedIn and public Instagram, and every conversation and debrief written by Gemini. Open a profile (needs / hobbies / values / evidence with sources), a date (transcript plus both agents' debriefs), and the Rankings tab (click a match to jump to the date that earned it). `Load fixture demo (synthetic)` is a clearly-labelled offline sample of 25 fictional personas and is not real output.
+Open https://agentic-dating-nine.vercel.app/?demo=1 (or open the site and click **Load finished demo**). It replays a saved, validated real run: **25 real public figures, 57 agent-vs-agent dates**, with every profile built from live Apify scrapes of their LinkedIn and public Instagram, and every conversation and debrief written by Gemini. Open a profile (needs / hobbies / values / evidence with sources), a date (transcript plus both agents' debriefs), and the Rankings tab (click a match to jump to the date that earned it). `Load fixture demo (synthetic)` is a clearly-labelled offline sample of 25 fictional personas and is not real output.
 
 You can also paste your own `LinkedIn, Instagram` lines and run it live (limited to 12 people on the public site because the free Gemini and Apify quotas are shared by all visitors; when a quota is spent the UI says so and stops cleanly).
 

@@ -25,6 +25,9 @@ export default function Home() {
   const [kind, setKind] = useState<Kind | null>(null); // what the DISPLAYED data is: real model output or synthetic fixture
   const [notice, setNotice] = useState("");
   useEffect(() => { fetch("/api/health").then((r) => r.json()).then(setHealth).catch(() => {}); }, []);
+  // /?demo=1 opens straight into the saved real run (no scraping or AI calls), starting on the profiles.
+  useEffect(() => { if (new URLSearchParams(window.location.search).get("demo") === "1") loadDemo("demo.json", "profiles"); // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const say = (m: string) => setLog((l) => [...l.slice(-80), m]);
   const byId = useMemo(() => Object.fromEntries(people.map((p) => [p.id, p])), [people]);
@@ -52,13 +55,14 @@ export default function Home() {
     const blob = new Blob([JSON.stringify({ meta, people, dates, shortlists }, null, 1)], { type: "application/json" });
     const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = kind === "fixture" ? "fixture-demo.json" : "demo.json"; a.click();
   };
-  async function loadDemo(file: "demo.json" | "fixture-demo.json") {
+  async function loadDemo(file: "demo.json" | "fixture-demo.json", startTab: Tab = "rankings") {
     const r = await fetch("/" + file);
     if (!r.ok) return setNotice(file === "demo.json" ? "No finished demo is published yet. Run a cohort with live keys and save the export to public/demo.json." : "Fixture demo missing: run npm run demo:fixture.");
     const d = await r.json();
     setNotice(""); setKind(d.meta?.kind === "fixture" ? "fixture" : "live"); setPeople(d.people); setDates(d.dates); setShortlists(d.shortlists);
     setSelPerson(null); setSelDate(null); setRankPerson(null); setLog([`Loaded ${file} (generated ${d.meta?.generated_at ?? "unknown"}).`]);
-    if (d.meta?.kind !== "fixture" && d.people.length < 25) setNotice(`This is a real run of only ${d.people.length} people, not the full 25-person cohort.`); setStage("done"); setTab("rankings");
+    if (d.meta?.kind !== "fixture" && d.people.length < 25) setNotice(`This is a real run of only ${d.people.length} people, not the full 25-person cohort.`); setStage("done"); setTab(startTab);
+    if (startTab !== "rankings") setTimeout(() => document.querySelector(".tabs")?.scrollIntoView({ behavior: "smooth", block: "start" }), 350);
   }
 
   const ids = ready.map((p) => p.id);
