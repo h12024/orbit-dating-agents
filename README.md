@@ -4,9 +4,17 @@ Every person is represented by an agent. The agents date each other on their beh
 
 **Inputs:** a LinkedIn URL + a public Instagram URL per person. Those two sources are all an agent ever sees.
 
+- Live site: https://agentic-dating-nine.vercel.app
+- Demo video (about 2:45): https://youtu.be/3s6kjwps6tE
 - Repo: https://github.com/h12024/orbit-dating-agents
-- Live site: _not deployed yet - see "Deploy"_
-- Demo: `Load finished demo` (real model output, appears once `public/demo.json` is generated) and `Load fixture demo (synthetic)` (25 fictional personas, always available, always labelled).
+
+## Try it in 30 seconds
+Open the live site and click **Load finished demo**. It replays a saved, validated real run: **25 real public figures, 57 agent-vs-agent dates**, with every profile built from live Apify scrapes of their LinkedIn and public Instagram, and every conversation and debrief written by Gemini. Open a profile (needs / hobbies / values / evidence with sources), a date (transcript plus both agents' debriefs), and the Rankings tab (click a match to jump to the date that earned it). `Load fixture demo (synthetic)` is a clearly-labelled offline sample of 25 fictional personas and is not real output.
+
+You can also paste your own `LinkedIn, Instagram` lines and run it live (limited to 12 people on the public site because the free Gemini and Apify quotas are shared by all visitors; when a quota is spent the UI says so and stops cleanly).
+
+## Result of the real run (`public/demo.json`)
+25 people (all high-confidence profiles), 57 dates, 228 unique conversation turns, 0 failed steps, validated by `scripts/validate-demo.mjs` (real Apify provenance, no fixture markers, structure and secret checks). Candidates are only included if verified on both platforms; three same-name strangers and one private Instagram account were rejected along the way (see `data/people.json`).
 
 ## How it works
 1. **Read** - `/api/scrape` fetches both public profiles (Apify actors; public page meta tags as a thin fallback). `/api/analyze` (analysis model) writes a structured profile: needs, hobbies, interests, values, personality, lifestyle, dealbreakers, and an **evidence** list of direct observations. Needs/values/personality are inferences; `evidence` is what was actually seen. Thin data lowers `confidence`; protected traits are ignored; scraped text is treated as untrusted data.
@@ -25,7 +33,7 @@ The AI layer is provider-agnostic (`lib/llm.ts`): **Gemini** (official REST `gen
 | `APIFY_TOKEN` | Strongly recommended. Reliable LinkedIn/Instagram scraping | Falls back to public meta tags: LinkedIn headline only, Instagram follower counts only (low-confidence profiles). LinkedIn also returns HTTP 999 after ~10 unauthenticated fetches. We do not bypass that. |
 | `ANALYZE_MODEL`, `DATE_MODEL`, `VERDICT_MODEL` | Optional model overrides | Gemini: `gemini-3.5-flash-lite` / `gemini-3.5-flash-lite` / `gemini-3.1-flash-lite` |
 | `GEMINI_RPM` | Optional pacing per model per process | off (relies on 429 retry/backoff) |
-| `APIFY_LINKEDIN_ACTOR`, `APIFY_INSTAGRAM_ACTOR` | Optional actor overrides | `apimaestro~linkedin-profile-detail`, `apify~instagram-profile-scraper` (verify before a big run) |
+| `APIFY_LINKEDIN_ACTOR`, `APIFY_INSTAGRAM_ACTOR` | Optional actor overrides | `apimaestro~linkedin-profile-detail` (live scraping; free plan caps it at 20 profiles/day), `apify~instagram-profile-scraper`. The cohort's LinkedIn data was fetched in one batch with `harvestapi/linkedin-profile-scraper` (`scripts/ingest-harvest.mjs`), which the free plan allows 10 profiles per run |
 | `RATE_LIMIT_SCALE` | Optional multiplier for per-IP limits | 1 |
 | `LLM_MODE=fixture` | Dev only: synthetic output stamped `[FIXTURE]` + red banner | off |
 
